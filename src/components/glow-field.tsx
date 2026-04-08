@@ -81,8 +81,8 @@ export default function GlowField() {
         y: Math.random() * h * 0.8,
         vx: (Math.random() - 0.5) * 0.3,
         vy: (Math.random() - 0.5) * 0.2,
-        radius: 120 + Math.random() * 160,
-        opacity: 0.03 + Math.random() * 0.025,
+        radius: 150 + Math.random() * 180,
+        opacity: 0.05 + Math.random() * 0.04,
         phase: Math.random() * Math.PI * 2,
         speed: 0.002 + Math.random() * 0.003,
       }));
@@ -102,9 +102,9 @@ export default function GlowField() {
         spinX: (Math.random() - 0.5) * 0.012,
         spinY: (Math.random() - 0.5) * 0.015,
         spinZ: (Math.random() - 0.5) * 0.008,
-        size: i < 8 ? 14 + Math.random() * 22 : 2 + Math.random() * 3,
+        size: i < 8 ? 20 + Math.random() * 30 : 2.5 + Math.random() * 3.5,
         type: types[i % types.length],
-        opacity: 0.12 + Math.random() * 0.1,
+        opacity: 0.18 + Math.random() * 0.14,
         phase: Math.random() * Math.PI * 2,
       }));
     };
@@ -127,7 +127,7 @@ export default function GlowField() {
       });
 
       ctx.strokeStyle = `rgba(128, 0, 32, ${alpha})`;
-      ctx.lineWidth = 1.2 * scale;
+      ctx.lineWidth = 1.5 * scale;
       ctx.beginPath();
       ctx.moveTo(projected[0].x, projected[0].y);
       for (let i = 1; i < projected.length; i++) {
@@ -143,7 +143,7 @@ export default function GlowField() {
     ) => {
       const segments = 16;
       ctx.strokeStyle = `rgba(128, 0, 32, ${alpha})`;
-      ctx.lineWidth = 1.2 * scale;
+      ctx.lineWidth = 1.5 * scale;
       ctx.beginPath();
       for (let i = 0; i <= segments; i++) {
         const angle = (i / segments) * Math.PI * 2;
@@ -184,7 +184,7 @@ export default function GlowField() {
       });
 
       ctx.strokeStyle = `rgba(128, 0, 32, ${alpha})`;
-      ctx.lineWidth = 1 * scale;
+      ctx.lineWidth = 1.3 * scale;
       for (const [a, b] of edges) {
         ctx.beginPath();
         ctx.moveTo(projected[a].x, projected[a].y);
@@ -283,10 +283,10 @@ export default function GlowField() {
           const dy = a.y - b.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 250) {
-            const lineAlpha = (1 - dist / 250) * 0.07;
+          if (dist < 300) {
+            const lineAlpha = (1 - dist / 300) * 0.1;
             ctx.strokeStyle = `rgba(128, 0, 32, ${lineAlpha})`;
-            ctx.lineWidth = 0.7;
+            ctx.lineWidth = 0.8;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
