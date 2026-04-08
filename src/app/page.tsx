@@ -15,10 +15,10 @@ export default async function Home({ searchParams }: Props) {
       return <VersionA />;
     case "b":
       return <VersionB />;
-    case "d":
-      return <VersionD />;
     case "c":
-    default:
       return <VersionC />;
+    case "d":
+    default:
+      return <VersionD />;
   }
 }
