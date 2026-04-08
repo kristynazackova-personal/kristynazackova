@@ -47,8 +47,8 @@ export default function VentureCard({ venture }: { venture: Venture }) {
           <span
             className="text-[10px] font-bold font-mono tracking-wider px-2 py-0.5 rounded shrink-0"
             style={{
-              background: venture.status === "LIVE" ? "#ECFDF5" : "#F3F4F6",
-              color: venture.status === "LIVE" ? "#2E8B57" : "#4B5563",
+              background: venture.status === "LIVE" ? "#FDF2F4" : "#F3F4F6",
+              color: venture.status === "LIVE" ? "#800020" : "#4B5563",
             }}
           >
             {venture.status}
@@ -110,7 +110,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
             <div className="mb-5">
               <p
                 className="text-[10px] font-bold font-mono tracking-wider mb-2"
-                style={{ color: "#2E8B57" }}
+                style={{ color: "#800020" }}
               >
                 WHY I BUILT THIS
               </p>
@@ -123,7 +123,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
             <div className="mb-5">
               <p
                 className="text-[10px] font-bold font-mono tracking-wider mb-2"
-                style={{ color: "#2E8B57" }}
+                style={{ color: "#800020" }}
               >
                 WHAT IT DOES
               </p>
@@ -137,7 +137,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
               <div>
                 <p
                   className="text-[10px] font-bold font-mono tracking-wider mb-3"
-                  style={{ color: "#2E8B57" }}
+                  style={{ color: "#800020" }}
                 >
                   PREVIEW
                 </p>

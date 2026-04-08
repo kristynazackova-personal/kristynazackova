@@ -141,7 +141,7 @@ export default function VersionD() {
             <div className="grid md:grid-cols-3 gap-8">
               {Object.entries(grouped).map(([category, items]) => (
                 <div key={category}>
-                  <p className="text-xs font-mono font-bold mb-3" style={{ color: "#2E8B57" }}>{category}</p>
+                  <p className="text-xs font-mono font-bold mb-3" style={{ color: "#800020" }}>{category}</p>
                   <div className="space-y-2">
                     {items.map((item) => (
                       <div key={item} className="flex items-center gap-2.5">
@@ -187,7 +187,7 @@ export default function VersionD() {
                   </div>
                   <div className="md:col-span-4">
                     <p className="text-sm font-bold">{e.role}</p>
-                    <p className="text-xs font-medium" style={{ color: "#2E8B57" }}>{e.company}</p>
+                    <p className="text-xs font-medium" style={{ color: "#800020" }}>{e.company}</p>
                   </div>
                   <div className="md:col-span-6">
                     <p className="text-xs font-mono mb-1" style={{ color: "#4B5563" }}>{e.scope}</p>
