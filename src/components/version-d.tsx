@@ -250,6 +250,19 @@ export default function VersionD() {
             </div>
           </section>
 
+          {/* Mentorship */}
+          <section className="py-14 border-t" style={{ borderColor: "#E5E7EB" }}>
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4B5563" }}>Mentorship</h2>
+                <p className="text-sm" style={{ color: "#4B5563" }}>Product strategy, AI, systems thinking, career growth. 7-day free trial.</p>
+              </div>
+              <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md border transition-all duration-100 hover:border-black" style={{ borderColor: "#E5E7EB", color: "#000" }}>
+                Book &nearr;
+              </a>
+            </div>
+          </section>
+
           {/* Contact */}
           <section className="py-14 border-t" style={{ borderColor: "#E5E7EB" }}>
             <div className="flex items-center justify-between">
@@ -272,6 +285,7 @@ export default function VersionD() {
           <span>&copy; {new Date().getFullYear()} Kristyna Zackova</span>
           <div className="flex items-center gap-5">
             <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">LinkedIn</a>
+            <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">Mentorship</a>
             <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ConversationLens</a>
             <a href="https://www.threadlift.io" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ThreadLift</a>
           </div>

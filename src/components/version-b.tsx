@@ -124,6 +124,15 @@ export default function VersionB() {
 
           <hr className="border-border" />
 
+          {/* Mentorship */}
+          <section className="py-16">
+            <h2 className="text-xs font-medium tracking-widest uppercase text-muted mb-4">Mentorship</h2>
+            <p className="text-muted mb-4">Product strategy, AI, systems thinking, career growth. 7-day free trial.</p>
+            <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:opacity-60 transition-opacity">Book a session &rarr;</a>
+          </section>
+
+          <hr className="border-border" />
+
           {/* Writing */}
           <section className="py-16">
             <h2 className="text-xs font-medium tracking-widest uppercase text-muted mb-4">Writing</h2>

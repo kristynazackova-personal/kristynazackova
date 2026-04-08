@@ -199,6 +199,22 @@ export default function VersionA() {
           </div>
         </section>
 
+        {/* Mentorship */}
+        <section className="py-32">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-sm font-mono text-accent tracking-wider uppercase mb-4">Mentorship</h2>
+            <div className="p-8 bg-surface border border-border rounded-2xl">
+              <h3 className="text-2xl font-bold mb-3 font-[family-name:var(--font-heading)]">
+                Work with <span className="gradient-text">me</span>
+              </h3>
+              <p className="text-muted max-w-xl mb-6">Product strategy, AI product management, systems thinking, career growth. 2 calls/month, unlimited async Q&A. 7-day free trial.</p>
+              <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-3 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg transition-all hover:scale-105">
+                Book a mentor session
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-32 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent" />

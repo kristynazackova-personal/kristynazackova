@@ -190,6 +190,18 @@ export default function VersionC() {
             </div>
           </section>
 
+          {/* Mentorship */}
+          <section className="py-20">
+            <div className="p-10 bg-surface border border-border rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+              <h2 className="text-xs font-semibold tracking-widest uppercase text-accent mb-4">Mentorship</h2>
+              <p className="text-foreground text-lg font-medium mb-2">Work with me 1-on-1</p>
+              <p className="text-muted mb-6">Product strategy, AI product management, systems thinking, and career growth. 2 calls/month, unlimited async Q&A. 7-day free trial.</p>
+              <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2.5 bg-accent text-white text-sm font-medium rounded-xl hover:bg-accent/90 transition-all duration-250">
+                Book a session
+              </a>
+            </div>
+          </section>
+
           {/* Writing */}
           <section className="py-20">
             <div className="p-10 bg-accent-bg rounded-2xl border border-accent/10">
