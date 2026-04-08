@@ -61,8 +61,8 @@ export default function VentureCard({ venture }: { venture: Venture }) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="text-[10px] font-bold font-mono tracking-wider px-2 py-1 rounded border hover:border-black transition-all duration-100"
-              style={{ borderColor: "rgba(0,0,0,0.06)", color: "#000" }}
+              className="text-[10px] font-medium font-mono tracking-wider px-2 py-1 rounded transition-all duration-100 hover:bg-black/5"
+              style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}
             >
               VISIT {"\u2197"}
             </a>

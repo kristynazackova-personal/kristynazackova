@@ -104,7 +104,7 @@ export default function VersionD() {
             <a href="#systems" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Ventures</a>
             <a href="#experience" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Experience</a>
             <Link href="/blog" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Writing</Link>
-            <a href="mailto:kristynazackova@gmail.com" className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md transition-all duration-100" style={{ background: "#000", color: "#fff" }}>
+            <a href="mailto:kristynazackova@gmail.com" className="text-xs font-medium uppercase tracking-wider px-3 py-1.5 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#000" }}>
               Contact
             </a>
           </div>
@@ -132,11 +132,11 @@ export default function VersionD() {
                   Building consumer-centric SaaS that solves complex advertising and incentives challenges for CPG brands. Turning ambiguity into structure, strategy into shipped product.
                 </p>
                 <div className="flex gap-3">
-                  <a href="#systems" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100" style={{ background: "#000", color: "#fff" }}>
-                    View work
+                  <a href="#systems" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
+                    View work &darr;
                   </a>
-                  <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md border transition-all duration-100 hover:border-black" style={{ borderColor: "#E5E7EB", color: "#000" }}>
-                    LinkedIn
+                  <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#6B7280" }}>
+                    LinkedIn {"\u2197"}
                   </a>
                 </div>
               </div>
@@ -246,7 +246,7 @@ export default function VersionD() {
                 <h2 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4B5563" }}>Writing</h2>
                 <p className="text-xs" style={{ color: "#6B7280" }}>Thoughts on product, systems, and technology.</p>
               </div>
-              <Link href="/blog" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md border transition-all duration-100 hover:border-black" style={{ borderColor: "#E5E7EB", color: "#000" }}>
+              <Link href="/blog" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
                 Read &rarr;
               </Link>
             </div>
@@ -259,7 +259,7 @@ export default function VersionD() {
                 <h2 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4B5563" }}>Mentorship</h2>
                 <p className="text-xs" style={{ color: "#6B7280" }}>Product strategy, AI, systems thinking, career growth. 7-day free trial.</p>
               </div>
-              <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md border transition-all duration-100 hover:border-black" style={{ borderColor: "#E5E7EB", color: "#000" }}>
+              <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
                 Book {"\u2197"}
               </a>
             </div>
@@ -274,8 +274,8 @@ export default function VersionD() {
                 <h2 className="text-sm font-bold mb-1">Get in touch</h2>
                 <p className="text-xs" style={{ color: "#6B7280" }}>Interested in product, AI, or building something together.</p>
               </div>
-              <a href="mailto:kristynazackova@gmail.com" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100" style={{ background: "#000", color: "#fff" }}>
-                Email
+              <a href="mailto:kristynazackova@gmail.com" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
+                Email &rarr;
               </a>
             </div>
           </section>
