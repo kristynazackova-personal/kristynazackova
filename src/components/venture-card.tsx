@@ -64,7 +64,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
               className="text-[10px] font-bold font-mono tracking-wider px-2 py-1 rounded border hover:border-black transition-all duration-100"
               style={{ borderColor: "#E5E7EB", color: "#000" }}
             >
-              VISIT &nearr;
+              VISIT {"\u2197"}
             </a>
           )}
           <svg

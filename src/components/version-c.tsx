@@ -158,7 +158,7 @@ export default function VersionC() {
                       </span>
                     </div>
                     <p className="text-muted text-sm leading-relaxed flex-1">{v.description}</p>
-                    {v.link && <p className="mt-5 text-sm font-medium text-accent">Visit &nearr;</p>}
+                    {v.link && <p className="mt-5 text-sm font-medium text-accent">Visit {"\u2197"}</p>}
                   </div>
                 );
                 return v.link ? (

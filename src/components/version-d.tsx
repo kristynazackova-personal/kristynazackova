@@ -252,7 +252,7 @@ export default function VersionD() {
                 <p className="text-sm" style={{ color: "#4B5563" }}>Product strategy, AI, systems thinking, career growth. 7-day free trial.</p>
               </div>
               <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md border transition-all duration-100 hover:border-black" style={{ borderColor: "#E5E7EB", color: "#000" }}>
-                Book &nearr;
+                Book {"\u2197"}
               </a>
             </div>
           </section>

@@ -91,7 +91,7 @@ export default function VersionB() {
                   <div className="flex items-baseline gap-3 mb-2">
                     {v.link ? (
                       <a href={v.link} target="_blank" rel="noopener noreferrer" className="text-lg font-medium hover:opacity-60 transition-opacity">
-                        {v.title}<span className="text-muted ml-1.5">&nearr;</span>
+                        {v.title}<span className="text-muted ml-1.5">{"\u2197"}</span>
                       </a>
                     ) : (
                       <span className="text-lg font-medium">{v.title}</span>
