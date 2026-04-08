@@ -34,7 +34,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
       className="border rounded-lg transition-all duration-150"
       style={{
         borderColor: open ? "#000" : "#E5E7EB",
-        background: "#fff",
+        background: "#FEFEFE",
       }}
     >
       {/* Header — always visible */}
@@ -62,7 +62,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
               className="text-[10px] font-bold font-mono tracking-wider px-2 py-1 rounded border hover:border-black transition-all duration-100"
-              style={{ borderColor: "#E5E7EB", color: "#000" }}
+              style={{ borderColor: "rgba(0,0,0,0.06)", color: "#000" }}
             >
               VISIT {"\u2197"}
             </a>
@@ -105,7 +105,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
         }}
       >
         <div ref={contentRef} className="px-5 pb-5">
-          <div className="border-t pt-5" style={{ borderColor: "#E5E7EB" }}>
+          <div className="border-t pt-5" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
             {/* Why */}
             <div className="mb-5">
               <p
@@ -151,7 +151,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
                         playsInline
                         muted
                         className="w-full rounded border"
-                        style={{ borderColor: "#E5E7EB" }}
+                        style={{ borderColor: "rgba(0,0,0,0.06)" }}
                       />
                     ) : (
                       <img
@@ -159,7 +159,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
                         src={m.src}
                         alt={m.alt}
                         className="w-full rounded border"
-                        style={{ borderColor: "#E5E7EB" }}
+                        style={{ borderColor: "rgba(0,0,0,0.06)" }}
                       />
                     )
                   )}

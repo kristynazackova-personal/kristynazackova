@@ -91,10 +91,10 @@ export default function VersionD() {
     <div
       data-theme="d"
       className="min-h-full flex flex-col"
-      style={{ background: "#ffffff", color: "#000000" }}
+      style={{ background: "#F8F8F7", color: "#000000" }}
     >
       {/* Nav */}
-      <nav className="border-b" style={{ borderColor: "#E5E7EB" }}>
+      <nav style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
         <div className="max-w-[1100px] mx-auto px-6 h-12 flex items-center justify-between">
           <Link href="/?version=d" className="text-xs font-bold tracking-widest uppercase" style={{ color: "#000" }}>
             KZ
@@ -123,10 +123,10 @@ export default function VersionD() {
                     Product Leader / Founder
                   </span>
                 </div>
-                <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.1] mb-5">
+                <h1 className="text-5xl sm:text-6xl font-bold tracking-[-0.035em] leading-[1.05] mb-5">
                   Kristyna Zackova
                 </h1>
-                <p className="text-base leading-[1.5] mb-8 max-w-lg" style={{ color: "#4B5563" }}>
+                <p className="text-sm leading-[1.6] mb-8 max-w-lg" style={{ color: "#6B7280" }}>
                   Building consumer-centric SaaS that solves complex advertising and incentives challenges for CPG brands. Turning ambiguity into structure, strategy into shipped product.
                 </p>
                 <div className="flex gap-3">
@@ -145,22 +145,22 @@ export default function VersionD() {
                     <span>ROLE</span>
                     <span className="font-semibold" style={{ color: "#000" }}>Principal PM</span>
                   </div>
-                  <div className="w-full h-px" style={{ background: "#E5E7EB" }} />
+                  <div className="w-full h-px" style={{ background: "rgba(0,0,0,0.06)" }} />
                   <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
                     <span>ORG</span>
                     <span className="font-semibold" style={{ color: "#000" }}>Inmar Intelligence</span>
                   </div>
-                  <div className="w-full h-px" style={{ background: "#E5E7EB" }} />
+                  <div className="w-full h-px" style={{ background: "rgba(0,0,0,0.06)" }} />
                   <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
                     <span>FOCUS</span>
                     <span className="font-semibold" style={{ color: "#000" }}>CPG / Martech / AI</span>
                   </div>
-                  <div className="w-full h-px" style={{ background: "#E5E7EB" }} />
+                  <div className="w-full h-px" style={{ background: "rgba(0,0,0,0.06)" }} />
                   <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
                     <span>VENTURES</span>
                     <span className="font-semibold" style={{ color: "#2E8B57" }}>3 active</span>
                   </div>
-                  <div className="w-full h-px" style={{ background: "#E5E7EB" }} />
+                  <div className="w-full h-px" style={{ background: "rgba(0,0,0,0.06)" }} />
                   <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
                     <span>LOCATION</span>
                     <span className="font-semibold" style={{ color: "#000" }}>New York</span>
@@ -171,7 +171,7 @@ export default function VersionD() {
           </section>
 
           {/* Capabilities */}
-          <section className="py-14 border-t" style={{ borderColor: "#E5E7EB" }}>
+          <section className="py-14 mt-4">
             <h2 className="text-xs font-bold uppercase tracking-widest mb-8" style={{ color: "#4B5563" }}>
               Capabilities
             </h2>
@@ -192,8 +192,10 @@ export default function VersionD() {
             </div>
           </section>
 
+          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)" }} />
+
           {/* Ventures */}
-          <section id="systems" className="py-14 border-t" style={{ borderColor: "#E5E7EB" }}>
+          <section id="systems" className="py-14">
             <div className="flex items-baseline justify-between mb-8">
               <h2 className="text-xs font-bold uppercase tracking-widest" style={{ color: "#4B5563" }}>
                 Ventures
@@ -207,14 +209,16 @@ export default function VersionD() {
             </div>
           </section>
 
+          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)" }} />
+
           {/* Experience */}
-          <section id="experience" className="py-14 border-t" style={{ borderColor: "#E5E7EB" }}>
+          <section id="experience" className="py-14">
             <h2 className="text-xs font-bold uppercase tracking-widest mb-8" style={{ color: "#4B5563" }}>
               Experience
             </h2>
             <div className="space-y-0">
               {experience.map((e, i) => (
-                <div key={i} className="py-5 border-t first:border-t-0 grid md:grid-cols-12 gap-4 items-baseline" style={{ borderColor: "#F3F4F6" }}>
+                <div key={i} className="py-5 border-t first:border-t-0 grid md:grid-cols-12 gap-4 items-baseline" style={{ borderColor: "rgba(0,0,0,0.04)" }}>
                   <div className="md:col-span-2">
                     <span className="text-xs font-mono font-semibold" style={{ color: "#4B5563" }}>{e.period}</span>
                   </div>
@@ -231,12 +235,14 @@ export default function VersionD() {
             </div>
           </section>
 
+          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)" }} />
+
           {/* Writing */}
-          <section className="py-14 border-t" style={{ borderColor: "#E5E7EB" }}>
+          <section className="py-14">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4B5563" }}>Writing</h2>
-                <p className="text-sm" style={{ color: "#4B5563" }}>Thoughts on product, systems, and technology.</p>
+                <p className="text-xs" style={{ color: "#6B7280" }}>Thoughts on product, systems, and technology.</p>
               </div>
               <Link href="/blog" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md border transition-all duration-100 hover:border-black" style={{ borderColor: "#E5E7EB", color: "#000" }}>
                 Read &rarr;
@@ -245,11 +251,11 @@ export default function VersionD() {
           </section>
 
           {/* Mentorship */}
-          <section className="py-14 border-t" style={{ borderColor: "#E5E7EB" }}>
+          <section className="py-14">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4B5563" }}>Mentorship</h2>
-                <p className="text-sm" style={{ color: "#4B5563" }}>Product strategy, AI, systems thinking, career growth. 7-day free trial.</p>
+                <p className="text-xs" style={{ color: "#6B7280" }}>Product strategy, AI, systems thinking, career growth. 7-day free trial.</p>
               </div>
               <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md border transition-all duration-100 hover:border-black" style={{ borderColor: "#E5E7EB", color: "#000" }}>
                 Book {"\u2197"}
@@ -257,12 +263,14 @@ export default function VersionD() {
             </div>
           </section>
 
+          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)" }} />
+
           {/* Contact */}
-          <section className="py-14 border-t" style={{ borderColor: "#E5E7EB" }}>
+          <section className="py-14">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-sm font-bold mb-1">Get in touch</h2>
-                <p className="text-sm" style={{ color: "#4B5563" }}>Interested in product, AI, or building something together.</p>
+                <p className="text-xs" style={{ color: "#6B7280" }}>Interested in product, AI, or building something together.</p>
               </div>
               <a href="mailto:kristynazackova@gmail.com" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100" style={{ background: "#000", color: "#fff" }}>
                 Email
@@ -274,7 +282,7 @@ export default function VersionD() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-8 border-t" style={{ borderColor: "#E5E7EB" }}>
+      <footer className="mt-8" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
         <div className="max-w-[1100px] mx-auto px-6 py-6 flex items-center justify-between text-xs" style={{ color: "#4B5563" }}>
           <span>&copy; {new Date().getFullYear()} Kristyna Zackova</span>
           <div className="flex items-center gap-5">
