@@ -1,0 +1,282 @@
+import Link from "next/link";
+
+const ventures = [
+  {
+    title: "ConversationLens",
+    description: "AI-driven platform analyzing couples' conversations to deliver relationship insights.",
+    link: "https://conversationlens.com",
+    status: "LIVE",
+  },
+  {
+    title: "ThreadLift",
+    description: "Social listening and engagement platform — discovers conversations on Reddit and Quora, generates AI draft replies.",
+    link: "https://www.threadlift.io",
+    status: "LIVE",
+  },
+  {
+    title: "Life Made Easy",
+    description: "iOS app turning biometric data from Apple Health, Oura Ring, and Google Calendar into actionable health insights.",
+    link: null,
+    status: "QA",
+  },
+];
+
+const experience = [
+  {
+    role: "Principal Product Manager",
+    company: "Inmar Intelligence",
+    period: "2025 —",
+    scope: "CPG Enterprise Solutions",
+    description: "Leading unified personalized solutions for consumers and CPG clients across multiple Martech roadmaps.",
+  },
+  {
+    role: "Senior Product Manager",
+    company: "Inmar Intelligence",
+    period: "2022 — 2025",
+    scope: "Consumer Engagement",
+    description: "Built chatbot and website shopping experiences. Lifted incremental sales and delivered program insights.",
+  },
+  {
+    role: "Product Manager",
+    company: "Bazaarvoice",
+    period: "2019 — 2022",
+    scope: "Influenster Division",
+    description: "Redesigned consumer data collection UX. Built internal tools enabling scale through automation.",
+  },
+];
+
+const capabilities = [
+  { label: "Product Strategy", category: "CORE" },
+  { label: "Continuous Discovery", category: "CORE" },
+  { label: "Go-to-Market", category: "CORE" },
+  { label: "Cross-team Leadership", category: "CORE" },
+  { label: "User Research & UX", category: "METHODS" },
+  { label: "Data Analysis", category: "METHODS" },
+  { label: "Solution Architecture", category: "METHODS" },
+  { label: "Customer Journeys", category: "METHODS" },
+  { label: "SaaS", category: "DOMAINS" },
+  { label: "AI / ML Products", category: "DOMAINS" },
+  { label: "Martech", category: "DOMAINS" },
+  { label: "Agile / Scrum", category: "DOMAINS" },
+];
+
+const grouped = capabilities.reduce((acc, c) => {
+  if (!acc[c.category]) acc[c.category] = [];
+  acc[c.category].push(c.label);
+  return acc;
+}, {} as Record<string, string[]>);
+
+export default function VersionD() {
+  return (
+    <div
+      data-theme="d"
+      className="min-h-full flex flex-col"
+      style={{ background: "#ffffff", color: "#000000" }}
+    >
+      {/* Nav */}
+      <nav className="border-b" style={{ borderColor: "#E5E7EB" }}>
+        <div className="max-w-[1100px] mx-auto px-6 h-12 flex items-center justify-between">
+          <Link href="/?version=d" className="text-xs font-bold tracking-widest uppercase" style={{ color: "#000" }}>
+            KZ
+          </Link>
+          <div className="flex items-center gap-6">
+            <a href="#systems" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Ventures</a>
+            <a href="#experience" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Experience</a>
+            <Link href="/blog" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Writing</Link>
+            <a href="mailto:hello@kristynazackova.com" className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md transition-all duration-100" style={{ background: "#000", color: "#fff" }}>
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <main className="flex-1">
+        <div className="max-w-[1100px] mx-auto px-6">
+
+          {/* Hero */}
+          <section className="pt-20 pb-16">
+            <div className="grid md:grid-cols-12 gap-8">
+              <div className="md:col-span-7">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#2E8B57" }} />
+                  <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#4B5563" }}>
+                    Product Leader / Founder
+                  </span>
+                </div>
+                <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.1] mb-5">
+                  Kristyna Zackova
+                </h1>
+                <p className="text-base leading-[1.5] mb-8 max-w-lg" style={{ color: "#4B5563" }}>
+                  Building consumer-centric SaaS that solves complex advertising and incentives challenges for CPG brands. Turning ambiguity into structure, strategy into shipped product.
+                </p>
+                <div className="flex gap-3">
+                  <a href="#systems" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100" style={{ background: "#000", color: "#fff" }}>
+                    View work
+                  </a>
+                  <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md border transition-all duration-100 hover:border-black" style={{ borderColor: "#E5E7EB", color: "#000" }}>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+              <div className="md:col-span-5 flex items-end">
+                {/* Data markers */}
+                <div className="w-full space-y-3 pb-2">
+                  <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
+                    <span>ROLE</span>
+                    <span className="font-semibold" style={{ color: "#000" }}>Principal PM</span>
+                  </div>
+                  <div className="w-full h-px" style={{ background: "#E5E7EB" }} />
+                  <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
+                    <span>ORG</span>
+                    <span className="font-semibold" style={{ color: "#000" }}>Inmar Intelligence</span>
+                  </div>
+                  <div className="w-full h-px" style={{ background: "#E5E7EB" }} />
+                  <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
+                    <span>FOCUS</span>
+                    <span className="font-semibold" style={{ color: "#000" }}>CPG / Martech / AI</span>
+                  </div>
+                  <div className="w-full h-px" style={{ background: "#E5E7EB" }} />
+                  <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
+                    <span>VENTURES</span>
+                    <span className="font-semibold" style={{ color: "#2E8B57" }}>3 active</span>
+                  </div>
+                  <div className="w-full h-px" style={{ background: "#E5E7EB" }} />
+                  <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
+                    <span>LOCATION</span>
+                    <span className="font-semibold" style={{ color: "#000" }}>New York</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Capabilities */}
+          <section className="py-14 border-t" style={{ borderColor: "#E5E7EB" }}>
+            <h2 className="text-xs font-bold uppercase tracking-widest mb-8" style={{ color: "#4B5563" }}>
+              Capabilities
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {Object.entries(grouped).map(([category, items]) => (
+                <div key={category}>
+                  <p className="text-xs font-mono font-bold mb-3" style={{ color: "#2E8B57" }}>{category}</p>
+                  <div className="space-y-2">
+                    {items.map((item) => (
+                      <div key={item} className="flex items-center gap-2.5">
+                        <div className="w-1 h-1 rounded-full" style={{ background: "#000" }} />
+                        <span className="text-sm" style={{ color: "#4B5563" }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Ventures */}
+          <section id="systems" className="py-14 border-t" style={{ borderColor: "#E5E7EB" }}>
+            <div className="flex items-baseline justify-between mb-8">
+              <h2 className="text-xs font-bold uppercase tracking-widest" style={{ color: "#4B5563" }}>
+                Ventures
+              </h2>
+              <span className="text-xs font-mono" style={{ color: "#4B5563" }}>{ventures.length} projects</span>
+            </div>
+            <div className="grid md:grid-cols-3 gap-4">
+              {ventures.map((v) => {
+                const card = (
+                  <div className="group h-full p-5 border rounded-lg transition-all duration-100 flex flex-col" style={{ borderColor: "#E5E7EB", background: "#fff" }}>
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-sm font-bold">{v.title}</h3>
+                      <span
+                        className="text-[10px] font-bold font-mono tracking-wider px-2 py-0.5 rounded"
+                        style={{
+                          background: v.status === "LIVE" ? "#ECFDF5" : "#F3F4F6",
+                          color: v.status === "LIVE" ? "#2E8B57" : "#4B5563",
+                        }}
+                      >
+                        {v.status}
+                      </span>
+                    </div>
+                    <p className="text-xs leading-[1.5] flex-1" style={{ color: "#4B5563" }}>{v.description}</p>
+                    {v.link && (
+                      <p className="mt-4 text-xs font-bold group-hover:underline" style={{ color: "#000" }}>
+                        Open &nearr;
+                      </p>
+                    )}
+                  </div>
+                );
+                return v.link ? (
+                  <a key={v.title} href={v.link} target="_blank" rel="noopener noreferrer" className="[&>div]:hover:border-black">{card}</a>
+                ) : (
+                  <div key={v.title}>{card}</div>
+                );
+              })}
+            </div>
+          </section>
+
+          {/* Experience */}
+          <section id="experience" className="py-14 border-t" style={{ borderColor: "#E5E7EB" }}>
+            <h2 className="text-xs font-bold uppercase tracking-widest mb-8" style={{ color: "#4B5563" }}>
+              Experience
+            </h2>
+            <div className="space-y-0">
+              {experience.map((e, i) => (
+                <div key={i} className="py-5 border-t first:border-t-0 grid md:grid-cols-12 gap-4 items-baseline" style={{ borderColor: "#F3F4F6" }}>
+                  <div className="md:col-span-2">
+                    <span className="text-xs font-mono font-semibold" style={{ color: "#4B5563" }}>{e.period}</span>
+                  </div>
+                  <div className="md:col-span-4">
+                    <p className="text-sm font-bold">{e.role}</p>
+                    <p className="text-xs font-medium" style={{ color: "#2E8B57" }}>{e.company}</p>
+                  </div>
+                  <div className="md:col-span-6">
+                    <p className="text-xs font-mono mb-1" style={{ color: "#4B5563" }}>{e.scope}</p>
+                    <p className="text-sm" style={{ color: "#4B5563" }}>{e.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Writing */}
+          <section className="py-14 border-t" style={{ borderColor: "#E5E7EB" }}>
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4B5563" }}>Writing</h2>
+                <p className="text-sm" style={{ color: "#4B5563" }}>Thoughts on product, systems, and technology.</p>
+              </div>
+              <Link href="/blog" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md border transition-all duration-100 hover:border-black" style={{ borderColor: "#E5E7EB", color: "#000" }}>
+                Read &rarr;
+              </Link>
+            </div>
+          </section>
+
+          {/* Contact */}
+          <section className="py-14 border-t" style={{ borderColor: "#E5E7EB" }}>
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-sm font-bold mb-1">Get in touch</h2>
+                <p className="text-sm" style={{ color: "#4B5563" }}>Interested in product, AI, or building something together.</p>
+              </div>
+              <a href="mailto:hello@kristynazackova.com" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100" style={{ background: "#000", color: "#fff" }}>
+                Email
+              </a>
+            </div>
+          </section>
+
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="mt-8 border-t" style={{ borderColor: "#E5E7EB" }}>
+        <div className="max-w-[1100px] mx-auto px-6 py-6 flex items-center justify-between text-xs" style={{ color: "#4B5563" }}>
+          <span>&copy; {new Date().getFullYear()} Kristyna Zackova</span>
+          <div className="flex items-center gap-5">
+            <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">LinkedIn</a>
+            <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ConversationLens</a>
+            <a href="https://www.threadlift.io" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ThreadLift</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

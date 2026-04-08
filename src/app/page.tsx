@@ -1,6 +1,7 @@
 import VersionA from "@/components/version-a";
 import VersionB from "@/components/version-b";
 import VersionC from "@/components/version-c";
+import VersionD from "@/components/version-d";
 
 type Props = {
   searchParams: Promise<{ version?: string }>;
@@ -14,6 +15,8 @@ export default async function Home({ searchParams }: Props) {
       return <VersionA />;
     case "b":
       return <VersionB />;
+    case "d":
+      return <VersionD />;
     case "c":
     default:
       return <VersionC />;
