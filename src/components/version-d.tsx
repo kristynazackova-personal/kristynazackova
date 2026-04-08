@@ -1,6 +1,7 @@
 import Link from "next/link";
 import VentureCard from "./venture-card";
 import type { Venture } from "./venture-card";
+import GlowField from "./glow-field";
 
 const ventures: Venture[] = [
   {
@@ -111,10 +112,11 @@ export default function VersionD() {
       </nav>
 
       <main className="flex-1">
-        <div className="max-w-[1100px] mx-auto px-6">
+        <div className="max-w-[1100px] mx-auto px-6 relative">
+          <GlowField />
 
           {/* Hero */}
-          <section className="pt-20 pb-16">
+          <section className="pt-20 pb-16 relative">
             <div className="grid md:grid-cols-12 gap-8">
               <div className="md:col-span-7">
                 <div className="flex items-center gap-3 mb-6">
