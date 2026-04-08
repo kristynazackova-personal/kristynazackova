@@ -103,7 +103,7 @@ export default function VersionD() {
             <a href="#systems" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Ventures</a>
             <a href="#experience" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Experience</a>
             <Link href="/blog" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Writing</Link>
-            <a href="mailto:hello@kristynazackova.com" className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md transition-all duration-100" style={{ background: "#000", color: "#fff" }}>
+            <a href="mailto:kristynazackova@gmail.com" className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md transition-all duration-100" style={{ background: "#000", color: "#fff" }}>
               Contact
             </a>
           </div>
@@ -264,7 +264,7 @@ export default function VersionD() {
                 <h2 className="text-sm font-bold mb-1">Get in touch</h2>
                 <p className="text-sm" style={{ color: "#4B5563" }}>Interested in product, AI, or building something together.</p>
               </div>
-              <a href="mailto:hello@kristynazackova.com" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100" style={{ background: "#000", color: "#fff" }}>
+              <a href="mailto:kristynazackova@gmail.com" className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100" style={{ background: "#000", color: "#fff" }}>
                 Email
               </a>
             </div>

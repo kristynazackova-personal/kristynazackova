@@ -76,7 +76,7 @@ export default function VersionB() {
             </p>
             <div className="flex gap-4 mt-8">
               <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted hover:text-foreground transition-colors underline underline-offset-4 decoration-border hover:decoration-foreground">LinkedIn</a>
-              <a href="mailto:hello@kristynazackova.com" className="text-sm text-muted hover:text-foreground transition-colors underline underline-offset-4 decoration-border hover:decoration-foreground">Email</a>
+              <a href="mailto:kristynazackova@gmail.com" className="text-sm text-muted hover:text-foreground transition-colors underline underline-offset-4 decoration-border hover:decoration-foreground">Email</a>
             </div>
           </section>
 
@@ -148,7 +148,7 @@ export default function VersionB() {
           <p>&copy; {new Date().getFullYear()}</p>
           <div className="flex items-center gap-5">
             <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
-            <a href="mailto:hello@kristynazackova.com" className="hover:text-foreground transition-colors">Email</a>
+            <a href="mailto:kristynazackova@gmail.com" className="hover:text-foreground transition-colors">Email</a>
           </div>
         </div>
       </footer>

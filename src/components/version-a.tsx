@@ -223,7 +223,7 @@ export default function VersionA() {
               Let&apos;s <span className="gradient-text">connect</span>
             </h2>
             <p className="text-muted text-lg mb-10 max-w-lg mx-auto">Interested in product, AI, or building something together? I&apos;d love to hear from you.</p>
-            <a href="mailto:hello@kristynazackova.com" className="inline-block px-8 py-3 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg transition-all hover:scale-105">
+            <a href="mailto:kristynazackova@gmail.com" className="inline-block px-8 py-3 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg transition-all hover:scale-105">
               Get in touch
             </a>
           </div>

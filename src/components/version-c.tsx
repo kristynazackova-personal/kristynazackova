@@ -80,7 +80,7 @@ export default function VersionC() {
             <a href="#ventures" className="text-sm text-muted hover:text-accent transition-colors duration-250">Ventures</a>
             <a href="#experience" className="text-sm text-muted hover:text-accent transition-colors duration-250">Experience</a>
             <Link href="/blog" className="text-sm text-muted hover:text-accent transition-colors duration-250">Writing</Link>
-            <a href="mailto:hello@kristynazackova.com" className="text-sm px-4 py-2 bg-accent text-white rounded-xl hover:bg-accent/90 transition-all duration-250">
+            <a href="mailto:kristynazackova@gmail.com" className="text-sm px-4 py-2 bg-accent text-white rounded-xl hover:bg-accent/90 transition-all duration-250">
               Get in touch
             </a>
           </div>
@@ -218,7 +218,7 @@ export default function VersionC() {
           <section className="py-20 text-center">
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Let&apos;s connect</h2>
             <p className="text-muted text-lg mb-8 max-w-md mx-auto">Interested in product, AI, or building something together?</p>
-            <a href="mailto:hello@kristynazackova.com" className="inline-block px-6 py-2.5 bg-accent text-white text-sm font-medium rounded-xl hover:bg-accent/90 transition-all duration-250">
+            <a href="mailto:kristynazackova@gmail.com" className="inline-block px-6 py-2.5 bg-accent text-white text-sm font-medium rounded-xl hover:bg-accent/90 transition-all duration-250">
               Get in touch
             </a>
           </section>
