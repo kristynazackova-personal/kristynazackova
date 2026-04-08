@@ -1,98 +1,139 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #fafafa;
-  --color-foreground: #171717;
-  --color-muted: #737373;
-  --color-accent: #171717;
-  --color-border: #e5e5e5;
-  --color-surface: #ffffff;
+  /* Version C (default) */
+  --color-background: #F7F6F3;
+  --color-foreground: #1A1A1A;
+  --color-muted: #6F6F6F;
+  --color-accent: #2E8B57;
+  --color-accent-2: #2E8B57;
+  --color-accent-3: #2E8B57;
+  --color-accent-bg: #EEF5F0;
+  --color-border: #E5E5E5;
+  --color-surface: #FAFAF8;
+  --color-surface-2: #F0EFEC;
   --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
   --font-mono: var(--font-jetbrains-mono);
+  --font-heading: var(--font-space-grotesk);
 }
 
+/* ── Base ── */
 body {
-  background: var(--color-background);
-  color: var(--color-foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
 ::selection {
-  background: var(--color-foreground);
-  color: var(--color-background);
+  background: var(--color-accent);
+  color: white;
 }
 
+/* ── Theme A: Bold & Dark ── */
+[data-theme="a"] {
+  --color-background: #0a0a0a;
+  --color-foreground: #f5f5f5;
+  --color-muted: #a3a3a3;
+  --color-accent: #f43f5e;
+  --color-accent-2: #a855f7;
+  --color-accent-3: #3b82f6;
+  --color-accent-bg: rgba(244, 63, 94, 0.1);
+  --color-border: #2a2a2a;
+  --color-surface: #171717;
+  --color-surface-2: #262626;
+}
+
+/* ── Theme B: Minimal ── */
+[data-theme="b"] {
+  --color-background: #fafafa;
+  --color-foreground: #171717;
+  --color-muted: #737373;
+  --color-accent: #171717;
+  --color-accent-2: #171717;
+  --color-accent-3: #171717;
+  --color-accent-bg: #f0f0f0;
+  --color-border: #e5e5e5;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f5f5;
+}
+
+/* ── Theme C: Warm Authority ── */
+[data-theme="c"] {
+  --color-background: #F7F6F3;
+  --color-foreground: #1A1A1A;
+  --color-muted: #6F6F6F;
+  --color-accent: #2E8B57;
+  --color-accent-2: #2E8B57;
+  --color-accent-3: #2E8B57;
+  --color-accent-bg: #EEF5F0;
+  --color-border: #E5E5E5;
+  --color-surface: #FAFAF8;
+  --color-surface-2: #F0EFEC;
+}
+
+/* ── Animations (Version A) ── */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-delayed { animation: float 6s ease-in-out 2s infinite; }
+.animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #f43f5e, #a855f7, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Animations (Version C) ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fade-up 0.6s ease-in-out both; }
+.fade-up-1 { animation-delay: 0ms; }
+.fade-up-2 { animation-delay: 100ms; }
+.fade-up-3 { animation-delay: 200ms; }
+.fade-up-4 { animation-delay: 300ms; }
+
+/* ── Subtle grid (Version C only) ── */
+[data-theme="c"]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.018) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Prose (shared) ── */
 .prose h1, .prose h2, .prose h3 {
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: var(--color-foreground);
 }
-
 .prose h1 { font-size: 1.875rem; margin-top: 2.5rem; margin-bottom: 1rem; }
-.prose h2 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.75rem; }
-.prose h3 { font-size: 1.25rem; margin-top: 1.75rem; margin-bottom: 0.5rem; }
-
-.prose p {
-  line-height: 1.8;
-  margin-bottom: 1.25rem;
-  color: var(--color-muted);
-}
-
-.prose a {
-  color: var(--color-foreground);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-  transition: opacity 0.2s;
-}
-
-.prose a:hover {
-  opacity: 0.6;
-}
-
-.prose code {
-  background: var(--color-border);
-  padding: 0.2em 0.4em;
-  border-radius: 3px;
-  font-size: 0.875em;
-  font-family: var(--font-mono), monospace;
-}
-
-.prose pre {
-  background: var(--color-foreground);
-  color: var(--color-background);
-  border-radius: 6px;
-  padding: 1.25rem;
-  overflow-x: auto;
-  margin: 1.5rem 0;
-}
-
-.prose pre code {
-  background: none;
-  padding: 0;
-  color: inherit;
-}
-
-.prose ul, .prose ol {
-  color: var(--color-muted);
-  margin: 1rem 0;
-  padding-left: 1.5rem;
-}
-
-.prose li {
-  margin-bottom: 0.5rem;
-  line-height: 1.7;
-}
-
-.prose blockquote {
-  border-left: 2px solid var(--color-border);
-  padding-left: 1rem;
-  margin: 1.5rem 0;
-  font-style: italic;
-  color: var(--color-muted);
-}
-
-.prose hr {
-  border-color: var(--color-border);
-  margin: 2.5rem 0;
-}
+.prose h2 { font-size: 1.5rem; margin-top: 2.25rem; margin-bottom: 0.75rem; }
+.prose h3 { font-size: 1.25rem; margin-top: 2rem; margin-bottom: 0.5rem; }
+.prose p { line-height: 1.7; margin-bottom: 1.25rem; color: var(--color-muted); }
+.prose a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: opacity 0.2s; }
+.prose a:hover { opacity: 0.7; }
+.prose code { background: var(--color-surface-2); padding: 0.2em 0.4em; border-radius: 4px; font-size: 0.875em; font-family: var(--font-mono), monospace; }
+.prose pre { background: var(--color-foreground); color: var(--color-background); border-radius: 6px; padding: 1.25rem; overflow-x: auto; margin: 1.5rem 0; }
+.prose pre code { background: none; padding: 0; color: inherit; }
+.prose ul, .prose ol { color: var(--color-muted); margin: 1rem 0; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.5rem; line-height: 1.7; }
+.prose blockquote { border-left: 2px solid var(--color-accent); padding-left: 1.25rem; margin: 1.75rem 0; font-style: italic; color: var(--color-muted); }
+.prose hr { border-color: var(--color-border); margin: 2.5rem 0; }

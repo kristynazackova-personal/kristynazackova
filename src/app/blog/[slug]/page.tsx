@@ -37,25 +37,39 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   return (
-    <article className="max-w-2xl mx-auto px-6 py-20">
+    <article className="max-w-[700px] mx-auto px-6 py-24">
       <Link
         href="/blog"
-        className="text-sm text-muted hover:text-foreground transition-colors mb-12 inline-block"
+        className="text-sm text-muted hover:text-accent transition-colors duration-250 mb-14 inline-block"
       >
-        &larr; Back
+        &larr; Back to writing
       </Link>
 
-      <header className="mb-10">
-        <h1 className="text-3xl font-semibold tracking-tight mb-3">
+      <header className="mb-12">
+        <h1 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-semibold tracking-tight leading-tight mb-4">
           {post.title}
         </h1>
-        <time className="text-sm text-muted font-mono">
-          {new Date(post.date).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </time>
+        <div className="flex flex-wrap items-center gap-4">
+          <time className="text-sm text-muted font-mono">
+            {new Date(post.date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </time>
+          {post.tags.length > 0 && (
+            <div className="flex gap-2">
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-2.5 py-0.5 text-xs font-medium bg-accent-bg text-accent rounded-full"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
       </header>
 
       <div className="prose max-w-none">
