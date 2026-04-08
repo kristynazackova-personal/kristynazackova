@@ -120,9 +120,17 @@ export default function VersionD() {
             <h1 className="text-6xl sm:text-8xl font-bold tracking-[-0.045em] leading-[0.95] mb-8 max-w-4xl">
               Turning fragmented products into unified systems.
             </h1>
-            <p className="text-sm mb-10" style={{ color: "#9CA3AF" }}>
-              Kristyna Zackova &mdash; Principal Product Manager, Inmar Intelligence
-            </p>
+            <div className="flex items-center gap-4 mb-10">
+              <img
+                src="/kristyna.png"
+                alt="Kristyna Zackova"
+                className="w-11 h-11 rounded-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-300"
+                style={{ border: "2px solid rgba(0,0,0,0.06)" }}
+              />
+              <p className="text-sm" style={{ color: "#9CA3AF" }}>
+                Kristyna Zackova &mdash; Principal Product Manager, Inmar Intelligence
+              </p>
+            </div>
             <div className="flex items-center gap-6 text-xs font-mono" style={{ color: "#C0C0C0" }}>
               <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-100">
                 LinkedIn {"\u2197"}
