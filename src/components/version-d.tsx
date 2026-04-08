@@ -141,30 +141,6 @@ export default function VersionD() {
             </div>
           </section>
 
-          {/* Capabilities */}
-          <section className="py-14 mt-4">
-            <h2 className="text-xs font-bold uppercase tracking-widest mb-8" style={{ color: "#4B5563" }}>
-              Capabilities
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {Object.entries(grouped).map(([category, items]) => (
-                <div key={category}>
-                  <p className="text-xs font-mono font-bold mb-3" style={{ color: "#800020" }}>{category}</p>
-                  <div className="space-y-2">
-                    {items.map((item) => (
-                      <div key={item} className="flex items-center gap-2.5">
-                        <div className="w-1 h-1 rounded-full" style={{ background: "#000" }} />
-                        <span className="text-sm" style={{ color: "#4B5563" }}>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)" }} />
-
           {/* Ventures */}
           <section id="systems" className="py-14">
             <div className="flex items-baseline justify-between mb-8">
@@ -231,6 +207,30 @@ export default function VersionD() {
               <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
                 Book {"\u2197"}
               </a>
+            </div>
+          </section>
+
+          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)" }} />
+
+          {/* Capabilities */}
+          <section className="py-14">
+            <h2 className="text-xs font-bold uppercase tracking-widest mb-8" style={{ color: "#4B5563" }}>
+              Capabilities
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {Object.entries(grouped).map(([category, items]) => (
+                <div key={category}>
+                  <p className="text-xs font-mono font-bold mb-3" style={{ color: "#800020" }}>{category}</p>
+                  <div className="space-y-2">
+                    {items.map((item) => (
+                      <div key={item} className="flex items-center gap-2.5">
+                        <div className="w-1 h-1 rounded-full" style={{ background: "#000" }} />
+                        <span className="text-sm" style={{ color: "#4B5563" }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 
