@@ -91,7 +91,7 @@ export default function GlowField() {
       const types: Shape["type"][] = ["diamond", "ring", "cube", "diamond", "ring", "dot", "dot", "dot"];
       shapes = Array.from({ length: 16 }, (_, i) => ({
         x: (Math.random() - 0.5) * w * 1.0,
-        y: (Math.random() - 0.5) * h * 0.7,
+        y: (Math.random() - 0.5) * h * 0.9,
         z: Math.random() * 300 - 50,
         vx: (Math.random() - 0.5) * 0.7,
         vy: (Math.random() - 0.5) * 0.5,
@@ -238,7 +238,7 @@ export default function GlowField() {
 
         // Wrap around
         const boundX = w * 0.6;
-        const boundY = h * 0.5;
+        const boundY = h * 0.6;
         if (shape.x < -boundX) shape.x = boundX;
         if (shape.x > boundX) shape.x = -boundX;
         if (shape.y < -boundY) shape.y = boundY;
@@ -311,8 +311,7 @@ export default function GlowField() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full pointer-events-none"
-      style={{ height: "700px", opacity: 1 }}
+      className="w-full h-full pointer-events-none"
     />
   );
 }

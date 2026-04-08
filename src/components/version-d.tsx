@@ -111,9 +111,12 @@ export default function VersionD() {
         </div>
       </nav>
 
-      <main className="flex-1">
-        <div className="max-w-[1100px] mx-auto px-6 relative">
-          <GlowField />
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <GlowField />
+      </div>
+
+      <main className="flex-1 relative z-10">
+        <div className="max-w-[1100px] mx-auto px-6">
 
           {/* Hero */}
           <section className="pt-28 pb-24 relative">
