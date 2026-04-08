@@ -116,59 +116,25 @@ export default function VersionD() {
           <GlowField />
 
           {/* Hero */}
-          <section className="pt-20 pb-16 relative">
-            <div className="grid md:grid-cols-12 gap-8">
-              <div className="md:col-span-7">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#2E8B57" }} />
-                  <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#4B5563" }}>
-                    Product Leader / Founder
-                  </span>
-                </div>
-                <h1 className="text-5xl sm:text-6xl font-bold tracking-[-0.035em] leading-[1.05] mb-5">
-                  Kristyna Zackova
-                </h1>
-                <p className="text-sm leading-[1.6] mb-8 max-w-lg" style={{ color: "#6B7280" }}>
-                  Building consumer-centric SaaS that solves complex advertising and incentives challenges for CPG brands. Turning ambiguity into structure, strategy into shipped product.
-                </p>
-                <div className="flex gap-3">
-                  <a href="#systems" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
-                    View work &darr;
-                  </a>
-                  <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#6B7280" }}>
-                    LinkedIn {"\u2197"}
-                  </a>
-                </div>
-              </div>
-              <div className="md:col-span-5 flex items-end">
-                {/* Data markers */}
-                <div className="w-full space-y-3 pb-2">
-                  <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
-                    <span>ROLE</span>
-                    <span className="font-semibold" style={{ color: "#000" }}>Principal PM</span>
-                  </div>
-                  <div className="w-full h-px" style={{ background: "rgba(0,0,0,0.06)" }} />
-                  <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
-                    <span>ORG</span>
-                    <span className="font-semibold" style={{ color: "#000" }}>Inmar Intelligence</span>
-                  </div>
-                  <div className="w-full h-px" style={{ background: "rgba(0,0,0,0.06)" }} />
-                  <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
-                    <span>FOCUS</span>
-                    <span className="font-semibold" style={{ color: "#000" }}>CPG / Martech / AI</span>
-                  </div>
-                  <div className="w-full h-px" style={{ background: "rgba(0,0,0,0.06)" }} />
-                  <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
-                    <span>VENTURES</span>
-                    <span className="font-semibold" style={{ color: "#2E8B57" }}>3 active</span>
-                  </div>
-                  <div className="w-full h-px" style={{ background: "rgba(0,0,0,0.06)" }} />
-                  <div className="flex items-center justify-between text-xs font-mono" style={{ color: "#4B5563" }}>
-                    <span>LOCATION</span>
-                    <span className="font-semibold" style={{ color: "#000" }}>New York</span>
-                  </div>
-                </div>
-              </div>
+          <section className="pt-24 pb-20 relative">
+            <h1 className="text-6xl sm:text-7xl font-bold tracking-[-0.04em] leading-[1] mb-6 max-w-3xl">
+              Building products that reduce complexity into structure
+            </h1>
+            <p className="text-sm leading-[1.6] mb-8 max-w-lg" style={{ color: "#6B7280" }}>
+              Kristyna Zackova — Principal PM at Inmar Intelligence. Turning ambiguity into strategy, strategy into shipped product.
+            </p>
+            <div className="flex items-center gap-6 text-xs font-mono" style={{ color: "#9CA3AF" }}>
+              <span>CPG / Martech / AI</span>
+              <span style={{ color: "rgba(0,0,0,0.12)" }}>|</span>
+              <span>New York</span>
+              <span style={{ color: "rgba(0,0,0,0.12)" }}>|</span>
+              <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-100">
+                LinkedIn {"\u2197"}
+              </a>
+              <span style={{ color: "rgba(0,0,0,0.12)" }}>|</span>
+              <a href="#systems" className="hover:text-black transition-colors duration-100">
+                View work &darr;
+              </a>
             </div>
           </section>
 
