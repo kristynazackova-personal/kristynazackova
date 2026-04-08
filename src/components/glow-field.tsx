@@ -79,10 +79,10 @@ export default function GlowField() {
       nodes = Array.from({ length: 4 }, () => ({
         x: Math.random() * w,
         y: Math.random() * h * 0.8,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.2,
-        radius: 150 + Math.random() * 180,
-        opacity: 0.05 + Math.random() * 0.04,
+        vx: (Math.random() - 0.5) * 0.06,
+        vy: (Math.random() - 0.5) * 0.04,
+        radius: 120 + Math.random() * 140,
+        opacity: 0.03 + Math.random() * 0.025,
         phase: Math.random() * Math.PI * 2,
         speed: 0.002 + Math.random() * 0.003,
       }));
@@ -93,18 +93,18 @@ export default function GlowField() {
         x: (Math.random() - 0.5) * w * 1.0,
         y: (Math.random() - 0.5) * h * 0.9,
         z: Math.random() * 300 - 50,
-        vx: (Math.random() - 0.5) * 0.7,
-        vy: (Math.random() - 0.5) * 0.5,
-        vz: (Math.random() - 0.5) * 0.3,
+        vx: (Math.random() - 0.5) * 0.12,
+        vy: (Math.random() - 0.5) * 0.08,
+        vz: (Math.random() - 0.5) * 0.05,
         rotX: Math.random() * Math.PI * 2,
         rotY: Math.random() * Math.PI * 2,
         rotZ: Math.random() * Math.PI * 2,
-        spinX: (Math.random() - 0.5) * 0.012,
-        spinY: (Math.random() - 0.5) * 0.015,
-        spinZ: (Math.random() - 0.5) * 0.008,
-        size: i < 8 ? 20 + Math.random() * 30 : 2.5 + Math.random() * 3.5,
+        spinX: (Math.random() - 0.5) * 0.002,
+        spinY: (Math.random() - 0.5) * 0.0025,
+        spinZ: (Math.random() - 0.5) * 0.0015,
+        size: i < 8 ? 14 + Math.random() * 21 : 1.8 + Math.random() * 2.5,
         type: types[i % types.length],
-        opacity: 0.18 + Math.random() * 0.14,
+        opacity: 0.1 + Math.random() * 0.08,
         phase: Math.random() * Math.PI * 2,
       }));
     };
@@ -126,8 +126,8 @@ export default function GlowField() {
         return { x: cx + x * scale, y: cy + y * scale };
       });
 
-      ctx.strokeStyle = `rgba(128, 0, 32, ${alpha})`;
-      ctx.lineWidth = 1.5 * scale;
+      ctx.strokeStyle = `rgba(46, 139, 87, ${alpha})`;
+      ctx.lineWidth = 0.8 * scale;
       ctx.beginPath();
       ctx.moveTo(projected[0].x, projected[0].y);
       for (let i = 1; i < projected.length; i++) {
@@ -142,8 +142,8 @@ export default function GlowField() {
       rotX: number, rotY: number, alpha: number
     ) => {
       const segments = 16;
-      ctx.strokeStyle = `rgba(128, 0, 32, ${alpha})`;
-      ctx.lineWidth = 1.5 * scale;
+      ctx.strokeStyle = `rgba(46, 139, 87, ${alpha})`;
+      ctx.lineWidth = 0.8 * scale;
       ctx.beginPath();
       for (let i = 0; i <= segments; i++) {
         const angle = (i / segments) * Math.PI * 2;
@@ -183,8 +183,8 @@ export default function GlowField() {
         return { x: cx + x * scale, y: cy + y * scale };
       });
 
-      ctx.strokeStyle = `rgba(128, 0, 32, ${alpha})`;
-      ctx.lineWidth = 1.3 * scale;
+      ctx.strokeStyle = `rgba(46, 139, 87, ${alpha})`;
+      ctx.lineWidth = 0.6 * scale;
       for (const [a, b] of edges) {
         ctx.beginPath();
         ctx.moveTo(projected[a].x, projected[a].y);
@@ -215,9 +215,9 @@ export default function GlowField() {
         const gradient = ctx.createRadialGradient(
           node.x, node.y, 0, node.x, node.y, node.radius
         );
-        gradient.addColorStop(0, `rgba(128, 0, 32, ${alpha})`);
-        gradient.addColorStop(0.4, `rgba(128, 0, 32, ${alpha * 0.3})`);
-        gradient.addColorStop(1, `rgba(128, 0, 32, 0)`);
+        gradient.addColorStop(0, `rgba(46, 139, 87, ${alpha})`);
+        gradient.addColorStop(0.4, `rgba(46, 139, 87, ${alpha * 0.3})`);
+        gradient.addColorStop(1, `rgba(46, 139, 87, 0)`);
         ctx.fillStyle = gradient;
         ctx.fillRect(
           node.x - node.radius, node.y - node.radius,
@@ -247,21 +247,21 @@ export default function GlowField() {
         if (shape.z > 400) shape.z = -100;
 
         const { x: sx, y: sy, scale } = project(shape.x, shape.y, shape.z, cx, cy);
-        const pulse = Math.sin(time * 0.002 + shape.phase) * 0.5 + 0.5;
+        const pulse = Math.sin(time * 0.0008 + shape.phase) * 0.5 + 0.5;
         const alpha = shape.opacity * (0.5 + pulse * 0.5) * scale;
 
         if (shape.type === "dot") {
           const r = shape.size * scale;
           const gradient = ctx.createRadialGradient(sx, sy, 0, sx, sy, r * 4);
-          gradient.addColorStop(0, `rgba(128, 0, 32, ${alpha})`);
-          gradient.addColorStop(0.3, `rgba(128, 0, 32, ${alpha * 0.4})`);
-          gradient.addColorStop(1, `rgba(128, 0, 32, 0)`);
+          gradient.addColorStop(0, `rgba(46, 139, 87, ${alpha})`);
+          gradient.addColorStop(0.3, `rgba(46, 139, 87, ${alpha * 0.4})`);
+          gradient.addColorStop(1, `rgba(46, 139, 87, 0)`);
           ctx.fillStyle = gradient;
           ctx.beginPath();
           ctx.arc(sx, sy, r * 4, 0, Math.PI * 2);
           ctx.fill();
 
-          ctx.fillStyle = `rgba(128, 0, 32, ${alpha * 1.2})`;
+          ctx.fillStyle = `rgba(46, 139, 87, ${alpha * 1.2})`;
           ctx.beginPath();
           ctx.arc(sx, sy, r * 0.6, 0, Math.PI * 2);
           ctx.fill();
@@ -283,10 +283,10 @@ export default function GlowField() {
           const dy = a.y - b.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 300) {
-            const lineAlpha = (1 - dist / 300) * 0.1;
-            ctx.strokeStyle = `rgba(128, 0, 32, ${lineAlpha})`;
-            ctx.lineWidth = 0.8;
+          if (dist < 250) {
+            const lineAlpha = (1 - dist / 250) * 0.04;
+            ctx.strokeStyle = `rgba(46, 139, 87, ${lineAlpha})`;
+            ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
