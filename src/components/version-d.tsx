@@ -1,23 +1,43 @@
 import Link from "next/link";
+import VentureCard from "./venture-card";
+import type { Venture } from "./venture-card";
 
-const ventures = [
+const ventures: Venture[] = [
   {
     title: "ConversationLens",
-    description: "AI-driven platform analyzing couples' conversations to deliver relationship insights.",
+    summary: "AI-driven platform analyzing couples' conversations to deliver relationship insights.",
     link: "https://conversationlens.com",
     status: "LIVE",
+    why: "I noticed a gap in accessible couple therapy — most options are expensive, hard to schedule, or feel too clinical. I wanted to create something that meets couples where they already are: in their everyday conversations. The idea was to use AI to surface patterns and insights that would normally take months of therapy to uncover.",
+    description: "ConversationLens analyzes text-based conversations between partners to identify communication patterns, emotional dynamics, and areas of friction. It delivers personalized insights and actionable suggestions. The platform covers everything from product architecture and voice features to monetization and compliance. Live with active users since November 2025.",
+    media: [
+      // Add screenshots/gifs here, e.g.:
+      // { type: "image", src: "/ventures/conversationlens-1.png", alt: "ConversationLens dashboard" },
+    ],
   },
   {
     title: "ThreadLift",
-    description: "Social listening and engagement platform — discovers conversations on Reddit and Quora, generates AI draft replies.",
+    summary: "Social listening and engagement platform — discovers conversations on Reddit and Quora, generates AI draft replies.",
     link: "https://www.threadlift.io",
     status: "LIVE",
+    why: "Brands struggle to show up authentically in online communities. Traditional social media management tools focus on posting, not listening and engaging. I saw an opportunity to help brands discover relevant conversations already happening and respond in a way that adds genuine value — without coming across as spam.",
+    description: "ThreadLift monitors Reddit and Quora for conversations relevant to your brand or expertise. It uses AI to generate context-aware draft replies that you review and approve before posting. The platform never auto-posts — you stay in full control. It's built for founders, marketers, and brands who want to grow their presence one authentic comment at a time.",
+    media: [
+      // Add screenshots/gifs here, e.g.:
+      // { type: "image", src: "/ventures/threadlift-1.png", alt: "ThreadLift conversation discovery" },
+    ],
   },
   {
     title: "Life Made Easy",
-    description: "iOS app turning biometric data from Apple Health, Oura Ring, and Google Calendar into actionable health insights.",
+    summary: "iOS app turning biometric data from Apple Health, Oura Ring, and Google Calendar into actionable health insights.",
     link: null,
     status: "QA",
+    why: "Society is increasingly obsessed with longevity — from Bryan Johnson to Andrew Huberman to the booming market for biometric trackers. The apps I tried were either overwhelming with data or too shallow to be useful. None connected the dots between daily habits and how you actually feel. I built Life Made Easy to fill that gap: genuinely simple UX that does the hard analytical work under the hood.",
+    description: "The app pulls data from Apple Health, Oura Ring, and Google Calendar, then runs statistical correlation analysis to surface cause-and-effect relationships in your health. It finds patterns like how your meetings affect your heart rate, whether your workouts improve your sleep, and which activities correlate with higher HRV. An AI assistant lets you log activities conversationally and ask questions about your own trends. A timeline view presents your life as a continuous canvas of events and metrics you can explore and annotate.",
+    media: [
+      // Add screenshots/gifs here, e.g.:
+      // { type: "image", src: "/ventures/lifemadeeasy-1.png", alt: "Life Made Easy timeline" },
+    ],
   },
 ];
 
@@ -180,36 +200,10 @@ export default function VersionD() {
               </h2>
               <span className="text-xs font-mono" style={{ color: "#4B5563" }}>{ventures.length} projects</span>
             </div>
-            <div className="grid md:grid-cols-3 gap-4">
-              {ventures.map((v) => {
-                const card = (
-                  <div className="group h-full p-5 border rounded-lg transition-all duration-100 flex flex-col" style={{ borderColor: "#E5E7EB", background: "#fff" }}>
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-sm font-bold">{v.title}</h3>
-                      <span
-                        className="text-[10px] font-bold font-mono tracking-wider px-2 py-0.5 rounded"
-                        style={{
-                          background: v.status === "LIVE" ? "#ECFDF5" : "#F3F4F6",
-                          color: v.status === "LIVE" ? "#2E8B57" : "#4B5563",
-                        }}
-                      >
-                        {v.status}
-                      </span>
-                    </div>
-                    <p className="text-xs leading-[1.5] flex-1" style={{ color: "#4B5563" }}>{v.description}</p>
-                    {v.link && (
-                      <p className="mt-4 text-xs font-bold group-hover:underline" style={{ color: "#000" }}>
-                        Open &nearr;
-                      </p>
-                    )}
-                  </div>
-                );
-                return v.link ? (
-                  <a key={v.title} href={v.link} target="_blank" rel="noopener noreferrer" className="[&>div]:hover:border-black">{card}</a>
-                ) : (
-                  <div key={v.title}>{card}</div>
-                );
-              })}
+            <div className="space-y-3">
+              {ventures.map((v) => (
+                <VentureCard key={v.title} venture={v} />
+              ))}
             </div>
           </section>
 
