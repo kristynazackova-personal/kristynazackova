@@ -139,7 +139,7 @@ export default function VersionD() {
                     Kristyna Zackova
                   </div>
                   <div className="text-[14px] text-gray-500">
-                    Principal Product Manager @ Inmar Intelligence
+                    Principal Product Manager @ Inmar Intelligence & Founder of <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-150">ConversationLens</a>
                   </div>
                 </div>
               </div>
