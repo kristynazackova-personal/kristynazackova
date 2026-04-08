@@ -1,7 +1,7 @@
 import Link from "next/link";
 import VentureCard from "./venture-card";
 import type { Venture } from "./venture-card";
-import GlowField from "./glow-field";
+import FloatingObject from "./floating-object";
 
 const ventures: Venture[] = [
   {
@@ -116,46 +116,48 @@ export default function VersionD() {
 
           {/* Hero */}
           <section
-            className="pt-28 pb-24 mb-24 relative grid grid-cols-12"
+            className="pt-28 pb-24 mb-24 relative"
             style={{ background: "radial-gradient(circle at 30% 40%, #ffffff 0%, #f7f7f7 60%, #f3f3f3 100%)" }}
           >
-            {/* Text block */}
-            <div className="col-span-12 md:col-span-7 ml-0 max-w-[680px]">
-              <h1
-                className="text-[64px] leading-[1.05] tracking-[-0.02em] font-bold text-black animate-[fadeSlideIn_400ms_ease-out_both]"
-                style={{ transform: "translateX(-4px)" }}
-              >
-                Turning fragmented products into unified systems.
-              </h1>
-              <div className="mt-5 space-y-1 flex items-start gap-4 animate-[fadeSlideIn_400ms_ease-out_100ms_both]">
-                <img
-                  src="/kristyna.png"
-                  alt="Kristyna Zackova"
-                  className="w-11 h-11 rounded-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-300 shrink-0 mt-0.5"
-                  style={{ border: "2px solid rgba(0,0,0,0.06)" }}
-                />
-                <div className="space-y-1">
-                  <div className="text-[16px] font-medium text-black/80">
-                    Kristyna Zackova
-                  </div>
-                  <div className="text-[14px] text-gray-500">
-                    Principal Product Manager @ Inmar Intelligence & Founder of <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-150">ConversationLens</a>
+            <div className="relative grid grid-cols-12 items-center">
+              {/* Text block */}
+              <div className="col-span-12 md:col-span-7 ml-0 max-w-[680px]">
+                <h1
+                  className="text-[64px] leading-[1.05] tracking-[-0.02em] font-bold text-black animate-[fadeSlideIn_400ms_ease-out_both]"
+                  style={{ transform: "translateX(-4px)" }}
+                >
+                  Turning fragmented products into unified systems.
+                </h1>
+                <div className="mt-5 flex items-start gap-4 animate-[fadeSlideIn_400ms_ease-out_100ms_both]">
+                  <img
+                    src="/kristyna.png"
+                    alt="Kristyna Zackova"
+                    className="w-11 h-11 rounded-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-300 shrink-0 mt-0.5"
+                    style={{ border: "2px solid rgba(0,0,0,0.06)" }}
+                  />
+                  <div className="space-y-1">
+                    <div className="text-[16px] font-medium text-black/80">
+                      Kristyna Zackova
+                    </div>
+                    <div className="text-[14px] text-gray-500">
+                      Principal Product Manager @ Inmar Intelligence & Founder of <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-150">ConversationLens</a>
+                    </div>
                   </div>
                 </div>
+                <div className="mt-6 flex gap-6 animate-[fadeSlideIn_400ms_ease-out_150ms_both]">
+                  <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors duration-150">
+                    LinkedIn {"\u2197"}
+                  </a>
+                  <a href="#systems" className="text-sm text-gray-500 hover:text-black transition-colors duration-150">
+                    View Work &darr;
+                  </a>
+                </div>
               </div>
-              <div className="mt-6 flex gap-6 animate-[fadeSlideIn_400ms_ease-out_150ms_both]">
-                <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors duration-150">
-                  LinkedIn {"\u2197"}
-                </a>
-                <a href="#systems" className="text-sm text-gray-500 hover:text-black transition-colors duration-150">
-                  View Work &darr;
-                </a>
-              </div>
-            </div>
 
-            {/* Background visual */}
-            <div className="absolute right-[-10%] top-[10%] w-[60%] pointer-events-none opacity-[0.2]" style={{ filter: "blur(24px)" }}>
-              <GlowField />
+              {/* Floating 3D object */}
+              <div className="hidden md:flex col-span-5 relative justify-center items-center">
+                <FloatingObject />
+              </div>
             </div>
           </section>
 

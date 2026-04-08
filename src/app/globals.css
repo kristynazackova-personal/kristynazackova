@@ -94,6 +94,13 @@ body {
   background-clip: text;
 }
 
+/* ── Hero float (Version D) ── */
+@keyframes heroFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
 /* ── Hero entrance (Version D) ── */
 @keyframes fadeSlideIn {
   from { opacity: 0; transform: translateY(10px); }
