@@ -10,20 +10,54 @@ const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk", subsets: 
 
 export const metadata: Metadata = {
   title: {
-    default: "Kristyna Zackova",
+    default: "Kristyna Zackova — Product Leader & Founder",
     template: "%s — Kristyna Zackova",
   },
   description:
-    "Product leader building consumer-centric SaaS solutions for CPG brands. Founder of ConversationLens.com.",
+    "Principal Product Manager at Inmar Intelligence. Building consumer-centric SaaS solutions for CPG brands. Founder of ConversationLens and ThreadLift.",
+  keywords: [
+    "Kristyna Zackova",
+    "Product Manager",
+    "Product Leader",
+    "CPG",
+    "SaaS",
+    "Martech",
+    "AI Products",
+    "ConversationLens",
+    "ThreadLift",
+    "Inmar Intelligence",
+  ],
+  authors: [{ name: "Kristyna Zackova" }],
+  creator: "Kristyna Zackova",
   metadataBase: new URL("https://kristynazackova.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Kristyna Zackova",
+    title: "Kristyna Zackova — Product Leader & Founder",
     description:
-      "Product leader building consumer-centric SaaS solutions for CPG brands. Founder of ConversationLens.com.",
+      "Principal Product Manager at Inmar Intelligence. Building consumer-centric SaaS solutions for CPG brands. Founder of ConversationLens and ThreadLift.",
     url: "https://kristynazackova.com",
     siteName: "Kristyna Zackova",
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kristyna Zackova — Product Leader & Founder",
+    description:
+      "Principal Product Manager at Inmar Intelligence. Building consumer-centric SaaS solutions for CPG brands.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
