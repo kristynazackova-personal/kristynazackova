@@ -116,24 +116,19 @@ export default function VersionD() {
           <GlowField />
 
           {/* Hero */}
-          <section className="pt-24 pb-20 relative">
-            <h1 className="text-6xl sm:text-7xl font-bold tracking-[-0.04em] leading-[1] mb-6 max-w-3xl">
-              Building products that reduce complexity into structure
+          <section className="pt-28 pb-24 relative">
+            <h1 className="text-6xl sm:text-8xl font-bold tracking-[-0.045em] leading-[0.95] mb-8 max-w-4xl">
+              Turning fragmented products into unified systems.
             </h1>
-            <p className="text-sm leading-[1.6] mb-8 max-w-lg" style={{ color: "#6B7280" }}>
-              Kristyna Zackova — Principal PM at Inmar Intelligence. Turning ambiguity into strategy, strategy into shipped product.
+            <p className="text-sm mb-10" style={{ color: "#9CA3AF" }}>
+              Kristyna Zackova &mdash; Principal Product Manager, Inmar Intelligence
             </p>
-            <div className="flex items-center gap-6 text-xs font-mono" style={{ color: "#9CA3AF" }}>
-              <span>CPG / Martech / AI</span>
-              <span style={{ color: "rgba(0,0,0,0.12)" }}>|</span>
-              <span>New York</span>
-              <span style={{ color: "rgba(0,0,0,0.12)" }}>|</span>
+            <div className="flex items-center gap-6 text-xs font-mono" style={{ color: "#C0C0C0" }}>
               <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-100">
                 LinkedIn {"\u2197"}
               </a>
-              <span style={{ color: "rgba(0,0,0,0.12)" }}>|</span>
               <a href="#systems" className="hover:text-black transition-colors duration-100">
-                View work &darr;
+                Work &darr;
               </a>
             </div>
           </section>
