@@ -12,8 +12,7 @@ const ventures: Venture[] = [
     why: "I saw a consistent gap in how people understand and improve their relationships. While therapy can be valuable, it is often expensive, difficult to access, and not embedded in the day-to-day interactions where most relationship dynamics actually play out. I wanted to build a system that brings more clarity to those everyday moments — helping people better understand how they communicate, how patterns form, and where friction emerges.",
     description: "ConversationLens analyzes real conversations (text, audio, or transcripts) to identify communication patterns, emotional dynamics, and recurring points of tension. The goal is not to replace therapy, but to complement it by providing structured, objective insight into how people communicate, visibility into patterns across time (not just isolated moments), and practical, evidence-informed suggestions for improving interactions. The platform combines conversation analysis, AI-guided reflection, and voice-based sessions into a single system designed to make relationship insight more continuous and accessible. Live with active users since November 2025.",
     media: [
-      // Add screenshots/gifs here, e.g.:
-      // { type: "image", src: "/ventures/conversationlens-1.png", alt: "ConversationLens dashboard" },
+      { type: "image", src: "/ventures/conversationlens-1.jpeg", alt: "ConversationLens — Relationship Journey" },
     ],
   },
   {

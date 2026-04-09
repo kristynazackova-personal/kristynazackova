@@ -2,6 +2,83 @@
 
 import { useState, useRef, useEffect } from "react";
 
+function MediaCarousel({ media }: { media: VentureMedia[] }) {
+  const [current, setCurrent] = useState(0);
+  const total = media.length;
+
+  return (
+    <div>
+      <p
+        className="text-[10px] font-bold font-mono tracking-wider mb-3"
+        style={{ color: "#800020" }}
+      >
+        PREVIEW
+      </p>
+      <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide">
+        {media.map((m, i) => (
+          <div
+            key={i}
+            className="snap-center shrink-0 flex flex-col items-center"
+          >
+            {/* Phone frame */}
+            <div
+              className="relative rounded-[28px] overflow-hidden shadow-lg"
+              style={{
+                width: "220px",
+                border: "6px solid #1a1a1a",
+                background: "#1a1a1a",
+              }}
+            >
+              {/* Notch */}
+              <div
+                className="absolute top-0 left-1/2 -translate-x-1/2 z-10 rounded-b-xl"
+                style={{
+                  width: "80px",
+                  height: "16px",
+                  background: "#1a1a1a",
+                }}
+              />
+              {m.type === "video" ? (
+                <video
+                  src={m.src}
+                  controls
+                  playsInline
+                  muted
+                  className="w-full rounded-[22px]"
+                />
+              ) : (
+                <img
+                  src={m.src}
+                  alt={m.alt}
+                  className="w-full rounded-[22px]"
+                />
+              )}
+            </div>
+            {/* Caption */}
+            <p className="text-[10px] text-center mt-2" style={{ color: "#9CA3AF" }}>
+              {m.alt}
+            </p>
+          </div>
+        ))}
+      </div>
+      {total > 1 && (
+        <div className="flex justify-center gap-1.5 mt-3">
+          {media.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className="w-1.5 h-1.5 rounded-full transition-all duration-150"
+              style={{
+                background: i === current ? "#800020" : "rgba(0,0,0,0.1)",
+              }}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export interface VentureMedia {
   type: "image" | "video";
   src: string;
@@ -134,37 +211,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
 
             {/* Media */}
             {venture.media.length > 0 && (
-              <div>
-                <p
-                  className="text-[10px] font-bold font-mono tracking-wider mb-3"
-                  style={{ color: "#800020" }}
-                >
-                  PREVIEW
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {venture.media.map((m, i) =>
-                    m.type === "video" ? (
-                      <video
-                        key={i}
-                        src={m.src}
-                        controls
-                        playsInline
-                        muted
-                        className="w-full rounded border"
-                        style={{ borderColor: "rgba(0,0,0,0.06)" }}
-                      />
-                    ) : (
-                      <img
-                        key={i}
-                        src={m.src}
-                        alt={m.alt}
-                        className="w-full rounded border"
-                        style={{ borderColor: "rgba(0,0,0,0.06)" }}
-                      />
-                    )
-                  )}
-                </div>
-              </div>
+              <MediaCarousel media={venture.media} />
             )}
           </div>
         </div>
