@@ -12,7 +12,13 @@ const ventures: Venture[] = [
     why: "I saw a consistent gap in how people understand and improve their relationships. While therapy can be valuable, it is often expensive, difficult to access, and not embedded in the day-to-day interactions where most relationship dynamics actually play out. I wanted to build a system that brings more clarity to those everyday moments — helping people better understand how they communicate, how patterns form, and where friction emerges.",
     description: "ConversationLens analyzes real conversations (text, audio, or transcripts) to identify communication patterns, emotional dynamics, and recurring points of tension. The goal is not to replace therapy, but to complement it by providing structured, objective insight into how people communicate, visibility into patterns across time (not just isolated moments), and practical, evidence-informed suggestions for improving interactions. The platform combines conversation analysis, AI-guided reflection, and voice-based sessions into a single system designed to make relationship insight more continuous and accessible. Live with active users since November 2025.",
     media: [
-      { type: "image", src: "/ventures/conversationlens-1.jpeg", alt: "ConversationLens — Relationship Journey" },
+      { type: "image", src: "/ventures/IMG_6681.jpeg", alt: "Dashboard" },
+      { type: "image", src: "/ventures/IMG_6682.jpeg", alt: "Relationship Journey" },
+      { type: "image", src: "/ventures/IMG_6674.jpeg", alt: "Health Score & Metrics" },
+      { type: "image", src: "/ventures/IMG_6676.jpeg", alt: "AI Therapist Chat" },
+      { type: "image", src: "/ventures/IMG_6677.jpeg", alt: "Features Overview" },
+      { type: "image", src: "/ventures/IMG_6678.jpeg", alt: "Shared Dashboards" },
+      { type: "image", src: "/ventures/IMG_6679.jpeg", alt: "Plans & Pricing" },
     ],
   },
   {
