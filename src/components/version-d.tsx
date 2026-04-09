@@ -56,9 +56,9 @@ const experience = [
     description: "Built an AI platform that analyzes real conversations to uncover patterns in relationships and communication. Identified a gap in accessible, structured relationship insight and designed a product that translates unstructured human interaction into measurable signals. Defined product strategy, system architecture, and core experience end-to-end. Launched in November 2025. The platform is live with active users and ongoing iteration across analytics, voice-based therapy, and insight generation.",
   },
   {
-    role: "Principal Product Manager",
+    role: "Senior \u2192 Principal Product Manager",
     company: "Inmar Intelligence",
-    period: "2025 — Present",
+    period: "2022 — Present",
     scope: "CPG Enterprise Solutions",
     description: "Defined and led the transition from fragmented products to unified, cross-channel systems for large CPG clients. Designed system-level solutions connecting incentives, media, and consumer data into cohesive experiences. Partnered directly with enterprise clients to identify high-impact problems and translate them into scalable product strategies. Drove alignment across multiple product teams, prioritizing initiatives that increased personalization and improved conversion across the consumer journey.",
   },
