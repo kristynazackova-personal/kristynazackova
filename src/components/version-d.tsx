@@ -63,13 +63,6 @@ const experience = [
     description: "Defined and led the transition from fragmented products to unified, cross-channel systems for large CPG clients. Designed system-level solutions connecting incentives, media, and consumer data into cohesive experiences. Partnered directly with enterprise clients to identify high-impact problems and translate them into scalable product strategies. Drove alignment across multiple product teams, prioritizing initiatives that increased personalization and improved conversion across the consumer journey.",
   },
   {
-    role: "Senior Product Manager",
-    company: "Inmar Intelligence",
-    period: "2022 — 2025",
-    scope: "Consumer Engagement",
-    description: "Built chatbot and website shopping experiences. Lifted incremental sales and delivered program insights.",
-  },
-  {
     role: "Product Manager",
     company: "Bazaarvoice",
     period: "2019 — 2022",
