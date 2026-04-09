@@ -101,13 +101,13 @@ export default function VersionD() {
     >
       {/* Nav */}
       <nav style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
-        <div className="max-w-[1100px] mx-auto px-6 h-12 flex items-center justify-between">
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 h-12 flex items-center justify-between">
           <Link href="/?version=d" className="text-xs font-bold tracking-widest uppercase" style={{ color: "#000" }}>
             KZ
           </Link>
-          <div className="flex items-center gap-6">
-            <a href="#systems" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Ventures</a>
-            <a href="#experience" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Experience</a>
+          <div className="flex items-center gap-4 sm:gap-6">
+            <a href="#systems" className="hidden sm:inline text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Ventures</a>
+            <a href="#experience" className="hidden sm:inline text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Experience</a>
             <Link href="/blog" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Writing</Link>
             <a href="mailto:kristynazackova@gmail.com" className="text-xs font-medium uppercase tracking-wider px-3 py-1.5 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#000" }}>
               Contact
@@ -117,34 +117,34 @@ export default function VersionD() {
       </nav>
 
       <main className="flex-1 relative z-10">
-        <div className="max-w-[1100px] mx-auto px-6">
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
 
           {/* Hero */}
           <section
-            className="pt-28 pb-24 mb-24 relative"
+            className="pt-16 sm:pt-28 pb-16 sm:pb-24 mb-12 sm:mb-24 relative"
             style={{ background: "radial-gradient(circle at 30% 40%, #ffffff 0%, #f7f7f7 60%, #f3f3f3 100%)" }}
           >
             <div className="relative grid grid-cols-12 items-center">
               {/* Text block */}
               <div className="col-span-12 md:col-span-7 ml-0 max-w-[680px]">
                 <h1
-                  className="text-[64px] leading-[1.05] tracking-[-0.02em] font-bold text-black animate-[fadeSlideIn_400ms_ease-out_both]"
+                  className="text-[36px] sm:text-[48px] md:text-[64px] leading-[1.08] tracking-[-0.02em] font-bold text-black animate-[fadeSlideIn_400ms_ease-out_both]"
                   style={{ transform: "translateX(-4px)" }}
                 >
                   Turning complex reality into simple products.
                 </h1>
-                <div className="mt-5 flex items-start gap-4 animate-[fadeSlideIn_400ms_ease-out_100ms_both]">
+                <div className="mt-5 flex items-start gap-3 sm:gap-4 animate-[fadeSlideIn_400ms_ease-out_100ms_both]">
                   <img
                     src="/kristyna.png"
                     alt="Kristyna Zackova"
-                    className="w-11 h-11 rounded-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-300 shrink-0 mt-0.5"
+                    className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-300 shrink-0 mt-0.5"
                     style={{ border: "2px solid rgba(0,0,0,0.06)" }}
                   />
-                  <div className="space-y-1">
-                    <div className="text-[16px] font-medium text-black/80">
+                  <div className="space-y-0.5 sm:space-y-1">
+                    <div className="text-[15px] sm:text-[16px] font-medium text-black/80">
                       Kristyna Zackova
                     </div>
-                    <div className="text-[14px] text-gray-500">
+                    <div className="text-[13px] sm:text-[14px] text-gray-500">
                       Principal Product Manager @ Inmar Intelligence & Founder of <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-150">ConversationLens</a>
                     </div>
                   </div>
@@ -190,7 +190,7 @@ export default function VersionD() {
             </h2>
             <div className="space-y-0">
               {experience.map((e, i) => (
-                <div key={i} className="py-5 border-t first:border-t-0 grid md:grid-cols-12 gap-4 items-baseline" style={{ borderColor: "rgba(0,0,0,0.04)" }}>
+                <div key={i} className="py-5 border-t first:border-t-0 grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 md:items-baseline" style={{ borderColor: "rgba(0,0,0,0.04)" }}>
                   <div className="md:col-span-2">
                     <span className="text-xs font-mono font-semibold" style={{ color: "#4B5563" }}>{e.period}</span>
                   </div>
@@ -198,7 +198,7 @@ export default function VersionD() {
                     <p className="text-sm font-bold">{e.role}</p>
                     <p className="text-xs font-medium" style={{ color: "#800020" }}>{e.company}</p>
                   </div>
-                  <div className="md:col-span-6">
+                  <div className="md:col-span-6 mt-1 md:mt-0">
                     <p className="text-xs font-mono mb-1" style={{ color: "#4B5563" }}>{e.scope}</p>
                     <p className="text-sm" style={{ color: "#4B5563" }}>{e.description}</p>
                   </div>
@@ -211,12 +211,12 @@ export default function VersionD() {
 
           {/* Writing */}
           <section className="py-14">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <h2 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4B5563" }}>Writing</h2>
                 <p className="text-xs" style={{ color: "#6B7280" }}>Thoughts on product, systems, and technology.</p>
               </div>
-              <Link href="/blog" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
+              <Link href="/blog" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5 self-start sm:self-auto shrink-0" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
                 Read &rarr;
               </Link>
             </div>
@@ -224,12 +224,12 @@ export default function VersionD() {
 
           {/* Mentorship */}
           <section className="py-14">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <h2 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4B5563" }}>Mentorship</h2>
                 <p className="text-xs" style={{ color: "#6B7280" }}>Product strategy, AI, systems thinking, career growth. 7-day free trial.</p>
               </div>
-              <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
+              <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5 self-start sm:self-auto shrink-0" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
                 Book {"\u2197"}
               </a>
             </div>
@@ -242,7 +242,7 @@ export default function VersionD() {
             <h2 className="text-xs font-bold uppercase tracking-widest mb-8" style={{ color: "#4B5563" }}>
               Capabilities
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
               {Object.entries(grouped).map(([category, items]) => (
                 <div key={category}>
                   <p className="text-xs font-mono font-bold mb-3" style={{ color: "#800020" }}>{category}</p>
@@ -263,12 +263,12 @@ export default function VersionD() {
 
           {/* Contact */}
           <section className="py-14">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <h2 className="text-sm font-bold mb-1">Get in touch</h2>
                 <p className="text-xs" style={{ color: "#6B7280" }}>Interested in product, AI, or building something together.</p>
               </div>
-              <a href="mailto:kristynazackova@gmail.com" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
+              <a href="mailto:kristynazackova@gmail.com" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5 self-start sm:self-auto shrink-0" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
                 Email &rarr;
               </a>
             </div>
@@ -279,9 +279,9 @@ export default function VersionD() {
 
       {/* Footer */}
       <footer className="mt-8" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
-        <div className="max-w-[1100px] mx-auto px-6 py-6 flex items-center justify-between text-xs" style={{ color: "#4B5563" }}>
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style={{ color: "#4B5563" }}>
           <span>&copy; {new Date().getFullYear()} Kristyna Zackova</span>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center flex-wrap justify-center gap-4 sm:gap-5">
             <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">LinkedIn</a>
             <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">Mentorship</a>
             <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ConversationLens</a>
