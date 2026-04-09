@@ -45,7 +45,7 @@ const experience = [
   {
     role: "Principal Product Manager",
     company: "Inmar Intelligence",
-    period: "2025 —",
+    period: "2025 — Present",
     scope: "CPG Enterprise Solutions",
     description: "Leading unified personalized solutions for consumers and CPG clients across multiple Martech roadmaps.",
   },
