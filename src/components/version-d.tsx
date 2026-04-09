@@ -74,7 +74,7 @@ const experience = [
     company: "Bazaarvoice",
     period: "2019 — 2022",
     scope: "Influenster Division",
-    description: "Redesigned consumer data collection UX. Built internal tools enabling scale through automation.",
+    description: "Improved product performance and scalability by redesigning core user flows and building internal systems. Led UX improvements for consumer data collection across mobile and web, increasing program success rates and reducing time to delivery. Built internal tools that automated workflows and enabled the platform to scale efficiently.",
   },
 ];
 
