@@ -60,7 +60,7 @@ const experience = [
     company: "Inmar Intelligence",
     period: "2025 — Present",
     scope: "CPG Enterprise Solutions",
-    description: "Leading unified personalized solutions for consumers and CPG clients across multiple Martech roadmaps.",
+    description: "Defined and led the transition from fragmented products to unified, cross-channel systems for large CPG clients. Designed system-level solutions connecting incentives, media, and consumer data into cohesive experiences. Partnered directly with enterprise clients to identify high-impact problems and translate them into scalable product strategies. Drove alignment across multiple product teams, prioritizing initiatives that increased personalization and improved conversion across the consumer journey.",
   },
   {
     role: "Senior Product Manager",
