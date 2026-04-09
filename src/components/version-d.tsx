@@ -49,6 +49,13 @@ const ventures: Venture[] = [
 
 const experience = [
   {
+    role: "Founder",
+    company: "ConversationLens",
+    period: "2025 — Present",
+    scope: "AI Relationship Intelligence",
+    description: "Built an AI platform that analyzes real conversations to uncover patterns in relationships and communication. Identified a gap in accessible, structured relationship insight and designed a product that translates unstructured human interaction into measurable signals. Defined product strategy, system architecture, and core experience end-to-end. Launched in November 2025. The platform is live with active users and ongoing iteration across analytics, voice-based therapy, and insight generation.",
+  },
+  {
     role: "Principal Product Manager",
     company: "Inmar Intelligence",
     period: "2025 — Present",
