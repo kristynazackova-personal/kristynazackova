@@ -131,7 +131,7 @@ export default function VersionD() {
                   className="text-[64px] leading-[1.05] tracking-[-0.02em] font-bold text-black animate-[fadeSlideIn_400ms_ease-out_both]"
                   style={{ transform: "translateX(-4px)" }}
                 >
-                  Turning fragmented products into unified systems.
+                  Turning complex reality into simple products.
                 </h1>
                 <div className="mt-5 flex items-start gap-4 animate-[fadeSlideIn_400ms_ease-out_100ms_both]">
                   <img
