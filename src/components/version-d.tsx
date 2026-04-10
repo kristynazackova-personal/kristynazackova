@@ -99,24 +99,7 @@ export default function VersionD() {
       className="min-h-full flex flex-col"
       style={{ background: "#F8F8F7", color: "#000000" }}
     >
-      {/* Nav */}
-      <nav style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 h-12 flex items-center justify-between">
-          <Link href="/?version=d" className="text-xs font-bold tracking-widest uppercase" style={{ color: "#000" }}>
-            KZ
-          </Link>
-          <div className="flex items-center gap-4 sm:gap-6">
-            <a href="#systems" className="hidden sm:inline text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Ventures</a>
-            <a href="#experience" className="hidden sm:inline text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Experience</a>
-            <Link href="/blog" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Writing</Link>
-            <a href="mailto:kristynazackova@gmail.com" className="text-xs font-medium uppercase tracking-wider px-3 py-1.5 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#000" }}>
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      <main className="flex-1 relative z-10">
+      <div className="relative z-10">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
 
           {/* Hero */}
@@ -275,20 +258,7 @@ export default function VersionD() {
           </section>
 
         </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="mt-8" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style={{ color: "#4B5563" }}>
-          <span>&copy; {new Date().getFullYear()} Kristyna Zackova</span>
-          <div className="flex items-center flex-wrap justify-center gap-4 sm:gap-5">
-            <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">LinkedIn</a>
-            <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">Mentorship</a>
-            <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ConversationLens</a>
-            <a href="https://www.threadlift.io" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ThreadLift</a>
-          </div>
-        </div>
-      </footer>
+      </div>
     </div>
   );
 }
