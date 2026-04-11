@@ -1,0 +1,44 @@
+name: Airtable Field Migration
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (preview only, no changes)"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+      command:
+        description: "Which script to run"
+        required: true
+        default: "convert"
+        type: choice
+        options:
+          - convert
+          - inspect
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: scripts/airtable-field-conversion
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - run: npm install
+
+      - name: Run migration
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: npm run ${{ inputs.command }}
