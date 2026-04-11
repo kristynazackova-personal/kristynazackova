@@ -1,5 +1,5 @@
 /**
- * Step 1: Inspect your Airtable base to see all tables, fields, and their current types.
+ * Inspect your Airtable base: tables, fields, types, and record counts.
  *
  * Usage:
  *   1. Copy .env.example to .env and fill in your values
@@ -8,13 +8,12 @@
  */
 
 import axios from "axios";
-import { readFileSync } from "fs";
+import { readFileSync, writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// Load .env manually (no extra dependency needed)
 function loadEnv() {
   try {
     const envPath = resolve(__dirname, ".env");
@@ -31,7 +30,7 @@ function loadEnv() {
       }
     }
   } catch {
-    // .env file not found, rely on existing env vars
+    // .env not found
   }
 }
 
@@ -46,20 +45,43 @@ if (!API_KEY || !BASE_ID) {
   process.exit(1);
 }
 
-async function inspectTables() {
-  const res = await axios.get(
-    `https://api.airtable.com/v0/meta/bases/${BASE_ID}/tables`,
-    {
-      headers: { Authorization: `Bearer ${API_KEY}` },
-    }
-  );
+const api = axios.create({
+  baseURL: "https://api.airtable.com/v0",
+  headers: {
+    Authorization: `Bearer ${API_KEY}`,
+    "Content-Type": "application/json",
+  },
+});
 
+async function countRecords(tableId) {
+  let total = 0;
+  let offset = undefined;
+
+  do {
+    const params = { pageSize: 100 };
+    if (offset) params.offset = offset;
+
+    const res = await api.get(`/${BASE_ID}/${tableId}`, { params });
+    total += res.data.records.length;
+    offset = res.data.offset;
+    await new Promise((r) => setTimeout(r, 220));
+  } while (offset);
+
+  return total;
+}
+
+async function inspectTables() {
+  console.log("Fetching table schema...\n");
+
+  const res = await api.get(`/meta/bases/${BASE_ID}/tables`);
   const tables = res.data.tables;
 
-  console.log(`\nFound ${tables.length} table(s) in base ${BASE_ID}:\n`);
+  console.log(`Found ${tables.length} table(s) in base ${BASE_ID}:\n`);
 
   for (const table of tables) {
-    console.log(`━━━ TABLE: "${table.name}" (${table.id}) ━━━`);
+    const recordCount = await countRecords(table.id);
+
+    console.log(`━━━ TABLE: "${table.name}" (${table.id}) — ${recordCount} record(s) ━━━`);
     console.log("");
 
     for (const field of table.fields) {
@@ -73,11 +95,9 @@ async function inspectTables() {
     }
   }
 
-  // Also write raw JSON for reference
   const outputPath = resolve(__dirname, "table-schema.json");
-  const { writeFileSync } = await import("fs");
   writeFileSync(outputPath, JSON.stringify(tables, null, 2));
-  console.log(`\nFull schema saved to table-schema.json`);
+  console.log(`Full schema saved to table-schema.json`);
 }
 
 inspectTables().catch((err) => {
