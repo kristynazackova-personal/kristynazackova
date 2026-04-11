@@ -1,16 +1,15 @@
 /**
- * Step 2: Convert text fields to their proper types (select, number, etc.)
+ * Auto-convert Airtable fields from text to proper types.
  *
- * This script reads the conversion config below and applies PATCH requests
- * to the Airtable Metadata API to convert field types.
+ * This script:
+ *   1. Fetches your table schema to find field IDs by name
+ *   2. Converts matching fields to their target types
+ *   3. Reports results
  *
  * Usage:
- *   1. Run `npm run inspect` first to get your table/field IDs
- *   2. Fill in the CONVERSIONS array below with your actual IDs
+ *   1. Copy .env.example to .env and fill in your values
+ *   2. npm install
  *   3. npm run convert
- *
- * IMPORTANT: Airtable may not cleanly map existing text values to select
- * options. After conversion, run the cleanup script if needed.
  */
 
 import axios from "axios";
@@ -20,10 +19,9 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// Load .env
 function loadEnv() {
   try {
-    const envPath = resolve(__dirname, "../.env");
+    const envPath = resolve(__dirname, ".env");
     const content = readFileSync(envPath, "utf-8");
     for (const line of content.split("\n")) {
       const trimmed = line.trim();
@@ -48,147 +46,174 @@ const BASE_ID = process.env.AIRTABLE_BASE_ID;
 
 if (!API_KEY || !BASE_ID) {
   console.error("Missing AIRTABLE_API_KEY or AIRTABLE_BASE_ID.");
+  console.error("Copy .env.example to .env and fill in your values.");
   process.exit(1);
 }
 
-// ═══════════════════════════════════════════════════════════════
-// CONVERSION CONFIG — fill in your table/field IDs from inspect
-// ═══════════════════════════════════════════════════════════════
-
-const CONVERSIONS = [
-  // Example: Category → single select
-  // {
-  //   tableId: "tblXXXXXXXXXX",
-  //   fieldId: "fldXXXXXXXXXX",
-  //   fieldName: "Category",  // just for logging
-  //   type: "singleSelect",
-  //   options: {
-  //     choices: [
-  //       { name: "Work" },
-  //       { name: "Startup" },
-  //       { name: "Growth" },
-  //       { name: "Idea" },
-  //       { name: "Personal Brand" },
-  //     ],
-  //   },
-  // },
-
-  // Example: Status → single select
-  // {
-  //   tableId: "tblXXXXXXXXXX",
-  //   fieldId: "fldXXXXXXXXXX",
-  //   fieldName: "Status",
-  //   type: "singleSelect",
-  //   options: {
-  //     choices: [
-  //       { name: "Idea" },
-  //       { name: "Early" },
-  //       { name: "In Progress" },
-  //       { name: "Active" },
-  //       { name: "Paused" },
-  //       { name: "Done" },
-  //     ],
-  //   },
-  // },
-
-  // Example: Priority → single select
-  // {
-  //   tableId: "tblXXXXXXXXXX",
-  //   fieldId: "fldXXXXXXXXXX",
-  //   fieldName: "Priority",
-  //   type: "singleSelect",
-  //   options: {
-  //     choices: [
-  //       { name: "High" },
-  //       { name: "Medium" },
-  //       { name: "Low" },
-  //     ],
-  //   },
-  // },
-
-  // Example: Impact → number
-  // {
-  //   tableId: "tblXXXXXXXXXX",
-  //   fieldId: "fldXXXXXXXXXX",
-  //   fieldName: "Impact",
-  //   type: "number",
-  //   options: { precision: 0 },
-  // },
-
-  // Example: Effort → number
-  // {
-  //   tableId: "tblXXXXXXXXXX",
-  //   fieldId: "fldXXXXXXXXXX",
-  //   fieldName: "Effort",
-  //   type: "number",
-  //   options: { precision: 0 },
-  // },
-
-  // Example: Confidence → number
-  // {
-  //   tableId: "tblXXXXXXXXXX",
-  //   fieldId: "fldXXXXXXXXXX",
-  //   fieldName: "Confidence",
-  //   type: "number",
-  //   options: { precision: 0 },
-  // },
-];
+const headers = {
+  Authorization: `Bearer ${API_KEY}`,
+  "Content-Type": "application/json",
+};
 
 // ═══════════════════════════════════════════════════════════════
+// FIELD CONVERSION RULES
+//
+// Maps field names → target types. Case-insensitive matching.
+// Add or remove entries as needed for your tables.
+// ═══════════════════════════════════════════════════════════════
 
-async function convertField(conversion) {
-  const { tableId, fieldId, fieldName, type, options } = conversion;
-  const url = `https://api.airtable.com/v0/meta/bases/${BASE_ID}/tables/${tableId}/fields/${fieldId}`;
-
-  const body = { type };
-  if (options) {
-    body.options = options;
-  }
-
-  const res = await axios.patch(url, body, {
-    headers: {
-      Authorization: `Bearer ${API_KEY}`,
-      "Content-Type": "application/json",
+const FIELD_RULES = {
+  // Single select fields
+  Category: {
+    type: "singleSelect",
+    options: {
+      choices: [
+        { name: "Work" },
+        { name: "Startup" },
+        { name: "Growth" },
+        { name: "Idea" },
+        { name: "Personal Brand" },
+      ],
     },
-  });
+  },
+  Status: {
+    type: "singleSelect",
+    options: {
+      choices: [
+        { name: "Idea" },
+        { name: "Early" },
+        { name: "In Progress" },
+        { name: "Active" },
+        { name: "Paused" },
+        { name: "Done" },
+      ],
+    },
+  },
+  Priority: {
+    type: "singleSelect",
+    options: {
+      choices: [
+        { name: "High" },
+        { name: "Medium" },
+        { name: "Low" },
+      ],
+    },
+  },
 
+  // Number fields
+  Impact: {
+    type: "number",
+    options: { precision: 0 },
+  },
+  Effort: {
+    type: "number",
+    options: { precision: 0 },
+  },
+  Confidence: {
+    type: "number",
+    options: { precision: 0 },
+  },
+};
+
+// ═══════════════════════════════════════════════════════════════
+
+async function fetchSchema() {
+  const res = await axios.get(
+    `https://api.airtable.com/v0/meta/bases/${BASE_ID}/tables`,
+    { headers }
+  );
+  return res.data.tables;
+}
+
+async function convertField(tableId, fieldId, body) {
+  const url = `https://api.airtable.com/v0/meta/bases/${BASE_ID}/tables/${tableId}/fields/${fieldId}`;
+  const res = await axios.patch(url, body, { headers });
   return res.data;
 }
 
 async function run() {
-  if (CONVERSIONS.length === 0) {
-    console.log("No conversions configured.");
-    console.log("");
-    console.log("Steps:");
-    console.log("  1. Run `npm run inspect` to get your table/field IDs");
-    console.log("  2. Edit scripts/convert-fields.mjs");
-    console.log("  3. Uncomment and fill in the CONVERSIONS array");
-    console.log("  4. Run `npm run convert` again");
-    return;
+  console.log("Fetching table schema...\n");
+  const tables = await fetchSchema();
+
+  // Build a lowercase lookup for field rules
+  const rulesLower = {};
+  for (const [name, rule] of Object.entries(FIELD_RULES)) {
+    rulesLower[name.toLowerCase()] = { originalName: name, ...rule };
   }
 
-  console.log(`\nConverting ${CONVERSIONS.length} field(s)...\n`);
+  let totalConverted = 0;
+  let totalSkipped = 0;
+  let totalFailed = 0;
 
-  for (const conversion of CONVERSIONS) {
-    const { fieldName, type } = conversion;
-    process.stdout.write(`  ${fieldName} → ${type} ... `);
+  for (const table of tables) {
+    const matches = [];
 
-    try {
-      await convertField(conversion);
-      console.log("done");
-    } catch (err) {
-      const detail = err.response?.data?.error?.message || err.message;
-      console.log(`FAILED: ${detail}`);
+    for (const field of table.fields) {
+      const rule = rulesLower[field.name.toLowerCase()];
+      if (rule && field.type !== rule.type) {
+        matches.push({ field, rule });
+      } else if (rule && field.type === rule.type) {
+        totalSkipped++;
+      }
     }
 
-    // Small delay to respect rate limits (5 req/sec for metadata API)
-    await new Promise((r) => setTimeout(r, 250));
+    if (matches.length === 0) continue;
+
+    console.log(`━━━ TABLE: "${table.name}" (${table.id}) ━━━\n`);
+
+    for (const { field, rule } of matches) {
+      const body = { type: rule.type };
+      if (rule.options) body.options = rule.options;
+
+      process.stdout.write(
+        `  ${field.name} (${field.id}): ${field.type} → ${rule.type} ... `
+      );
+
+      try {
+        await convertField(table.id, field.id, body);
+        console.log("done");
+        totalConverted++;
+      } catch (err) {
+        const detail = err.response?.data?.error?.message || err.message;
+        console.log(`FAILED: ${detail}`);
+        totalFailed++;
+      }
+
+      // Respect rate limits (5 req/sec for metadata API)
+      await new Promise((r) => setTimeout(r, 250));
+    }
+
+    console.log("");
   }
 
-  console.log("\nConversion complete.");
-  console.log(
-    "Tip: Run `npm run inspect` again to verify the field types changed."
-  );
+  console.log("─────────────────────────────────");
+  console.log(`Converted: ${totalConverted}`);
+  console.log(`Already correct type: ${totalSkipped}`);
+  if (totalFailed > 0) console.log(`Failed: ${totalFailed}`);
+  console.log("");
+
+  if (totalConverted === 0 && totalFailed === 0) {
+    console.log("No fields needed conversion. Either:");
+    console.log("  - Field names don't match the rules in this script");
+    console.log("  - Fields are already the correct type");
+    console.log("");
+    console.log("Run `npm run inspect` to see your current field names/types.");
+  } else {
+    console.log(
+      "Tip: Run `npm run inspect` to verify the field types changed."
+    );
+    console.log(
+      "Note: If existing text values don't match select options exactly,"
+    );
+    console.log("      those cells may appear empty. Check your data in Airtable.");
+  }
 }
 
-run();
+run().catch((err) => {
+  if (err.response) {
+    console.error(`API Error ${err.response.status}:`, err.response.data);
+  } else {
+    console.error("Error:", err.message);
+  }
+  process.exit(1);
+});

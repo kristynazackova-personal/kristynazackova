@@ -17,7 +17,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // Load .env manually (no extra dependency needed)
 function loadEnv() {
   try {
-    const envPath = resolve(__dirname, "../.env");
+    const envPath = resolve(__dirname, ".env");
     const content = readFileSync(envPath, "utf-8");
     for (const line of content.split("\n")) {
       const trimmed = line.trim();
@@ -74,7 +74,7 @@ async function inspectTables() {
   }
 
   // Also write raw JSON for reference
-  const outputPath = resolve(__dirname, "../table-schema.json");
+  const outputPath = resolve(__dirname, "table-schema.json");
   const { writeFileSync } = await import("fs");
   writeFileSync(outputPath, JSON.stringify(tables, null, 2));
   console.log(`\nFull schema saved to table-schema.json`);
