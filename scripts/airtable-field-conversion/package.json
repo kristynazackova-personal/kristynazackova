@@ -1,0 +1,12 @@
+{
+  "name": "airtable-field-conversion",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "inspect": "node scripts/inspect-tables.mjs",
+    "convert": "node scripts/convert-fields.mjs"
+  },
+  "dependencies": {
+    "axios": "^1.7.0"
+  }
+}
