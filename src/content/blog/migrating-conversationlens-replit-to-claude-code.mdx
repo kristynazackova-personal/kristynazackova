@@ -1,0 +1,126 @@
+---
+title: "Replit vs Claude Code: Why I Migrated, and the Gap That Remains"
+description: "A founder's field report on migrating from Replit to Claude Code — cost, Scrum-board planning, automated task scheduling, and the product-discovery gap neither tool has closed."
+date: "2026-04-12"
+tags: ["Replit", "Claude Code", "AI coding tools", "developer tools", "product management", "migration"]
+---
+
+AI coding tools are evolving fast enough that the "right" choice six months ago isn't necessarily the right choice today. Pricing shifts, new features land, and the shape of what these tools *are* keeps changing—from IDEs, to pair programmers, to something closer to autonomous builders. Comparing **Replit vs Claude Code** today gives a very different answer than it did a year ago.
+
+I've been using Replit to develop ConversationLens for a while now, and I recently decided to migrate it to Claude Code. On paper, it's a straightforward cost decision. In practice, it surfaced a much more interesting question: **what layer of the product workflow are these tools actually competing for?**
+
+This post is a short field report on that migration—what pushed me to switch, what Replit quietly got right while I was mid-move, what Claude Code wins on, and the gap that neither tool has closed yet. If you're a product manager, founder, or solo builder trying to figure out which of these AI coding tools deserves your stack, this is for you.
+
+---
+
+I'm migrating ConversationLens from Replit to Claude Code.
+
+At a high level, the decision came down to a simple product principle: comparable capability at a lower cost.
+
+Right now, Claude Code gives me most of what I was using Replit for—but more efficiently from a pricing perspective. That alone is enough to justify the switch. But as always, the interesting part isn't the decision itself—it's the tradeoffs you uncover along the way.
+
+## Where Replit Surprised Me: The Scrum Board for AI Builders
+
+In the middle of my migration, Replit rolled out a feature I've been wanting for a while: **task planning with a Scrum-style board**.
+
+This is not a small feature—it signals a clear strategic move: **Replit is positioning itself as an AI coding product for product managers**, not just engineers.
+
+A Scrum board is the native language of product managers. By baking it into the development environment, Replit is saying: *you don't need to be an engineer to drive a product forward—you need to be able to plan, prioritize, and ship, and the AI will handle the execution underneath.*
+
+When you're working solo (or in a very small team), context switching between code and planning is expensive. Having task management embedded directly in your development environment reduces that friction significantly—and for a PM operating without a traditional engineering team, it becomes the primary interface to the product itself.
+
+Even though this feature won't make me stay on Replit, it highlights something important:
+
+**Replit is moving toward being a full-stack builder operating system, not just a coding environment.**
+
+And that direction is strategically strong.
+
+## Where Claude Code Wins: Automated Task Scheduling
+
+On the other side, Claude Code has something that—while not entirely absent in Replit—is implemented in a fundamentally better way: **automated task scheduling**.
+
+To be fair: Replit *does* let you schedule tasks, but it does so at the code level. You write a script, configure a scheduled deployment, and it runs on a cron. You get execution logs, and that's about it.
+
+Claude Code schedules at the **agent level**. You're not just running a script on a timer—you're scheduling reasoning and action. And crucially, you get visibility into what the agent actually did:
+
+- Did the task succeed?
+- What did it find?
+- What did it change?
+- What failed, and why?
+
+That visibility is the real unlock—especially for the kinds of recurring work that benefit most from automation:
+
+- **Periodic automated testing** — the agent runs the tests, interprets the results, and surfaces anything meaningful instead of dumping a log file on you
+- **Cleanup tasks for errored-out jobs** — the agent can actually inspect *why* something errored and take corrective action, not just re-run a script blindly
+- **Ongoing maintenance work** — things that would otherwise slip because nobody wants to babysit a cron job
+
+For how I work, this is a bigger unlock than a visual task board.
+
+I expect to use this heavily.
+
+## The Real Gap Between Replit and Claude Code: Planning vs Execution
+
+What this migration made very clear is that these tools are optimizing for different layers:
+
+| Layer | Replit | Claude Code |
+|---|---|---|
+| Planning | Strong (Scrum board) | Weak / missing |
+| Execution | Standard | Strong (automation, scheduling) |
+| Cost efficiency | Moderate | Strong |
+
+This creates a gap that neither fully solves yet:
+
+**There is no tool (yet) that seamlessly combines high-quality planning + autonomous execution in one environment for a reasonable price.**
+
+## What Product Managers and Founders Actually Want (And What's Probably Coming)
+
+The ideal system looks like this:
+
+1. You define tasks in a structured way (like a Scrum board)
+2. The system prioritizes and schedules them automatically
+3. It executes what it can autonomously
+4. It escalates what requires human input
+
+In other words: **a self-driving development workflow, not just a better IDE.**
+
+Both Replit and Claude Code are moving toward this—but from opposite directions.
+
+- **Replit** → starting from collaboration and planning
+- **Claude Code** → starting from execution and automation
+
+## The Piece That Stays Missing — And Why Product Managers Retain High Value
+
+Even if both tools converge on "planning + execution + reasonable pricing," there's a layer *neither* of them solves, and probably won't for a long time:
+
+**Data collection for generating and prioritizing problems and solutions.**
+
+Task boards assume the tasks already exist. Execution engines assume someone has decided what's worth building. Both of these tools start one step *after* the hardest part of product work:
+
+- Sitting in customer conversations and noticing what's *not* being said
+- Triangulating signals across sales calls, support tickets, analytics, and market dynamics
+- Deciding which problems are worth solving given strategic context, timing, and business model
+- Prioritizing based on judgment that doesn't live in any dataset
+
+Execution is becoming commoditized. *Problem discovery and prioritization* is not.
+
+This is why product managers retain high value in an AI-native development world. The further AI pushes into execution, the more leverage sits with the person who decides **what should be executed in the first place**—and why.
+
+The tool that eventually wins won't just close the loop between planning and execution. It will close the loop between **signal collection, problem definition, prioritization, planning, and execution.**
+
+That's still a long way off.
+
+## Final Take: Why Claude Code Wins for Now
+
+I'm still moving forward with Claude Code.
+
+The cost advantage and automation capabilities outweigh any advantages I get from Replit.
+
+But this migration exposed something more important than the tool choice itself:
+
+**The distance between product work and development work is going to keep growing.**
+
+As AI absorbs more of execution, the person who defines *what* gets built pulls further away from the person who writes *how* it gets built. Replit is leaning into that gap from the planning side. Claude Code is leaning into it from the execution side. Both are betting that the PM layer and the dev layer are drifting apart—and that the tool you pick depends on which side of the gap you operate from.
+
+The most leveraged role in this world is the one that sits on top of the signal: **the product manager, the founder, the operator with taste.** Because that's the layer AI doesn't yet touch—problem discovery, signal collection, and prioritization.
+
+That's the role I'm optimizing my stack around.
