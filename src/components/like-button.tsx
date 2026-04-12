@@ -13,17 +13,6 @@ export default function LikeButton({ slug }: { slug: string }) {
 
     const storedCount = localStorage.getItem(`likes:${slug}`);
     if (storedCount) setCount(parseInt(storedCount, 10));
-
-    fetch(`/api/likes/${slug}`)
-      .then((r) => {
-        if (!r.ok) throw new Error();
-        return r.json();
-      })
-      .then((data) => {
-        setCount(data.count);
-        localStorage.setItem(`likes:${slug}`, String(data.count));
-      })
-      .catch(() => {});
   }, [slug]);
 
   const handleLike = () => {
@@ -42,18 +31,6 @@ export default function LikeButton({ slug }: { slug: string }) {
       const mp = (window as any).mixpanel;
       if (mp?.track) mp.track("Article Liked", { slug });
     } catch {}
-
-    fetch(`/api/likes/${slug}`, { method: "POST" })
-      .then((res) => {
-        if (res.ok) return res.json();
-      })
-      .then((data) => {
-        if (data?.count) {
-          setCount(data.count);
-          localStorage.setItem(`likes:${slug}`, String(data.count));
-        }
-      })
-      .catch(() => {});
 
     setTimeout(() => setAnimating(false), 300);
   };
