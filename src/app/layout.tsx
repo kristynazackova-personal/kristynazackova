@@ -97,10 +97,10 @@ export default function RootLayout({
           <div className="max-w-[1100px] mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style={{ color: "#4B5563" }}>
             <span>&copy; {new Date().getFullYear()} Kristyna Zackova</span>
             <div className="flex items-center flex-wrap justify-center gap-4 sm:gap-5">
-              <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">LinkedIn</a>
-              <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">Mentorship</a>
-              <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ConversationLens</a>
-              <a href="https://www.threadlift.io" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ThreadLift</a>
+              <a href="https://www.linkedin.com/in/k-zackova/?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">LinkedIn</a>
+              <a href="https://mentorcruise.com/mentor/kristynazackova/?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">Mentorship</a>
+              <a href="https://conversationlens.com?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ConversationLens</a>
+              <a href="https://www.threadlift.io?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ThreadLift</a>
             </div>
           </div>
         </footer>

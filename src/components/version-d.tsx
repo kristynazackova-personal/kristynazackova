@@ -7,7 +7,7 @@ const ventures: Venture[] = [
   {
     title: "ConversationLens",
     summary: "AI-driven platform analyzing couples' conversations to deliver relationship insights.",
-    link: "https://conversationlens.com",
+    link: "https://conversationlens.com?utm_source=kristynazackova.com&utm_medium=portfolio",
     status: "LIVE",
     why: "I saw a consistent gap in how people understand and improve their relationships. While therapy can be valuable, it is often expensive, difficult to access, and not embedded in the day-to-day interactions where most relationship dynamics actually play out. I wanted to build a system that brings more clarity to those everyday moments — helping people better understand how they communicate, how patterns form, and where friction emerges.",
     description: "ConversationLens analyzes real conversations (text, audio, or transcripts) to identify communication patterns, emotional dynamics, and recurring points of tension. The goal is not to replace therapy, but to complement it by providing structured, objective insight into how people communicate, visibility into patterns across time (not just isolated moments), and practical, evidence-informed suggestions for improving interactions. The platform combines conversation analysis, AI-guided reflection, and voice-based sessions into a single system designed to make relationship insight more continuous and accessible. Live with active users since November 2025.",
@@ -24,7 +24,7 @@ const ventures: Venture[] = [
   {
     title: "ThreadLift",
     summary: "Social listening and engagement platform — discovers conversations on Reddit and Quora, generates AI draft replies.",
-    link: "https://www.threadlift.io",
+    link: "https://www.threadlift.io?utm_source=kristynazackova.com&utm_medium=portfolio",
     status: "LIVE",
     why: "Customer acquisition is difficult, especially for early-stage companies. Paid advertising is fast but expensive, while organic growth and word of mouth are more authentic but take significant time and effort to build. I saw an opportunity to make this middle ground more efficient — helping companies participate in real conversations at scale, without losing authenticity. Platforms like Reddit and Quora already contain high-intent discussions, but finding the right ones and responding thoughtfully is time-consuming. ThreadLift was built to make this process faster, more structured, and easier to scale.",
     description: "ThreadLift identifies relevant conversations across platforms like Reddit and Quora and helps you engage in them effectively. For each thread, it generates context-aware reply drafts that you review and refine before posting. The goal is not to automate engagement, but to make high-quality participation more efficient. ThreadLift helps teams reduce the time required to find and engage in relevant discussions, contribute in a way that feels natural to each platform, and build awareness through consistent, credible participation rather than paid campaigns. It is designed for founders, marketers, and teams who want a more scalable approach to organic distribution. Live since April 2026.",
@@ -128,12 +128,12 @@ export default function VersionD() {
                       Kristyna Zackova
                     </div>
                     <div className="text-[13px] sm:text-[14px] text-gray-500">
-                      Principal Product Manager @ Inmar Intelligence & Founder of <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-150">ConversationLens</a>
+                      Principal Product Manager @ Inmar Intelligence & Founder of <a href="https://conversationlens.com?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-150">ConversationLens</a>
                     </div>
                   </div>
                 </div>
                 <div className="mt-6 flex gap-6 animate-[fadeSlideIn_400ms_ease-out_150ms_both]">
-                  <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors duration-150">
+                  <a href="https://www.linkedin.com/in/k-zackova/?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors duration-150">
                     LinkedIn {"\u2197"}
                   </a>
                   <a href="#systems" className="text-sm text-gray-500 hover:text-black transition-colors duration-150">
@@ -212,7 +212,7 @@ export default function VersionD() {
                 <h2 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4B5563" }}>Mentorship</h2>
                 <p className="text-xs" style={{ color: "#6B7280" }}>Product strategy, AI, systems thinking, career growth. 7-day free trial.</p>
               </div>
-              <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5 self-start sm:self-auto shrink-0" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
+              <a href="https://mentorcruise.com/mentor/kristynazackova/?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5 self-start sm:self-auto shrink-0" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
                 Book {"\u2197"}
               </a>
             </div>
