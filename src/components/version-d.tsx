@@ -132,9 +132,12 @@ export default function VersionD() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-6 flex gap-6 animate-[fadeSlideIn_400ms_ease-out_150ms_both]">
+                <div className="mt-6 flex items-center gap-6 animate-[fadeSlideIn_400ms_ease-out_150ms_both]">
                   <a href="https://www.linkedin.com/in/k-zackova/?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors duration-150">
                     LinkedIn {"\u2197"}
+                  </a>
+                  <a href="https://x.com/zackovak?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-black transition-colors duration-150">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                   </a>
                   <a href="#systems" className="text-sm text-gray-500 hover:text-black transition-colors duration-150">
                     View Work &darr;
