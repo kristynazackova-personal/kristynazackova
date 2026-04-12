@@ -29,17 +29,22 @@ And that direction is strategically strong.
 
 ## Where Claude Code Wins (For Me)
 
-On the other side, Claude Code has something I haven't seen in Replit: **automated task scheduling**.
+On the other side, Claude Code has something that—while not entirely absent in Replit—is implemented in a fundamentally better way: **automated task scheduling**.
 
-This is a different paradigm.
+To be fair: Replit *does* let you schedule tasks, but it does so at the code level. You write a script, configure a scheduled deployment, and it runs on a cron. You get execution logs, and that's about it.
 
-Instead of just organizing tasks, Claude Code helps execute workflows over time.
+Claude Code schedules at the **agent level**. You're not just running a script on a timer—you're scheduling reasoning and action. And crucially, you get visibility into what the agent actually did:
 
-That matters more than it might seem:
+- Did the task succeed?
+- What did it find?
+- What did it change?
+- What failed, and why?
 
-- It reduces manual overhead in maintaining momentum
-- It enables asynchronous progress (things happen even when you're not actively coding)
-- It starts to blur the line between tool and agent
+That visibility is the real unlock—especially for the kinds of recurring work that benefit most from automation:
+
+- **Periodic automated testing** — the agent runs the tests, interprets the results, and surfaces anything meaningful instead of dumping a log file on you
+- **Cleanup tasks for errored-out jobs** — the agent can actually inspect *why* something errored and take corrective action, not just re-run a script blindly
+- **Ongoing maintenance work** — things that would otherwise slip because nobody wants to babysit a cron job
 
 For how I work, this is a bigger unlock than a visual task board.
 
