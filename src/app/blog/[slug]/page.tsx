@@ -3,6 +3,9 @@ import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { MDXRemote } from "@/lib/mdx-remote";
+import LikeButton from "@/components/like-button";
+
+export const dynamic = "force-dynamic";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -76,6 +79,11 @@ export default async function BlogPostPage({ params }: Props) {
 
       <div className="prose max-w-none">
         <MDXRemote source={post.content} />
+      </div>
+
+      <div className="mt-12 pt-8 flex items-center gap-3" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
+        <LikeButton slug={slug} />
+        <span className="text-xs" style={{ color: "#9CA3AF" }}>Found this useful?</span>
       </div>
     </article>
   );

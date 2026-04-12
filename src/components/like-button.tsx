@@ -6,10 +6,8 @@ export default function LikeButton({ slug }: { slug: string }) {
   const [count, setCount] = useState(0);
   const [liked, setLiked] = useState(false);
   const [animating, setAnimating] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const stored = localStorage.getItem(`liked:${slug}`);
     if (stored === "true") setLiked(true);
 
@@ -39,14 +37,12 @@ export default function LikeButton({ slug }: { slug: string }) {
     setCount(newCount);
     localStorage.setItem(`likes:${slug}`, String(newCount));
 
-    // Track in Mixpanel
     try {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const mp = (window as any).mixpanel;
       if (mp?.track) mp.track("Article Liked", { slug });
     } catch {}
 
-    // Try API, ignore if it fails
     fetch(`/api/likes/${slug}`, { method: "POST" })
       .then((res) => {
         if (res.ok) return res.json();
@@ -62,11 +58,10 @@ export default function LikeButton({ slug }: { slug: string }) {
     setTimeout(() => setAnimating(false), 300);
   };
 
-  if (!mounted) return null;
-
   return (
     <button
       onClick={handleLike}
+      type="button"
       className="flex items-center gap-2 text-sm transition-all duration-150"
       style={{
         color: liked ? "#800020" : "#9CA3AF",
@@ -81,7 +76,7 @@ export default function LikeButton({ slug }: { slug: string }) {
           display: "inline-block",
         }}
       >
-        {liked ? "\u{1F44D}" : "\u{1F44D}"}
+        {"\u{1F44D}"}
       </span>
       <span className="font-mono text-xs">
         {count}
