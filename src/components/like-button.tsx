@@ -39,9 +39,11 @@ export default function LikeButton({ slug }: { slug: string }) {
     localStorage.setItem(`likes:${slug}`, String(newCount));
 
     // Track in Mixpanel
-    if (typeof window !== "undefined" && (window as Record<string, unknown>).mixpanel) {
-      (window as Record<string, unknown> & { mixpanel: { track: (event: string, props: Record<string, string>) => void } }).mixpanel.track("Article Liked", { slug });
-    }
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const mp = (window as any).mixpanel;
+      if (mp?.track) mp.track("Article Liked", { slug });
+    } catch {}
 
     // Try API, ignore if it fails
     try {
