@@ -6,15 +6,16 @@ export default function LikeButton({ slug }: { slug: string }) {
   const [count, setCount] = useState(0);
   const [liked, setLiked] = useState(false);
   const [animating, setAnimating] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const stored = localStorage.getItem(`liked:${slug}`);
     if (stored === "true") setLiked(true);
 
     const storedCount = localStorage.getItem(`likes:${slug}`);
     if (storedCount) setCount(parseInt(storedCount, 10));
 
-    // Try fetching from API, fall back to localStorage
     fetch(`/api/likes/${slug}`)
       .then((r) => {
         if (!r.ok) throw new Error();
@@ -27,7 +28,7 @@ export default function LikeButton({ slug }: { slug: string }) {
       .catch(() => {});
   }, [slug]);
 
-  const handleLike = async () => {
+  const handleLike = () => {
     if (liked) return;
 
     setLiked(true);
@@ -46,22 +47,26 @@ export default function LikeButton({ slug }: { slug: string }) {
     } catch {}
 
     // Try API, ignore if it fails
-    try {
-      const res = await fetch(`/api/likes/${slug}`, { method: "POST" });
-      if (res.ok) {
-        const data = await res.json();
-        setCount(data.count);
-        localStorage.setItem(`likes:${slug}`, String(data.count));
-      }
-    } catch {}
+    fetch(`/api/likes/${slug}`, { method: "POST" })
+      .then((res) => {
+        if (res.ok) return res.json();
+      })
+      .then((data) => {
+        if (data?.count) {
+          setCount(data.count);
+          localStorage.setItem(`likes:${slug}`, String(data.count));
+        }
+      })
+      .catch(() => {});
 
     setTimeout(() => setAnimating(false), 300);
   };
 
+  if (!mounted) return null;
+
   return (
     <button
       onClick={handleLike}
-      disabled={liked}
       className="flex items-center gap-2 text-sm transition-all duration-150"
       style={{
         color: liked ? "#800020" : "#9CA3AF",
@@ -76,7 +81,7 @@ export default function LikeButton({ slug }: { slug: string }) {
           display: "inline-block",
         }}
       >
-        {"\u{1F44D}"}
+        {liked ? "\u{1F44D}" : "\u{1F44D}"}
       </span>
       <span className="font-mono text-xs">
         {count}
