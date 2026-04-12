@@ -50,6 +50,8 @@ export default async function BlogPostPage({ params }: Props) {
           {post.title}
         </h1>
         <div className="flex flex-wrap items-center gap-4">
+          <span className="text-sm" style={{ color: "#4B5563" }}>By Kristyna Zackova</span>
+          <span style={{ color: "rgba(0,0,0,0.2)" }}>&middot;</span>
           <time className="text-sm text-muted font-mono">
             {new Date(post.date).toLocaleDateString("en-US", {
               year: "numeric",
