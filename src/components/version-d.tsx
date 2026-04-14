@@ -45,6 +45,15 @@ const ventures: Venture[] = [
       // { type: "image", src: "/ventures/lifemadeeasy-1.png", alt: "Life Made Easy timeline" },
     ],
   },
+  {
+    title: "3D Space",
+    summary: "3D interactive visualization platform for system architecture, timelines, and knowledge graphs.",
+    link: "https://lifeos.solutions",
+    status: "BETA",
+    why: "I wanted a way to see the systems I build and the knowledge I accumulate — not as flat documents or scattered notes, but as living, spatial structures I can walk through. Most tools for architecture diagrams, timelines, and knowledge graphs feel static and disconnected. I wanted a single environment where I could visualize how everything connects, evolves over time, and grows in complexity — and control exactly what the outside world sees.",
+    description: "3D Space is a 3D interactive visualization platform for system architecture, timelines, and knowledge graphs. You can map out a microservices architecture and see data flow across layers, plot your project history on a spiral timeline synced with Google Calendar, or build a knowledge graph that connects projects, skills, people, and ideas in three-dimensional space. An AI assistant lets you build and modify these visualizations through natural conversation — describe what you want and watch it appear. Every space can be embedded publicly as an interactive 3D scene, with granular admin controls over what visitors can see, click, and explore — all configurable through chat. Built with raw Three.js, Next.js, and PostgreSQL.",
+    media: [],
+  },
 ];
 
 const experience = [
