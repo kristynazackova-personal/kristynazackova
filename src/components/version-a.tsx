@@ -208,9 +208,22 @@ export default function VersionA() {
                 Work with <span className="gradient-text">me</span>
               </h3>
               <p className="text-muted max-w-xl mb-6">Product strategy, AI product management, systems thinking, career growth. 2 calls/month, unlimited async Q&A. 7-day free trial.</p>
-              <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-3 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg transition-all hover:scale-105">
-                Book a mentor session
-              </a>
+              <div className="flex flex-wrap items-center gap-6">
+                <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-3 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg transition-all hover:scale-105">
+                  Book a mentor session
+                </a>
+                <a
+                  href="https://mentorcruise.com/mentor/kristynazackova/?source=embed"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://cdn.mentorcruise.com/img/banner/sky-mentoring-badge.svg"
+                    width="180"
+                    alt="MentorCruise"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </section>

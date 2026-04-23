@@ -228,6 +228,18 @@ export default function VersionD() {
                 Book {"\u2197"}
               </a>
             </div>
+            <a
+              href="https://mentorcruise.com/mentor/kristynazackova/?source=embed"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block"
+            >
+              <img
+                src="https://cdn.mentorcruise.com/img/banner/sky-mentoring-badge.svg"
+                width="180"
+                alt="MentorCruise"
+              />
+            </a>
           </section>
 
           <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)" }} />
