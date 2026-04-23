@@ -196,9 +196,22 @@ export default function VersionC() {
               <h2 className="text-xs font-semibold tracking-widest uppercase text-accent mb-4">Mentorship</h2>
               <p className="text-foreground text-lg font-medium mb-2">Work with me 1-on-1</p>
               <p className="text-muted mb-6">Product strategy, AI product management, systems thinking, and career growth. 2 calls/month, unlimited async Q&A. 7-day free trial.</p>
-              <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2.5 bg-accent text-white text-sm font-medium rounded-xl hover:bg-accent/90 transition-all duration-250">
-                Book a session
-              </a>
+              <div className="flex flex-wrap items-center gap-6">
+                <a href="https://mentorcruise.com/mentor/kristynazackova/" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2.5 bg-accent text-white text-sm font-medium rounded-xl hover:bg-accent/90 transition-all duration-250">
+                  Book a session
+                </a>
+                <a
+                  href="https://mentorcruise.com/mentor/kristynazackova/?source=embed"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://cdn.mentorcruise.com/img/banner/sky-mentoring-badge.svg"
+                    width="180"
+                    alt="MentorCruise"
+                  />
+                </a>
+              </div>
             </div>
           </section>
 
