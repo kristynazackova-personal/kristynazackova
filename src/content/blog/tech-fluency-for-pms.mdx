@@ -1,0 +1,251 @@
+---
+title: "Tech Fluency for PMs — A Pocket Guide"
+description: "A field manual for non-technical product managers: the vocabulary, patterns, and habits that earn you credibility in a room full of engineers."
+date: "2026-04-23"
+tags: ["product management", "engineering", "career", "resources"]
+---
+
+You don't need to code to work with engineers well — you need to understand the shape of their world. The goal of this guide isn't to turn you into a developer. It's to give you enough vocabulary and context that you can follow a technical conversation, ask good questions, and earn credibility by showing you've done the homework.
+
+Read it once through. If anyone uses a term you don't recognize in the wild, the best move is always to say: *"Can you walk me through that? I want to make sure I understand it the way you do."* That's not weakness — it's good product behavior.
+
+## Contents
+
+1. [The Big Picture](#the-big-picture)
+2. [The Web and APIs](#the-web-and-apis)
+3. [How Engineers Work](#how-engineers-work)
+4. [Infrastructure and Scale](#infrastructure-and-scale)
+5. [Data and Databases](#data-and-databases)
+6. [Quality and Reliability](#quality-and-reliability)
+7. [Architecture Patterns](#architecture-patterns)
+8. [Security Basics](#security-basics)
+9. [Process and Ceremonies](#process-and-ceremonies)
+10. [Red Flags to Avoid](#red-flags-to-avoid)
+11. [Holding Your Own](#holding-your-own)
+
+---
+
+## The Big Picture
+
+*How a piece of software is actually put together, from the screen you tap to the servers you don't see.*
+
+**Frontend** *(a.k.a. client-side, UI layer)* — The part of the product the user actually sees and interacts with: the buttons, screens, animations, forms. Runs in the browser or the mobile app.
+
+> **In the wild:** *"The bug is frontend-only — the data is fine, it's just* rendering *wrong."*
+
+**Backend** *(a.k.a. server-side)* — Everything the user doesn't see: the servers, databases, and business logic that power the experience. When you press "Submit," the backend is what actually does the work.
+
+> **In the wild:** *"That's a backend change — we'll need to update the service and redeploy."*
+
+**Full-stack** — An engineer who works across both frontend and backend. Not a synonym for "senior" — it's about breadth, not seniority.
+
+**Client & Server** — The *client* is the app on the user's device (phone, browser). The *server* is a computer somewhere else that the client talks to. They exchange messages: client asks, server answers.
+
+> **Mental model:** Think waiter (client) takes your order to the kitchen (server), kitchen sends food back.
+
+**API** *(Application Programming Interface)* — A set of rules that lets one piece of software talk to another. It's a contract: "if you ask me like *this*, I'll respond with *that*." When your app shows weather, it's calling a weather API.
+
+> **Why PMs care:** APIs are the seams of your product. Integrations, partnerships, platform strategy — all live here.
+
+**SDK** *(Software Development Kit)* — A packaged toolkit (code, documentation, sample snippets) that makes it easier for developers to build on top of a platform. Stripe's SDK, for example, saves you from wiring up payment APIs from scratch.
+
+**Database** *(often shortened to "DB")* — Where persistent information lives: user accounts, orders, messages, anything that needs to still be there tomorrow. Think of it as an extremely organized set of digital filing cabinets.
+
+## The Web and APIs
+
+*How two computers actually talk to each other over the internet.*
+
+**HTTP / HTTPS** — The language computers use to exchange messages on the web. HTTPS is the same thing, encrypted. Every URL you visit is an HTTP(S) request under the hood.
+
+**REST API** — The most common style of web API. Organized around "resources" (users, orders, posts) you can create, read, update, or delete using standard HTTP verbs.
+
+**Endpoint** — A specific URL on an API that does one specific thing. `/users/123` is an endpoint that returns info about user 123.
+
+**Request & Response** — A single round-trip: the client sends a *request*, the server sends back a *response*. That's one API call.
+
+**JSON** *(pronounced "jay-son")* — The standard format for sending data between systems. It looks like nested lists of labels and values. You don't need to write it — but you should recognize it when someone pastes it in Slack.
+
+**Status Codes** — The three-digit numbers that come back with every response. **200** = success. **400s** = you (the client) did something wrong (404 = not found, 401 = not authorized). **500s** = the server broke.
+
+> **Interview gold:** Knowing 404 vs 500 signals whose problem it is — the client's or the server's.
+
+**Webhook** — The reverse of an API call. Instead of you asking the server "anything new?" every minute, the server *pings you* when something happens. Push, not pull.
+
+**Latency** — How long a request takes to complete. Measured in milliseconds. High latency = slow-feeling product.
+
+## How Engineers Work
+
+*The daily vocabulary of shipping code: version control, reviews, and deploys.*
+
+**Repository** *("repo")* — A project's codebase, plus its entire history of changes. Usually hosted on GitHub or GitLab.
+
+**Git** — The version control system nearly every software team uses. It tracks every change ever made to the code and lets many engineers work in parallel without stepping on each other.
+
+**Commit** — A saved, labeled change to the code. Think of it as one entry in the project's diary.
+
+**Branch** — A parallel copy of the codebase where an engineer works on a feature without affecting anyone else. When it's ready, they *merge* it back.
+
+**Pull Request (PR)** *(GitLab calls it MR — Merge Request)* — A proposal to merge one branch into another. It's where code review happens: other engineers comment, suggest changes, and eventually approve it.
+
+> **Why PMs care:** *"Is the PR merged?"* is how you find out if a feature is actually, truly done.
+
+**Merge** — Combining one branch's changes into another. Usually the feature branch into the main branch.
+
+**Deploy / Ship / Release** — Pushing code out so real users can use it. "Shipping" is the informal verb engineers live for. A PR being merged isn't the same as being shipped — deploy is the last step.
+
+**Environment** — A running copy of the application. **Dev** = an engineer's laptop. **Staging** = a pre-production clone for testing. **Production** ("prod") = what real users hit. Never test something risky in prod.
+
+**CI / CD** *(Continuous Integration / Continuous Deployment)* — Automation that runs every time code changes: tests it, builds it, and (optionally) deploys it. It's why modern teams can ship many times a day without everything breaking.
+
+**Feature Flag** — A switch that turns a feature on or off without redeploying code. Lets you roll out to 5% of users, test in production safely, or kill a feature instantly if it breaks.
+
+> **PM superpower:** Asking "can we put this behind a flag?" is one of the most PM-savvy things you can say.
+
+**Rollback** — Reverting a deploy when something goes wrong. "Roll it back" is what you hear in an incident channel at 2 a.m.
+
+### Phrases that instantly signal "this PM gets it"
+
+- **"What's the tradeoff?"** — Engineers respect this because every decision is a tradeoff.
+- **"Can we put it behind a feature flag?"** — Shows you think about risk and rollout, not just ship dates.
+- **"Is this a frontend change or does it touch the backend too?"** — Shows you understand the architecture has layers.
+- **"What's the blast radius if this breaks?"** — Shows you care about reliability, not just features.
+- **"Is the complexity in the logic or in the data model?"** — Signals you know where effort actually lives.
+
+## Infrastructure and Scale
+
+*The invisible machinery that keeps products running for millions of people.*
+
+**The Cloud** *(AWS, GCP, Azure)* — Someone else's computers, rented by the hour. "The cloud" is Amazon (AWS), Google (GCP), or Microsoft (Azure) letting companies run their software on a shared global fleet instead of owning hardware.
+
+**Server / Instance** — A computer running your backend code. In the cloud, you usually have many of them, spun up and down as needed.
+
+**CDN** *(Content Delivery Network)* — A global network of servers that stores copies of your content (images, videos, static files) closer to users, so they load faster. Cloudflare and Fastly are examples.
+
+**Cache** *(pronounced "cash")* — A temporary, fast storage layer that remembers recent results so you don't have to recompute them. "The cache is stale" means the stored version is out of date.
+
+**Load Balancer** — A traffic director that spreads incoming requests across many servers so none of them get overwhelmed.
+
+**Scalability** — The ability of a system to handle more load without falling over. "Does this scale?" usually means: what happens when 100x more users show up tomorrow?
+
+**Uptime / Downtime** — How available the service is. "Three nines" = 99.9% uptime (about 9 hours of downtime a year). "Four nines" = 99.99%. More nines = way more expensive.
+
+## Data and Databases
+
+*Where the information lives, and how it's shaped.*
+
+**SQL vs NoSQL** — **SQL** databases (Postgres, MySQL) store data in structured tables with strict columns — great when relationships matter. **NoSQL** databases (MongoDB, DynamoDB) are more flexible, storing documents or key-value pairs — great for fast-changing data shapes.
+
+**Schema** — The blueprint of a database: what tables exist, what columns they have, what types of data go where. "Schema change" = changing that blueprint, which is usually a bigger deal than it sounds.
+
+**Query** — A question asked of the database. "Give me all users who signed up last week" is a query.
+
+**Migration** — A controlled, versioned change to the database (adding a column, renaming a table). Migrations are risky because they touch live data; they're almost always scheduled and reviewed carefully.
+
+**Index** — A data structure that speeds up certain queries — like the index at the back of a book. No index = the database reads every row every time.
+
+## Quality and Reliability
+
+*How engineers keep things from breaking — and what happens when they do.*
+
+**Bug** — Behavior that differs from what was intended. Not all bugs are urgent — severity and frequency matter.
+
+**Regression** — A bug that breaks something that used to work. Engineers hate regressions more than new bugs because they signal a process failure.
+
+**Edge Case** — An unusual situation the main flow wasn't designed for: empty states, extremely long inputs, users in airplane mode. "What's the edge case?" is a fantastic PM question.
+
+**Unit / Integration / E2E Tests** — **Unit** = tests one small function in isolation. **Integration** = tests that several pieces work together. **End-to-end (E2E)** = simulates a real user clicking through the product.
+
+**Technical Debt** *("tech debt")* — Shortcuts taken in the past that now make the code harder to change. Like financial debt: sometimes worth taking on deliberately; dangerous when it accumulates unchecked.
+
+**Refactor** — Rewriting existing code to be cleaner or faster *without* changing what it does from the outside. A refactor is not a feature.
+
+**Incident / Outage** — When something breaks in production. Teams usually run a *postmortem* after: a blameless write-up of what happened and what to change.
+
+**Observability / Logs / Metrics** — **Logs** = text breadcrumbs the system writes as it runs. **Metrics** = numerical measurements over time (requests per second, error rate). **Observability** = how well you can understand what's happening inside the system from the outside.
+
+## Architecture Patterns
+
+*The big structural decisions that shape what's easy and what's painful.*
+
+**Monolith vs Microservices** — A **monolith** is one big application doing everything. **Microservices** break it into many small services that talk over APIs. Neither is "better" — they're tradeoffs between simplicity (mono) and independent scaling/teams (micro).
+
+**Native vs Hybrid (Mobile)** — **Native** apps are built specifically for iOS (Swift) or Android (Kotlin) — fastest, most polished. **Hybrid** (React Native, Flutter) shares code across platforms — faster to build, some tradeoffs in feel and performance.
+
+**Frontend Framework** — Libraries that organize how the UI is built: React, Vue, Angular. You don't need to know them, just recognize the names and know they solve the same general problem differently.
+
+**Async vs Sync** — **Synchronous** = wait for an answer before doing anything else. **Asynchronous** = fire off the request, keep working, handle the answer when it comes. Most modern apps are heavily async — that's why you see loading spinners.
+
+**Queue** — A waiting line for work. If 10,000 users hit "send," a queue lets the system process them one at a time without falling over.
+
+## Security Basics
+
+*Just enough to not say anything embarrassing.*
+
+**Authentication vs Authorization** *("authN vs authZ")* — **Authentication** = who are you? (logging in). **Authorization** = what are you allowed to do? (permissions). Getting these mixed up in a meeting is a giveaway.
+
+**OAuth / SSO** — **OAuth** is the protocol behind "Sign in with Google / Apple." **SSO** (Single Sign-On) lets employees use one login across many internal tools.
+
+**Encryption at Rest vs In Transit** — **In transit** = encrypted while moving between computers (that's what the S in HTTPS does). **At rest** = encrypted while sitting in the database. Enterprise customers almost always ask for both.
+
+**PII** *(Personally Identifiable Information)* — Data that can identify a specific person: names, emails, addresses, phone numbers. Handling PII has legal implications (GDPR, CCPA) and engineers are trained to be careful with it.
+
+**Token** — A string of characters that proves you're logged in or authorized to do something. When you sign in, the server issues a token your app then sends with every request.
+
+## Process and Ceremonies
+
+*The rituals of how software teams actually run — you'll probably be asked about these.*
+
+**Agile / Scrum** — **Agile** is a philosophy (ship small, iterate, respond to change). **Scrum** is a specific recipe for doing Agile, with sprints, standups, retros, etc.
+
+**Sprint** — A fixed time window (usually 1–2 weeks) in which the team commits to finishing a specific set of work.
+
+**Standup** — A short daily sync. Each person says what they did yesterday, what they're doing today, and anything blocking them.
+
+**Retrospective** *("retro")* — An end-of-sprint meeting where the team reflects on what went well, what didn't, and what to change next time.
+
+**User Story** — A one-line description of a feature from the user's perspective. Classic form: *"As a [user], I want [goal], so that [benefit]."*
+
+**Acceptance Criteria** — The concrete, testable conditions a story has to meet to be considered done. "When the user taps X, the system should do Y." PMs usually write these.
+
+**Epic** — A large body of work made up of many stories. "Checkout redesign" is an epic; "Support Apple Pay" is a story inside it.
+
+**Backlog & Grooming** — The **backlog** is the prioritized list of everything the team *could* work on next. **Grooming** (or "refinement") is the recurring meeting where the PM and team review and sharpen upcoming stories.
+
+**MVP** *(Minimum Viable Product)* — The smallest version of something that proves or disproves the core hypothesis. Not "the cheapest first version" — the *least* you can build to *learn*.
+
+## Red Flags to Avoid
+
+*Phrases that make engineers wince. Avoiding them costs you nothing and buys you credibility.*
+
+| Don't say | Try instead |
+|---|---|
+| *"Can't you just add a button that…"* | Drop "just." Engineers hear it as "I haven't thought about this." Try: *"How hard would it be to add X? What would you need to change?"* |
+| *"We need to put it in the cloud."* | "The cloud" isn't a decision. Ask: *"Where does this live today, and what would we need to change to support more users?"* |
+| *"The API is broken."* (when you mean the website is broken) | Describe what you're seeing, not what you think is causing it: *"When I click X, I see Y instead of Z"* lets the engineer do the diagnosis. |
+| *"How long will it take? Ballpark?"* | Ask for the shape of the work first: *"Is this a day, a week, or a month kind of problem?"* Then: *"What would make it longer?"* |
+| *"Can we use AI for this?"* | Be specific about the problem: *"Users are spending too much time on X — are there approaches (ML, rules, better UX) worth exploring?"* lets engineers bring options. |
+| Confusing frontend with design. | The frontend is the *code* that renders the UI. Design is the visual/experience decisions. A designer hands off mocks; a frontend engineer builds them. |
+
+## Holding Your Own
+
+*Vocabulary gets you in the door. These habits keep you there.*
+
+**Say "I don't know" cleanly.** Not "I don't know but…" — just, *"I don't know, walk me through it."* Senior engineers respect this more than a bluff. Follow up with *"What should I read to go deeper?"*
+
+**Play back what you heard.** *"So if I'm hearing you right, the challenge is X because Y, and the tradeoff is Z — is that right?"* This one move builds more trust with engineers than almost anything else.
+
+**Ask about the cause, not the symptom.** "Users complain the page is slow" is a symptom. *"What's actually slow — the server response, the image loading, the rendering?"* lets engineers point you at the real problem.
+
+**Respect that estimation is hard.** "How long will this take?" is the question engineers are most often wrong about — not because they're bad at their jobs, but because software has unknown unknowns. Ask for *ranges* and *confidence levels*, not dates.
+
+**Bring the "why," always.** Engineers will challenge *what* you're asking for — that's their job. If you can clearly articulate *why* (user need, business goal, data), the conversation shifts from "should we?" to "what's the best way?"
+
+**Learn one thing deeper after every technical conversation.** Hear a new term today? Look it up tonight. Over six months, this compounds into real fluency. That's how every non-technical PM who became excellent got there.
+
+---
+
+## Closing
+
+You don't need to know everything. You need to know enough to listen well, ask sharp questions, and earn the right to be in the room. You already have the hardest part — curiosity.
+
+Good luck.

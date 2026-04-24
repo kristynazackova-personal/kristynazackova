@@ -7,27 +7,8 @@ export const metadata: Metadata = {
   description: "Thoughts on product, technology, and building things.",
 };
 
-const CUSTOM_POSTS = [
-  {
-    slug: "tech-fluency-for-pms",
-    title: "Tech Fluency for PMs — A Pocket Guide",
-    description:
-      "A field manual for non-technical product managers: vocabulary, patterns, and habits that earn you credibility in a room full of engineers.",
-    date: "2026-04-23",
-  },
-];
-
 export default function BlogPage() {
-  const mdxPosts = getAllPosts().map((p) => ({
-    slug: p.slug,
-    title: p.title,
-    description: p.description,
-    date: p.date,
-  }));
-
-  const posts = [...CUSTOM_POSTS, ...mdxPosts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  const posts = getAllPosts();
 
   return (
     <div className="max-w-[800px] mx-auto px-6 py-24">
