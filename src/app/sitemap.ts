@@ -25,5 +25,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     ...posts,
+    {
+      url: `${baseUrl}/blog/tech-fluency-for-pms`,
+      lastModified: new Date("2026-04-23"),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
   ];
 }
