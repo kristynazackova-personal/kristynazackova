@@ -224,22 +224,19 @@ export default function VersionD() {
                 <h2 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4B5563" }}>Mentorship</h2>
                 <p className="text-xs" style={{ color: "#6B7280" }}>Product strategy, AI, systems thinking, career growth. 7-day free trial.</p>
               </div>
-              <a href="https://mentorcruise.com/mentor/kristynazackova/?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5 self-start sm:self-auto shrink-0" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
-                Book {"\u2197"}
+              <a
+                href="https://mentorcruise.com/mentor/kristynazackova/?source=embed"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="self-start sm:self-auto shrink-0"
+              >
+                <img
+                  src="https://cdn.mentorcruise.com/img/banner/sky-mentoring-badge.svg"
+                  width="120"
+                  alt="MentorCruise"
+                />
               </a>
             </div>
-            <a
-              href="https://mentorcruise.com/mentor/kristynazackova/?source=embed"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-block"
-            >
-              <img
-                src="https://cdn.mentorcruise.com/img/banner/sky-mentoring-badge.svg"
-                width="180"
-                alt="MentorCruise"
-              />
-            </a>
           </section>
 
           <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)" }} />
