@@ -2,8 +2,14 @@
 title: "Tech Fluency for PMs — A Pocket Guide"
 description: "A field manual for non-technical product managers: the vocabulary, patterns, and habits that earn you credibility in a room full of engineers."
 date: "2026-04-23"
-tags: ["product management", "engineering", "career", "resources"]
+tags: ["product management", "engineering", "career", "resources", "mentoring"]
 ---
+
+I [mentor new and aspiring PMs through MentorCruise](https://mentorcruise.com/mentor/kristynazackova/?utm_source=kristynazackova.com&utm_medium=blog&utm_campaign=tech-fluency-for-pms), and the same friction keeps surfacing: when people go looking for a single, scannable resource that demystifies the tech vocabulary a PM actually hears on the job, they can't find one. Most content either assumes you already know the jargon, or drags you into a CS curriculum. So I wrote this.
+
+### Why this matters
+
+Tech fluency isn't a nice-to-have. A 2025 [cross-sector study of U.S. startups](https://www.researchgate.net/publication/394617492_The_Role_of_Technical_Product_Managers_in_Scaling_Cloud-Native_Applications_A_Cross-Sector_Study_of_US_Startups) found that organizations with technically fluent product managers **scale 2.3× faster and see 67% higher customer satisfaction** during rapid growth phases. A recent [industry analysis by Aakash Gupta](https://www.aakashg.com/product-manager-requirements/) estimates that PMs who understand the tech stack prevent roughly **62% of the scope creep** that derails projects — against a baseline where [52% of projects face scope creep in the first place](https://www.pmi.org/learning/library/top-five-causes-scope-creep-6675), per PMI.
 
 You don't need to code to work with engineers well — you need to understand the shape of their world. The goal of this guide isn't to turn you into a developer. It's to give you enough vocabulary and context that you can follow a technical conversation, ask good questions, and earn credibility by showing you've done the homework.
 
@@ -57,7 +63,7 @@ Read it once through. If anyone uses a term you don't recognize in the wild, the
 
 **HTTP / HTTPS** — The language computers use to exchange messages on the web. HTTPS is the same thing, encrypted. Every URL you visit is an HTTP(S) request under the hood.
 
-**REST API** — The most common style of web API. Organized around "resources" (users, orders, posts) you can create, read, update, or delete using standard HTTP verbs.
+**[REST API](https://developer.mozilla.org/en-US/docs/Glossary/REST)** — The most common style of web API. Organized around "resources" (users, orders, posts) you can create, read, update, or delete using standard HTTP verbs.
 
 **Endpoint** — A specific URL on an API that does one specific thing. `/users/123` is an endpoint that returns info about user 123.
 
@@ -79,13 +85,13 @@ Read it once through. If anyone uses a term you don't recognize in the wild, the
 
 **Repository** *("repo")* — A project's codebase, plus its entire history of changes. Usually hosted on GitHub or GitLab.
 
-**Git** — The version control system nearly every software team uses. It tracks every change ever made to the code and lets many engineers work in parallel without stepping on each other.
+**[Git](https://git-scm.com/about)** — The version control system nearly every software team uses. It tracks every change ever made to the code and lets many engineers work in parallel without stepping on each other.
 
 **Commit** — A saved, labeled change to the code. Think of it as one entry in the project's diary.
 
 **Branch** — A parallel copy of the codebase where an engineer works on a feature without affecting anyone else. When it's ready, they *merge* it back.
 
-**Pull Request (PR)** *(GitLab calls it MR — Merge Request)* — A proposal to merge one branch into another. It's where code review happens: other engineers comment, suggest changes, and eventually approve it.
+**[Pull Request (PR)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)** *(GitLab calls it MR — Merge Request)* — A proposal to merge one branch into another. It's where code review happens: other engineers comment, suggest changes, and eventually approve it.
 
 > **Why PMs care:** *"Is the PR merged?"* is how you find out if a feature is actually, truly done.
 
@@ -183,7 +189,7 @@ Read it once through. If anyone uses a term you don't recognize in the wild, the
 
 **Authentication vs Authorization** *("authN vs authZ")* — **Authentication** = who are you? (logging in). **Authorization** = what are you allowed to do? (permissions). Getting these mixed up in a meeting is a giveaway.
 
-**OAuth / SSO** — **OAuth** is the protocol behind "Sign in with Google / Apple." **SSO** (Single Sign-On) lets employees use one login across many internal tools.
+**OAuth / SSO** — **[OAuth](https://oauth.net/2/)** is the protocol behind "Sign in with Google / Apple." **SSO** (Single Sign-On) lets employees use one login across many internal tools.
 
 **Encryption at Rest vs In Transit** — **In transit** = encrypted while moving between computers (that's what the S in HTTPS does). **At rest** = encrypted while sitting in the database. Enterprise customers almost always ask for both.
 
@@ -195,7 +201,7 @@ Read it once through. If anyone uses a term you don't recognize in the wild, the
 
 *The rituals of how software teams actually run — you'll probably be asked about these.*
 
-**Agile / Scrum** — **Agile** is a philosophy (ship small, iterate, respond to change). **Scrum** is a specific recipe for doing Agile, with sprints, standups, retros, etc.
+**Agile / Scrum** — **[Agile](https://agilemanifesto.org/)** is a philosophy (ship small, iterate, respond to change). **[Scrum](https://scrumguides.org/scrum-guide.html)** is a specific recipe for doing Agile, with sprints, standups, retros, etc.
 
 **Sprint** — A fixed time window (usually 1–2 weeks) in which the team commits to finishing a specific set of work.
 
@@ -211,7 +217,7 @@ Read it once through. If anyone uses a term you don't recognize in the wild, the
 
 **Backlog & Grooming** — The **backlog** is the prioritized list of everything the team *could* work on next. **Grooming** (or "refinement") is the recurring meeting where the PM and team review and sharpen upcoming stories.
 
-**MVP** *(Minimum Viable Product)* — The smallest version of something that proves or disproves the core hypothesis. Not "the cheapest first version" — the *least* you can build to *learn*.
+**MVP** *(Minimum Viable Product)* — The smallest version of something that proves or disproves the core hypothesis. Not "the cheapest first version" — the *least* you can build to *learn*. See Eric Ries's [original framing in *The Lean Startup*](https://theleanstartup.com/principles).
 
 ## Red Flags to Avoid
 
@@ -248,4 +254,15 @@ Read it once through. If anyone uses a term you don't recognize in the wild, the
 
 You don't need to know everything. You need to know enough to listen well, ask sharp questions, and earn the right to be in the room. You already have the hardest part — curiosity.
 
-Good luck.
+Good luck — and if you want a sparring partner to level up faster, [I mentor on MentorCruise](https://mentorcruise.com/mentor/kristynazackova/?utm_source=kristynazackova.com&utm_medium=blog&utm_campaign=tech-fluency-for-pms).
+
+---
+
+## Sources and further reading
+
+- *[The Role of Technical Product Managers in Scaling Cloud-Native Applications: A Cross-Sector Study of U.S. Startups](https://www.researchgate.net/publication/394617492_The_Role_of_Technical_Product_Managers_in_Scaling_Cloud-Native_Applications_A_Cross-Sector_Study_of_US_Startups)* — IJSRMT, 2025. Source of the 2.3× scaling and 67% CSAT figures.
+- Aakash Gupta, *[The Real Product Manager Requirements: Your 2026 Hiring Blueprint](https://www.aakashg.com/product-manager-requirements/)* — source of the 62% scope-creep figure.
+- PMI, *[Top Five Causes of Scope Creep](https://www.pmi.org/learning/library/top-five-causes-scope-creep-6675)* — baseline scope-creep data.
+- *[The Agile Manifesto](https://agilemanifesto.org/)* and *[The Scrum Guide](https://scrumguides.org/scrum-guide.html)* — canonical definitions.
+- Eric Ries, *[The Lean Startup](https://theleanstartup.com/principles)* — origin of the MVP concept.
+- *[Git — About](https://git-scm.com/about)*, *[GitHub: About Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)*, *[MDN: REST](https://developer.mozilla.org/en-US/docs/Glossary/REST)*, *[OAuth 2.0](https://oauth.net/2/)* — engineering-side references.
