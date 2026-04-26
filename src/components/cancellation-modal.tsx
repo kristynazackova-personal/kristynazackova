@@ -109,11 +109,11 @@ function CancellationModalContent({
               id={titleId}
               className="text-xl font-semibold text-gray-900 sm:text-2xl"
             >
-              Before you go &mdash; why are you leaving?
+              We hate to see you go!
             </h2>
             <p className="mt-2 text-sm text-gray-600">
-              Your feedback helps me make Conversation Lens better. Pick
-              whatever applies.
+              Help us understand what we can do better for our clients. Share
+              why you are leaving:
             </p>
           </div>
           <button
