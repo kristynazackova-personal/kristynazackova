@@ -18,14 +18,14 @@
     actually need. Signed personally by Kristyna Zackova (founder).
 
   DYNAMIC VARIABLES:
-    LOGO_URL          - Absolute URL to the Conversation Lens logo
-                        (e.g. https://conversationlens.com/logo.png).
-                        Should be a transparent PNG, ~320px wide for
-                        retina rendering at the displayed 160px.
     CALL_BOOKING_URL  - URL to the booking page for the 15-min call
     FEEDBACK_FORM_URL - URL to the feedback form
     UNSUBSCRIBE_URL   - SendGrid unsubscribe link (or {{{unsubscribe}}})
     COMPANY_ADDRESS   - Postal address required for CAN-SPAM compliance
+
+  STATIC ASSETS:
+    Logo - https://conversationlens.com/logo.png (hardcoded in
+    header and footer; no dynamic_template_data field needed)
 -->
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
@@ -61,7 +61,7 @@
             <tr>
               <td class="px" align="center" style="padding:40px 48px 24px 48px;">
                 <a href="https://conversationlens.com" style="text-decoration:none; border:0;">
-                  <img src="{{LOGO_URL}}" alt="Conversation Lens" width="160" height="auto" style="display:block; border:0; outline:none; text-decoration:none; max-width:160px; height:auto;" />
+                  <img src="https://conversationlens.com/logo.png" alt="Conversation Lens" width="160" height="auto" style="display:block; border:0; outline:none; text-decoration:none; max-width:160px; height:auto;" />
                 </a>
               </td>
             </tr>
@@ -160,7 +160,7 @@
             <tr>
               <td class="px" align="center" style="padding:24px 48px 8px 48px; border-top:1px solid #e5e7eb;">
                 <a href="https://conversationlens.com" style="text-decoration:none; border:0;">
-                  <img src="{{LOGO_URL}}" alt="Conversation Lens" width="100" height="auto" style="display:block; border:0; outline:none; text-decoration:none; max-width:100px; height:auto; opacity:0.6;" />
+                  <img src="https://conversationlens.com/logo.png" alt="Conversation Lens" width="100" height="auto" style="display:block; border:0; outline:none; text-decoration:none; max-width:100px; height:auto; opacity:0.6;" />
                 </a>
               </td>
             </tr>
