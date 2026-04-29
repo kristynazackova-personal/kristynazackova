@@ -12,10 +12,11 @@ export default function BlogPage() {
 
   return (
     <div className="max-w-[800px] mx-auto px-6 py-24">
-      <h1 className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl font-semibold tracking-tight mb-3">
-        Writing
+      <p className="mono-caption mb-4">● 03 — Writing</p>
+      <h1 className="text-4xl sm:text-[56px] font-medium tracking-[-0.03em] leading-[1.02] mb-4" style={{ color: "var(--color-ink)" }}>
+        A path, <span style={{ color: "var(--color-accent)" }}>not a ladder</span>.
       </h1>
-      <p className="text-muted text-lg mb-16">
+      <p className="text-[18px] leading-[1.5] mb-16" style={{ color: "var(--color-mute)" }}>
         Occasional thoughts on product, technology, and building things.
       </p>
 
@@ -27,10 +28,11 @@ export default function BlogPage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group block py-6 border-b border-border/60 hover:bg-accent-bg/50 -mx-4 px-4 rounded-lg transition-all duration-250"
+              className="card-lift group block p-5 -mx-4 rounded-[20px] transition-all"
+              style={{ background: "var(--color-card)", border: "1px solid var(--color-rule)" }}
             >
-              <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-0">
-                <time className="text-sm text-muted font-mono w-36 shrink-0">
+              <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
+                <time className="mono-caption w-36 shrink-0">
                   {new Date(post.date).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "short",
@@ -38,10 +40,10 @@ export default function BlogPage() {
                   })}
                 </time>
                 <div>
-                  <h2 className="font-[family-name:var(--font-serif)] text-xl font-semibold group-hover:text-accent transition-colors duration-250">
+                  <h2 className="text-[22px] font-medium tracking-[-0.025em] leading-[1.2] group-hover:text-[color:var(--color-accent)] transition-colors duration-200" style={{ color: "var(--color-ink)" }}>
                     {post.title}
                   </h2>
-                  <p className="text-sm text-muted mt-1">
+                  <p className="text-sm mt-1" style={{ color: "var(--color-mute)" }}>
                     {post.description}
                   </p>
                 </div>

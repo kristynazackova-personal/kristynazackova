@@ -43,19 +43,19 @@ export default async function BlogPostPage({ params }: Props) {
     <article className="max-w-[700px] mx-auto px-6 py-24">
       <Link
         href="/blog"
-        className="text-sm text-muted hover:text-accent transition-colors duration-250 mb-14 inline-block"
+        className="mono-caption mb-14 inline-block hover:text-[color:var(--color-accent)] transition-colors duration-200"
       >
-        &larr; Back to writing
+        ← Back to writing
       </Link>
 
       <header className="mb-12">
-        <h1 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-semibold tracking-tight leading-tight mb-4">
+        <h1 className="text-3xl sm:text-[40px] font-medium tracking-[-0.03em] leading-[1.1] mb-4" style={{ color: "var(--color-ink)" }}>
           {post.title}
         </h1>
         <div className="flex flex-wrap items-center gap-4">
-          <span className="text-sm" style={{ color: "#4B5563" }}>By Kristyna Zackova</span>
-          <span style={{ color: "rgba(0,0,0,0.2)" }}>&middot;</span>
-          <time className="text-sm text-muted font-mono">
+          <span className="text-sm" style={{ color: "var(--color-mute)" }}>By Kristyna Zackova</span>
+          <span style={{ color: "var(--color-rule)" }}>·</span>
+          <time className="mono-caption">
             {new Date(post.date).toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",
@@ -67,7 +67,8 @@ export default async function BlogPostPage({ params }: Props) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2.5 py-0.5 text-xs font-medium bg-accent-bg text-accent rounded-full"
+                  className="px-2.5 py-0.5 text-xs font-medium rounded-full"
+                  style={{ background: "rgba(168,50,74,0.08)", color: "var(--color-accent)" }}
                 >
                   {tag}
                 </span>
@@ -81,9 +82,9 @@ export default async function BlogPostPage({ params }: Props) {
         <MDXRemote source={post.content} />
       </div>
 
-      <div className="mt-12 pt-8 flex items-center gap-3" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
+      <div className="mt-12 pt-8 flex items-center gap-3" style={{ borderTop: "1px solid var(--color-rule)" }}>
         <LikeButton slug={slug} />
-        <span className="text-xs" style={{ color: "#9CA3AF" }}>Found this useful?</span>
+        <span className="text-xs" style={{ color: "var(--color-mute)" }}>Found this useful?</span>
       </div>
     </article>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display, Space_Grotesk } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Link from "next/link";
@@ -7,8 +7,6 @@ import "./globals.css";
 
 const geist = Geist({ variable: "--font-geist", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
-const playfair = Playfair_Display({ variable: "--font-playfair", subsets: ["latin"] });
-const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -71,20 +69,46 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${geistMono.variable} ${playfair.variable} ${spaceGrotesk.variable} h-full antialiased`}
+      className={`${geist.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col" style={{ background: "#F8F8F7", color: "#000000" }}>
-        {/* Nav */}
-        <nav style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
-          <div className="max-w-[1100px] mx-auto px-4 sm:px-6 h-12 flex items-center justify-between">
-            <Link href="/" className="text-xs font-bold tracking-widest uppercase" style={{ color: "#000" }}>
-              KZ
-            </Link>
-            <div className="flex items-center gap-4 sm:gap-6">
-              <Link href="/#systems" className="hidden sm:inline text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Ventures</Link>
-              <Link href="/#experience" className="hidden sm:inline text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Experience</Link>
-              <Link href="/blog" className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100" style={{ color: "#4B5563" }}>Writing</Link>
-              <a href="mailto:kristynazackova@gmail.com" className="text-xs font-medium uppercase tracking-wider px-3 py-1.5 rounded-md transition-all duration-100 hover:bg-black/5" style={{ color: "#000" }}>
+      <body className="min-h-full flex flex-col" style={{ background: "var(--color-bg)", color: "var(--color-ink)" }}>
+        {/* Floating pill nav — sticky, glass-blur */}
+        <nav className="sticky top-4 z-40 px-4 sm:px-6">
+          <div className="max-w-[1100px] mx-auto flex justify-center">
+            <div className="glass-pill flex items-center gap-1 px-2 py-1.5" style={{ borderRadius: "var(--radius-pill)" }}>
+              <Link
+                href="/"
+                className="px-3 py-1.5 text-[12px] font-medium tracking-tight rounded-full transition-colors duration-200"
+                style={{ color: "var(--color-ink)" }}
+              >
+                KZ
+              </Link>
+              <Link
+                href="/#systems"
+                className="hidden sm:inline-block px-3 py-1.5 text-[12px] font-medium tracking-tight rounded-full transition-colors duration-200 hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-bg)]"
+                style={{ color: "var(--color-mute)" }}
+              >
+                Work
+              </Link>
+              <Link
+                href="/#experience"
+                className="hidden sm:inline-block px-3 py-1.5 text-[12px] font-medium tracking-tight rounded-full transition-colors duration-200 hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-bg)]"
+                style={{ color: "var(--color-mute)" }}
+              >
+                Experience
+              </Link>
+              <Link
+                href="/blog"
+                className="px-3 py-1.5 text-[12px] font-medium tracking-tight rounded-full transition-colors duration-200 hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-bg)]"
+                style={{ color: "var(--color-mute)" }}
+              >
+                Writing
+              </Link>
+              <a
+                href="mailto:kristynazackova@gmail.com"
+                className="px-3 py-1.5 text-[12px] font-medium tracking-tight rounded-full transition-colors duration-200 hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-bg)]"
+                style={{ color: "var(--color-mute)" }}
+              >
                 Contact
               </a>
             </div>
@@ -94,19 +118,19 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
 
         {/* Footer */}
-        <footer className="mt-8" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
-          <div className="max-w-[1100px] mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style={{ color: "#4B5563" }}>
-            <span>&copy; {new Date().getFullYear()} Kristyna Zackova</span>
-            <div className="flex items-center flex-wrap justify-center gap-4 sm:gap-5">
-              <a href="https://www.linkedin.com/in/k-zackova/?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-all duration-100" aria-label="LinkedIn">
+        <footer className="mt-8" style={{ borderTop: "1px solid var(--color-rule)" }}>
+          <div className="max-w-[1100px] mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ color: "var(--color-mute)" }}>
+            <span className="mono-caption">© {new Date().getFullYear()} Kristýna Žáčková · Design system v1</span>
+            <div className="flex items-center flex-wrap justify-center gap-4 sm:gap-5 text-[12px]">
+              <a href="https://www.linkedin.com/in/k-zackova/?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:text-[color:var(--color-ink)]" aria-label="LinkedIn">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               </a>
-              <a href="https://x.com/zackovak?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-all duration-100 flex items-center gap-1">
+              <a href="https://x.com/zackovak?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:text-[color:var(--color-ink)] flex items-center gap-1">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               </a>
-              <a href="https://mentorcruise.com/mentor/kristynazackova/?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">Mentorship</a>
-              <a href="https://conversationlens.com?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ConversationLens</a>
-              <a href="https://www.threadlift.io?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ThreadLift</a>
+              <a href="https://mentorcruise.com/mentor/kristynazackova/?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:text-[color:var(--color-ink)] hover:underline">Mentorship</a>
+              <a href="https://conversationlens.com?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:text-[color:var(--color-ink)] hover:underline">ConversationLens</a>
+              <a href="https://www.threadlift.io?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:text-[color:var(--color-ink)] hover:underline">ThreadLift</a>
             </div>
           </div>
         </footer>

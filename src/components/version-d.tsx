@@ -106,7 +106,7 @@ export default function VersionD() {
     <div
       data-theme="d"
       className="min-h-full flex flex-col"
-      style={{ background: "#F8F8F7", color: "#000000" }}
+      style={{ background: "var(--color-bg)", color: "var(--color-ink)" }}
     >
       <div className="relative z-10">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
@@ -114,16 +114,16 @@ export default function VersionD() {
           {/* Hero */}
           <section
             className="pt-16 sm:pt-28 pb-16 sm:pb-24 mb-12 sm:mb-24 relative"
-            style={{ background: "radial-gradient(circle at 30% 40%, #ffffff 0%, #f7f7f7 60%, #f3f3f3 100%)" }}
           >
+            <p className="mono-caption mb-6 animate-[fadeSlideIn_400ms_ease-out_both]">● 00 — Hello</p>
             <div className="relative grid grid-cols-12 items-center">
               {/* Text block */}
               <div className="col-span-12 md:col-span-7 ml-0 max-w-[680px]">
                 <h1
-                  className="text-[36px] sm:text-[48px] md:text-[64px] leading-[1.08] tracking-[-0.02em] font-bold text-black animate-[fadeSlideIn_400ms_ease-out_both]"
-                  style={{ transform: "translateX(-4px)" }}
+                  className="text-[36px] sm:text-[56px] md:text-[72px] leading-[0.95] tracking-[-0.035em] font-medium animate-[fadeSlideIn_400ms_ease-out_both]"
+                  style={{ color: "var(--color-ink)", transform: "translateX(-2px)" }}
                 >
-                  Turning complex reality into simple products.
+                  Turning complex reality into <span style={{ color: "var(--color-accent)" }}>simple</span> products.
                 </h1>
                 <div className="mt-5 flex items-start gap-3 sm:gap-4 animate-[fadeSlideIn_400ms_ease-out_100ms_both]">
                   <img
@@ -133,22 +133,22 @@ export default function VersionD() {
                     style={{ border: "2px solid rgba(0,0,0,0.06)" }}
                   />
                   <div className="space-y-0.5 sm:space-y-1">
-                    <div className="text-[15px] sm:text-[16px] font-medium text-black/80">
+                    <div className="text-[15px] sm:text-[16px] font-medium" style={{ color: "var(--color-ink)" }}>
                       Kristyna Zackova
                     </div>
-                    <div className="text-[13px] sm:text-[14px] text-gray-500">
-                      Principal Product Manager @ Inmar Intelligence & Founder of <a href="https://conversationlens.com?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-150">ConversationLens</a>
+                    <div className="text-[13px] sm:text-[14px]" style={{ color: "var(--color-mute)" }}>
+                      Principal Product Manager @ Inmar Intelligence & Founder of <a href="https://conversationlens.com?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="hover:text-[color:var(--color-accent)] transition-colors duration-200">ConversationLens</a>
                     </div>
                   </div>
                 </div>
                 <div className="mt-6 flex items-center gap-6 animate-[fadeSlideIn_400ms_ease-out_150ms_both]">
-                  <a href="https://www.linkedin.com/in/k-zackova/?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-black transition-colors duration-150" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/in/k-zackova/?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="hover:text-[color:var(--color-ink)] transition-colors duration-200" style={{ color: "var(--color-mute)" }} aria-label="LinkedIn">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                   </a>
-                  <a href="https://x.com/zackovak?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-black transition-colors duration-150">
+                  <a href="https://x.com/zackovak?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="hover:text-[color:var(--color-ink)] transition-colors duration-200" style={{ color: "var(--color-mute)" }}>
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                   </a>
-                  <a href="#systems" className="text-sm text-gray-500 hover:text-black transition-colors duration-150">
+                  <a href="#systems" className="text-sm hover:text-[color:var(--color-ink)] transition-colors duration-200" style={{ color: "var(--color-mute)" }}>
                     View Work &darr;
                   </a>
                 </div>
@@ -164,10 +164,8 @@ export default function VersionD() {
           {/* Ventures */}
           <section id="systems" className="py-14">
             <div className="flex items-baseline justify-between mb-8">
-              <h2 className="text-xs font-bold uppercase tracking-widest" style={{ color: "#4B5563" }}>
-                Ventures
-              </h2>
-              <span className="text-xs font-mono" style={{ color: "#4B5563" }}>{ventures.length} projects</span>
+              <h2 className="mono-caption">● 01 — Selected work</h2>
+              <span className="mono-caption">{ventures.length} entries</span>
             </div>
             <div className="space-y-3">
               {ventures.map((v) => (
@@ -176,43 +174,73 @@ export default function VersionD() {
             </div>
           </section>
 
-          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)" }} />
+          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, var(--color-rule), transparent)" }} />
 
           {/* Experience */}
           <section id="experience" className="py-14">
-            <h2 className="text-xs font-bold uppercase tracking-widest mb-8" style={{ color: "#4B5563" }}>
-              Experience
-            </h2>
+            <div className="flex items-baseline justify-between mb-8">
+              <h2 className="mono-caption">● 02 — Experience</h2>
+              <span className="mono-caption">{experience.length} roles</span>
+            </div>
             <div className="space-y-0">
-              {experience.map((e, i) => (
-                <div key={i} className="py-5 border-t first:border-t-0 grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 md:items-baseline" style={{ borderColor: "rgba(0,0,0,0.04)" }}>
-                  <div className="md:col-span-2">
-                    <span className="text-xs font-mono font-semibold" style={{ color: "#4B5563" }}>{e.period}</span>
+              {experience.map((e, i) => {
+                const isNow = e.period.toLowerCase().includes("present");
+                return (
+                  <div key={i} className="py-5 border-t first:border-t-0 grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 md:items-baseline" style={{ borderColor: "var(--color-rule)" }}>
+                    <div className="md:col-span-2 flex items-center gap-2">
+                      <span className="mono-caption">{e.period}</span>
+                      {isNow && (
+                        <span
+                          className="inline-flex items-center gap-1.5 font-mono uppercase"
+                          style={{
+                            background: "var(--color-accent)",
+                            color: "#fff",
+                            fontSize: "9px",
+                            letterSpacing: "0.14em",
+                            padding: "3px 10px",
+                            borderRadius: "var(--radius-pill)",
+                            fontWeight: 600,
+                          }}
+                        >
+                          <span className="pulse-led" style={{ background: "#fff" }} />
+                          NOW
+                        </span>
+                      )}
+                    </div>
+                    <div className="md:col-span-4">
+                      <p className="text-[16px] font-medium tracking-[-0.01em]" style={{ color: "var(--color-ink)" }}>{e.role}</p>
+                      <p className="text-xs font-medium" style={{ color: "var(--color-accent)" }}>{e.company}</p>
+                    </div>
+                    <div className="md:col-span-6 mt-1 md:mt-0">
+                      <p className="mono-caption mb-1">{e.scope}</p>
+                      <p className="text-sm leading-[1.55]" style={{ color: "var(--color-mute)" }}>{e.description}</p>
+                    </div>
                   </div>
-                  <div className="md:col-span-4">
-                    <p className="text-sm font-bold">{e.role}</p>
-                    <p className="text-xs font-medium" style={{ color: "#800020" }}>{e.company}</p>
-                  </div>
-                  <div className="md:col-span-6 mt-1 md:mt-0">
-                    <p className="text-xs font-mono mb-1" style={{ color: "#4B5563" }}>{e.scope}</p>
-                    <p className="text-sm" style={{ color: "#4B5563" }}>{e.description}</p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </section>
 
-          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)" }} />
+          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, var(--color-rule), transparent)" }} />
 
           {/* Writing */}
           <section className="py-14">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
-                <h2 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4B5563" }}>Writing</h2>
-                <p className="text-xs" style={{ color: "#6B7280" }}>Thoughts on product, systems, and technology.</p>
+                <h2 className="mono-caption mb-2">● 03 — Writing</h2>
+                <p className="text-[16px]" style={{ color: "var(--color-mute)" }}>Thoughts on product, systems, and technology.</p>
               </div>
-              <Link href="/blog" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5 self-start sm:self-auto shrink-0" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
-                Read &rarr;
+              <Link
+                href="/blog"
+                className="self-start sm:self-auto shrink-0 inline-flex items-center text-sm font-medium transition-transform duration-200 hover:-translate-y-0.5"
+                style={{
+                  background: "var(--color-ink)",
+                  color: "var(--color-bg)",
+                  padding: "14px 22px",
+                  borderRadius: "var(--radius-pill)",
+                }}
+              >
+                Read writing →
               </Link>
             </div>
           </section>
@@ -221,8 +249,8 @@ export default function VersionD() {
           <section className="py-14">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
-                <h2 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4B5563" }}>Mentorship</h2>
-                <p className="text-xs" style={{ color: "#6B7280" }}>Product strategy, AI, systems thinking, career growth. 7-day free trial.</p>
+                <h2 className="mono-caption mb-2">● 04 — Mentorship</h2>
+                <p className="text-[16px]" style={{ color: "var(--color-mute)" }}>Product strategy, AI, systems thinking, career growth. 7-day free trial.</p>
               </div>
               <a
                 href="https://mentorcruise.com/mentor/kristynazackova/?source=embed"
@@ -239,22 +267,28 @@ export default function VersionD() {
             </div>
           </section>
 
-          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)" }} />
+          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, var(--color-rule), transparent)" }} />
 
           {/* Capabilities */}
           <section className="py-14">
-            <h2 className="text-xs font-bold uppercase tracking-widest mb-8" style={{ color: "#4B5563" }}>
-              Capabilities
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+            <h2 className="mono-caption mb-8">● 05 — Capabilities</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {Object.entries(grouped).map(([category, items]) => (
-                <div key={category}>
-                  <p className="text-xs font-mono font-bold mb-3" style={{ color: "#800020" }}>{category}</p>
+                <div
+                  key={category}
+                  className="card-lift p-5"
+                  style={{
+                    background: "var(--color-card)",
+                    border: "1px solid var(--color-rule)",
+                    borderRadius: "var(--radius-lg)",
+                  }}
+                >
+                  <p className="mono-caption mb-3" style={{ color: "var(--color-accent)" }}>{category}</p>
                   <div className="space-y-2">
                     {items.map((item) => (
                       <div key={item} className="flex items-center gap-2.5">
-                        <div className="w-1 h-1 rounded-full" style={{ background: "#000" }} />
-                        <span className="text-sm" style={{ color: "#4B5563" }}>{item}</span>
+                        <div className="w-1 h-1 rounded-full" style={{ background: "var(--color-ink)" }} />
+                        <span className="text-sm" style={{ color: "var(--color-ink)" }}>{item}</span>
                       </div>
                     ))}
                   </div>
@@ -263,17 +297,28 @@ export default function VersionD() {
             </div>
           </section>
 
-          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)" }} />
+          <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, var(--color-rule), transparent)" }} />
 
           {/* Contact */}
           <section className="py-14">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
-                <h2 className="text-sm font-bold mb-1">Get in touch</h2>
-                <p className="text-xs" style={{ color: "#6B7280" }}>Interested in product, AI, or building something together.</p>
+                <h2 className="mono-caption mb-2">● 06 — Contact</h2>
+                <p className="text-[18px] leading-[1.5] max-w-[420px]" style={{ color: "var(--color-ink)" }}>
+                  Interested in product, AI, or building something <span style={{ color: "var(--color-accent)" }}>together</span>.
+                </p>
               </div>
-              <a href="mailto:kristynazackova@gmail.com" className="text-xs font-medium uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-100 hover:bg-black/5 self-start sm:self-auto shrink-0" style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}>
-                Email &rarr;
+              <a
+                href="mailto:kristynazackova@gmail.com"
+                className="self-start sm:self-auto shrink-0 inline-flex items-center text-sm font-medium transition-transform duration-200 hover:-translate-y-0.5"
+                style={{
+                  background: "var(--color-accent)",
+                  color: "#fff",
+                  padding: "9px 16px",
+                  borderRadius: "var(--radius-pill)",
+                }}
+              >
+                Book a session →
               </a>
             </div>
           </section>

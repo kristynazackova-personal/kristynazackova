@@ -41,7 +41,7 @@ export default function LikeButton({ slug }: { slug: string }) {
       type="button"
       className="flex items-center gap-2 text-sm transition-all duration-150"
       style={{
-        color: liked ? "#800020" : "#9CA3AF",
+        color: liked ? "var(--color-accent)" : "var(--color-mute)",
         cursor: liked ? "default" : "pointer",
       }}
       aria-label={liked ? "You liked this article" : "Like this article"}

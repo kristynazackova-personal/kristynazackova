@@ -10,7 +10,7 @@ function MediaCarousel({ media }: { media: VentureMedia[] }) {
     <div>
       <p
         className="text-[10px] font-bold font-mono tracking-wider mb-3"
-        style={{ color: "#800020" }}
+        style={{ color: "#a8324a" }}
       >
         PREVIEW
       </p>
@@ -55,7 +55,7 @@ function MediaCarousel({ media }: { media: VentureMedia[] }) {
               )}
             </div>
             {/* Caption */}
-            <p className="text-[10px] text-center mt-2" style={{ color: "#9CA3AF" }}>
+            <p className="text-[10px] text-center mt-2" style={{ color: "var(--color-mute)" }}>
               {m.alt}
             </p>
           </div>
@@ -69,7 +69,7 @@ function MediaCarousel({ media }: { media: VentureMedia[] }) {
               onClick={() => setCurrent(i)}
               className="w-1.5 h-1.5 rounded-full transition-all duration-150"
               style={{
-                background: i === current ? "#800020" : "rgba(0,0,0,0.1)",
+                background: i === current ? "#a8324a" : "rgba(0,0,0,0.1)",
               }}
             />
           ))}
@@ -108,10 +108,10 @@ export default function VentureCard({ venture }: { venture: Venture }) {
 
   return (
     <div
-      className="border rounded-lg transition-all duration-150"
+      className="border card-lift rounded-[24px] transition-all duration-150"
       style={{
-        borderColor: open ? "#000" : "#E5E7EB",
-        background: "#FEFEFE",
+        borderColor: open ? "var(--color-ink)" : "var(--color-rule)",
+        background: "var(--color-card)",
       }}
     >
       {/* Header — always visible */}
@@ -124,8 +124,8 @@ export default function VentureCard({ venture }: { venture: Venture }) {
           <span
             className="text-[10px] font-bold font-mono tracking-wider px-2 py-0.5 rounded shrink-0"
             style={{
-              background: venture.status === "LIVE" ? "#FDF2F4" : "#F3F4F6",
-              color: venture.status === "LIVE" ? "#800020" : "#4B5563",
+              background: venture.status === "LIVE" ? "rgba(168,50,74,0.08)" : "var(--color-card-2)",
+              color: venture.status === "LIVE" ? "#a8324a" : "var(--color-mute)",
             }}
           >
             {venture.status}
@@ -139,7 +139,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
               className="text-[10px] font-medium font-mono tracking-wider px-2 py-1 rounded transition-all duration-100 hover:bg-black/5"
-              style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}
+              style={{ color: "#000", background: "var(--color-card-2)" }}
             >
               VISIT {"\u2197"}
             </a>
@@ -152,7 +152,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
             className="transition-transform duration-150"
             style={{
               transform: open ? "rotate(180deg)" : "rotate(0deg)",
-              color: "#4B5563",
+              color: "var(--color-mute)",
             }}
           >
             <path
@@ -168,7 +168,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
 
       {/* Summary — always visible */}
       <div className="px-5 pb-4 -mt-1">
-        <p className="text-xs leading-[1.5]" style={{ color: "#4B5563" }}>
+        <p className="text-xs leading-[1.5]" style={{ color: "var(--color-mute)" }}>
           {venture.summary}
         </p>
       </div>
@@ -182,16 +182,16 @@ export default function VentureCard({ venture }: { venture: Venture }) {
         }}
       >
         <div ref={contentRef} className="px-5 pb-5">
-          <div className="border-t pt-5" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
+          <div className="border-t pt-5" style={{ borderColor: "var(--color-rule)" }}>
             {/* Why */}
             <div className="mb-5">
               <p
                 className="text-[10px] font-bold font-mono tracking-wider mb-2"
-                style={{ color: "#800020" }}
+                style={{ color: "#a8324a" }}
               >
                 WHY I BUILT THIS
               </p>
-              <p className="text-sm leading-[1.6]" style={{ color: "#4B5563" }}>
+              <p className="text-sm leading-[1.6]" style={{ color: "var(--color-mute)" }}>
                 {venture.why}
               </p>
             </div>
@@ -200,11 +200,11 @@ export default function VentureCard({ venture }: { venture: Venture }) {
             <div className="mb-5">
               <p
                 className="text-[10px] font-bold font-mono tracking-wider mb-2"
-                style={{ color: "#800020" }}
+                style={{ color: "#a8324a" }}
               >
                 WHAT IT DOES
               </p>
-              <p className="text-sm leading-[1.6]" style={{ color: "#4B5563" }}>
+              <p className="text-sm leading-[1.6]" style={{ color: "var(--color-mute)" }}>
                 {venture.description}
               </p>
             </div>
