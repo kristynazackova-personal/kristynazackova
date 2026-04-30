@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "ventures": "Projekty",
+    "experience": "Zkušenosti",
+    "writing": "Psaní",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "mentorship": "Mentoring"
+  },
+  "languageSwitcher": {
+    "label": "Jazyk"
+  },
+  "ventureCard": {
+    "preview": "NÁHLED",
+    "visit": "OTEVŘÍT",
+    "whyILBuiltThis": "PROČ JSEM TO POSTAVILA",
+    "whatItDoes": "CO TO DĚLÁ",
+    "status": {
+      "LIVE": "ŽIVĚ",
+      "QA": "QA",
+      "BETA": "BETA"
+    }
+  },
+  "home": {
+    "heroTitle": "Měním složitou realitu v jednoduché produkty.",
+    "heroRole": "Principal Product Manager v Inmar Intelligence a zakladatelka <brand>ConversationLens</brand>",
+    "viewWork": "Zobrazit práci",
+    "venturesHeading": "Projekty",
+    "venturesCount": "{count, plural, =1 {# projekt} few {# projekty} other {# projektů}}",
+    "experienceHeading": "Zkušenosti",
+    "writingHeading": "Psaní",
+    "writingTagline": "Úvahy o produktech, systémech a technologii.",
+    "writingCta": "Číst",
+    "mentorshipHeading": "Mentoring",
+    "mentorshipTagline": "Produktová strategie, AI, systémové myšlení, kariérní růst. 7denní zkušební verze zdarma.",
+    "capabilitiesHeading": "Schopnosti",
+    "capabilityCategories": {
+      "CORE": "ZÁKLAD",
+      "METHODS": "METODY",
+      "DOMAINS": "OBLASTI"
+    },
+    "capabilityLabels": {
+      "product-strategy": "Produktová strategie",
+      "continuous-discovery": "Continuous Discovery",
+      "go-to-market": "Go-to-Market",
+      "cross-team-leadership": "Vedení napříč týmy",
+      "user-research-ux": "Uživatelský výzkum & UX",
+      "data-analysis": "Datová analýza",
+      "solution-architecture": "Architektura řešení",
+      "customer-journeys": "Zákaznické cesty",
+      "saas": "SaaS",
+      "ai-ml-products": "AI / ML produkty",
+      "martech": "Martech",
+      "agile-scrum": "Agile / Scrum"
+    },
+    "contactHeading": "Ozvěte se",
+    "contactTagline": "Máte zájem o produkty, AI nebo společnou tvorbu něčeho nového.",
+    "contactCta": "Napsat",
+    "ventures": {
+      "conversationlens": {
+        "title": "ConversationLens",
+        "summary": "AI platforma analyzující konverzace párů, která přináší vhled do vztahů.",
+        "why": "Viděla jsem trvalou mezeru v tom, jak lidé chápou a zlepšují své vztahy. Terapie může být cenná, ale je často drahá, obtížně dostupná a nezasahuje do každodenních interakcí, kde se většina vztahové dynamiky odehrává. Chtěla jsem postavit systém, který přinese více jasnosti do těchto každodenních momentů — pomáhá lidem lépe rozumět tomu, jak komunikují, jak se tvoří vzorce a kde vzniká tření.",
+        "description": "ConversationLens analyzuje skutečné konverzace (text, audio nebo přepisy) a identifikuje komunikační vzorce, emoční dynamiku a opakující se body napětí. Cílem není nahradit terapii, ale doplnit ji strukturovaným, objektivním vhledem do toho, jak lidé komunikují, viditelností vzorců napříč časem (ne jen v izolovaných momentech) a praktickými, evidence-based návrhy na zlepšení interakcí. Platforma kombinuje analýzu konverzace, AI-vedenou reflexi a hlasová sezení do jediného systému navrženého tak, aby vhled do vztahů byl kontinuální a dostupný. V provozu s aktivními uživateli od listopadu 2025."
+      },
+      "threadlift": {
+        "title": "ThreadLift",
+        "summary": "Platforma pro social listening a engagement — vyhledává konverzace na Redditu a Quoře a generuje AI návrhy odpovědí.",
+        "why": "Akvizice zákazníků je obtížná, zejména pro začínající firmy. Placená reklama je rychlá, ale drahá, zatímco organický růst a šíření z úst do úst jsou autentičtější, ale jejich budování trvá dlouho a stojí značné úsilí. Viděla jsem příležitost zefektivnit tento střední prostor — pomoci firmám účastnit se skutečných konverzací ve velkém, aniž by ztratily autenticitu. Platformy jako Reddit a Quora už obsahují diskuze s vysokým záměrem, ale najít ty správné a reagovat promyšleně zabere čas. ThreadLift byl postaven, aby tento proces zrychlil, lépe strukturoval a usnadnil škálování.",
+        "description": "ThreadLift identifikuje relevantní konverzace na platformách jako Reddit a Quora a pomáhá vám se do nich efektivně zapojit. Pro každé vlákno generuje kontextové návrhy odpovědí, které před odesláním zkontrolujete a upravíte. Cílem není zapojení automatizovat, ale zefektivnit kvalitní účast. ThreadLift týmům pomáhá zkrátit čas potřebný k nalezení a zapojení do relevantních diskuzí, přispívat způsobem, který je přirozený pro každou platformu, a budovat povědomí prostřednictvím konzistentní, důvěryhodné účasti místo placených kampaní. Je navržen pro zakladatele, marketéry a týmy, které chtějí škálovatelnější přístup k organické distribuci. V provozu od dubna 2026."
+      },
+      "lifemadeeasy": {
+        "title": "Life Made Easy",
+        "summary": "iOS aplikace, která mění biometrická data z Apple Health, Oura Ring a Google Calendar na použitelné zdravotní vhledy.",
+        "why": "Roste zájem o personální optimalizaci zdraví, podpořený postavami jako Bryan Johnson a Andrew Huberman i rychlou adopcí nositelných zařízení. V praxi většina nástrojů buď zaplaví uživatele surovými daty, nebo problém zjednoduší tak, že vhled už není použitelný. Co konzistentně chybělo, byl jasný vztah mezi každodenním chováním a tím, jak se v čase skutečně cítíte. Postavila jsem LifeMadeEasy, aby cílila na tuto mezeru — usnadnila pochopení toho, jak denní akce, rutiny a kontext ovlivňují osobní zdraví, aniž by uživatelé museli interpretovat složitá data sami.",
+        "description": "LifeMadeEasy integruje data ze zdrojů jako Apple Health, Oura Ring a kalendářová aktivita a buduje sjednocený pohled na váš den. Analyzuje tato data a identifikuje vztahy mezi chováním a fyziologickými signály — například jak různé typy dní nebo schůzek korelují s tepovou frekvencí a stresem, zda jsou specifické rutiny spojené s lepším spánkem nebo regenerací a jaké aktivity se obvykle pojí s vyšším nebo nižším HRV v čase. Systém se zaměřuje na vyzdvihování vzorců a korelací srozumitelně a užitečně, místo prezentace pouze surových metrik. AI asistent umožňuje uživatelům zaznamenávat aktivity konverzačně a zkoumat svá data prostřednictvím otázek, zatímco rozhraní časové osy prezentuje denní život jako kontinuální sled událostí a signálů, které lze procházet a opatřovat poznámkami."
+      },
+      "threed-space": {
+        "title": "3D Space",
+        "summary": "Interaktivní 3D vizualizační platforma pro architekturu systémů, časové osy a znalostní grafy.",
+        "why": "Chtěla jsem vidět systémy, které stavím, a znalosti, které shromažďuji, jako živé prostorové struktury, kterými mohu procházet — ne jako ploché dokumenty nebo roztroušené poznámky. Toto je osobní průzkum, ne produkt, ale je v provozu a kdokoli zvědavý si jej může vyzkoušet.",
+        "description": "Interaktivní 3D vizualizační prostředí pro architekturu systémů, časové osy a znalostní grafy. Zmapujte mikroslužbovou architekturu a sledujte tok dat napříč vrstvami, vykreslete historii projektu na spirálovou časovou osu synchronizovanou s Google Calendarem nebo postavte znalostní graf propojující projekty, dovednosti, lidi a nápady ve 3D prostoru. AI asistent vám umožňuje budovat a upravovat vizualizace přirozenou konverzací. Každý prostor je veřejně vložitelný s granulárními ovládacími prvky pro správu — vše konfigurovatelné přes chat. Můžete také trénovat AI na vlastních znalostech a v podstatě chatovat sami se sebou — osobní myšlenkový partner, který zrcadlí, jak uvažujete. Další krok: nechat tyto „klony“ autonomně přebírat skutečnou práci. Postaveno na čistém Three.js, Next.js a PostgreSQL. AI funkce poháněné Claudem; vyvinuto end-to-end pomocí Claude Code. V provozu na lifeos.solutions."
+      }
+    },
+    "experience": {
+      "founder": {
+        "role": "Zakladatelka",
+        "company": "ConversationLens",
+        "period": "2025 — současnost",
+        "scope": "AI inteligence vztahů",
+        "description": "Postavila jsem AI platformu, která analyzuje skutečné konverzace a odhaluje vzorce ve vztazích a komunikaci. Identifikovala jsem mezeru v dostupném, strukturovaném vhledu do vztahů a navrhla produkt, který přetváří nestrukturovanou lidskou interakci na měřitelné signály. Definovala jsem produktovou strategii, architekturu systému a klíčový zážitek end-to-end. Spuštěno v listopadu 2025. Platforma je v provozu s aktivními uživateli a probíhající iterací napříč analytikou, terapií založenou na hlasu a generováním vhledů."
+      },
+      "inmar": {
+        "role": "Senior → Principal Product Manager",
+        "company": "Inmar Intelligence",
+        "period": "2022 — současnost",
+        "scope": "CPG Enterprise řešení",
+        "description": "Definovala a vedla jsem přechod od fragmentovaných produktů k jednotným, multikanálovým systémům pro velké CPG klienty. Navrhovala jsem systémová řešení propojující incentivy, média a spotřebitelská data do soudržných zážitků. Spolupracovala jsem přímo s enterprise klienty na identifikaci problémů s vysokým dopadem a jejich převodu do škálovatelných produktových strategií. Sjednocovala jsem priority napříč více produktovými týmy s důrazem na iniciativy, které zvyšují personalizaci a zlepšují konverzi napříč zákaznickou cestou."
+      },
+      "bazaarvoice": {
+        "role": "Product Manager",
+        "company": "Bazaarvoice",
+        "period": "2019 — 2022",
+        "scope": "Divize Influenster",
+        "description": "Zlepšila jsem výkon a škálovatelnost produktu redesignem klíčových uživatelských toků a budováním interních systémů. Vedla jsem zlepšení UX pro sběr spotřebitelských dat napříč mobilem a webem, čímž jsem zvýšila míru úspěšnosti programu a zkrátila dobu dodání. Postavila jsem interní nástroje, které automatizovaly workflow a umožnily platformě efektivně škálovat."
+      }
+    }
+  }
+}
