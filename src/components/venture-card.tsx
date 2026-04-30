@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 function MediaCarousel({ media }: { media: VentureMedia[] }) {
   const [current, setCurrent] = useState(0);
   const total = media.length;
+  const t = useTranslations("ventureCard");
 
   return (
     <div>
@@ -12,7 +14,7 @@ function MediaCarousel({ media }: { media: VentureMedia[] }) {
         className="text-[10px] font-bold font-mono tracking-wider mb-3"
         style={{ color: "#800020" }}
       >
-        PREVIEW
+        {t("preview")}
       </p>
       <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide">
         {media.map((m, i) => (
@@ -85,11 +87,13 @@ export interface VentureMedia {
   alt: string;
 }
 
+export type VentureStatus = "LIVE" | "QA" | "BETA";
+
 export interface Venture {
   title: string;
   summary: string;
   link: string | null;
-  status: string;
+  status: VentureStatus;
   why: string;
   description: string;
   media: VentureMedia[];
@@ -99,6 +103,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
   const [open, setOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
+  const t = useTranslations("ventureCard");
 
   useEffect(() => {
     if (contentRef.current) {
@@ -128,7 +133,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
               color: venture.status === "LIVE" ? "#800020" : "#4B5563",
             }}
           >
-            {venture.status}
+            {t(`status.${venture.status}`)}
           </span>
         </div>
         <div className="flex items-center gap-3 shrink-0">
@@ -141,7 +146,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
               className="text-[10px] font-medium font-mono tracking-wider px-2 py-1 rounded transition-all duration-100 hover:bg-black/5"
               style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}
             >
-              VISIT {"\u2197"}
+              {t("visit")} {"↗"}
             </a>
           )}
           <svg
@@ -189,7 +194,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
                 className="text-[10px] font-bold font-mono tracking-wider mb-2"
                 style={{ color: "#800020" }}
               >
-                WHY I BUILT THIS
+                {t("whyILBuiltThis")}
               </p>
               <p className="text-sm leading-[1.6]" style={{ color: "#4B5563" }}>
                 {venture.why}
@@ -202,7 +207,7 @@ export default function VentureCard({ venture }: { venture: Venture }) {
                 className="text-[10px] font-bold font-mono tracking-wider mb-2"
                 style={{ color: "#800020" }}
               >
-                WHAT IT DOES
+                {t("whatItDoes")}
               </p>
               <p className="text-sm leading-[1.6]" style={{ color: "#4B5563" }}>
                 {venture.description}
