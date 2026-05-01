@@ -34,14 +34,38 @@ Strategy docs on `claude/monetization-strategy-0oVEw` branch in `docs/`:
 - **Privacy as brand:** aim for E2EE-native posture, not just at-rest encryption. Hire a digital-health privacy lawyer at $30K MRR.
 - **Brooklyn entity strategy:** stay sole proprietor (avoid NYC's 4% UBT). Form LLC + S-corp only above ~$180K profit. Get a Brooklyn-based CPA who has seen UBT before.
 
-## Working style — what works for her
+## How she thinks
 
-- **Data-driven and honest.** Show real numbers. Push back when assumptions are weak. She'll push back when she has more context — that's good, follow her lead.
-- **Iterative and fast.** She refines plans across multiple turns. Don't try to nail it in one shot.
-- **Wants both strategy and execution.** Big-picture analysis paired with concrete, dated, hour-blocked tasks. The strategy docs and the playbook serve different purposes — keep them both.
+- **System-thinker, not tactical operator.** Her four ventures aren't a portfolio — they're four vertical slices of a single platform (conversation + biometric + spatial + distribution). She thinks in arcs (couples → solo → aging → eventually parenting/dating), not in features. Treat everything she ships as part of a long sequence, not a discrete product.
+- **Updates her position fast and without ego.** When the evidence is good, she absorbs it. When the evidence is weak, she pushes back. She's not defending positions — she's looking for the truth. Match that.
+- **Holds vision and operations in the same conversation without losing either.** Don't ask her to pick one mode. She wants strategic framing AND dated weekly tasks in the same answer.
+
+## How she works
+
+- **Data-driven and honest about her own numbers.** "Ads were expensive and I paid more than I received" is her actual framing — she doesn't varnish. Show real numbers. Don't hedge.
+- **Stress-tests by pushing back twice.** When she nudges once, she's checking. When she nudges again with more specificity, she's right and has more conviction than she's leading with. Take the second push seriously and re-examine.
+- **Iterative across turns, fast across abstraction layers.** She'll go from market sizing to Stripe deep-dive to gamification design to tax math in one conversation without losing the thread. Don't try to nail a complete plan in one shot — refine across turns.
 - **Comfortable with bluntness.** "This won't work" beats hedging. Don't soften.
-- **Commits strategic work to the repo.** When producing substantive strategy or planning docs, write them as markdown in `docs/` and commit on the working branch.
-- **Multi-product instinct, needs focus reminders.** She has 4 ventures. She's instinctively expansive. Default to recommending focus over breadth.
+- **Wants durable artifacts, not just chat.** When producing substantive strategy or planning work, write it as markdown in `docs/` and commit on the working branch. She'll re-read the artifact, not the conversation.
+- **Multi-product instinct, needs focus reminders.** She's instinctively expansive. Default to recommending focus over breadth. Watch for the moment she starts "lightly working on" Life Made Easy or 3D Space again — that's the failure mode and worth flagging.
+
+## Her tells
+
+- **Asserts by listing alternatives.** "Or once I make 20K I apply to startup combinators or find investors" reads like a question. When she lists options, she's asking for a weigh-in.
+- **Introduces decisions she's already half-made.** "Maybe I will cut parenting…" usually means she's tested the decision privately and wants confirmation. Engage with the merits, don't reflexively agree.
+- **Mode-switches visibly.** Expansive ("AR + cameras + wearables + everything") when excited about long-term vision; crisp ("1. quit, 2. build, 3. hire") when pragmatic. Match the register she's in.
+- **Returns to the day-job-quitting question more than any other.** That's the actual primary motivation. Whatever plan you help her build, the version she'll execute is the one that maps cleanly to leaving Inmar.
+
+## The unresolved central tension
+
+She's holding two goals that are not yet reconciled: **freedom from the day job** (lifestyle) and **building the category-defining mental-health platform** (venture-scale). The 13-week plan with the day-90 checkpoint is the structure for forcing that decision with data instead of feelings. Don't try to resolve the tension prematurely — protect the checkpoint as the decision moment.
+
+## Risks to flag when relevant
+
+- **Burnout.** Solo + day-job + 25 hrs/week of building + Brooklyn life is the failure pattern that hits ~month 4–5 of a sustained sprint. If she's working >55 hrs/week for 6+ weeks, raise it.
+- **Optimism on retention compounding.** She tends to estimate retention/LTV improvements at the upper end of plausible (3–4×) when realistic is 1.5–2×. If a financial plan depends on the upper estimate, push back.
+- **Solo-ness for the venture-scale path.** She hasn't said "I want a co-founder" out loud yet, but she'll need one for path C. Surface this when relevant — don't avoid it.
+- **Vision creep.** The vision keeps expanding. She consciously cut parenting; there will be more cuts. When she adds something to the long-term roadmap, weigh whether it's load-bearing or scope creep.
 
 ## Technical context
 
