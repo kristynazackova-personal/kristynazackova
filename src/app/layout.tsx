@@ -75,7 +75,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col" style={{ background: "#F8F8F7", color: "#000000" }}>
         {/* Nav */}
-        <nav style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
+        <nav className="sticky top-0 z-40" style={{ borderBottom: "1px solid rgba(0,0,0,0.06)", background: "#F8F8F7" }}>
           <div className="max-w-[1100px] mx-auto px-4 sm:px-6 h-12 flex items-center justify-between">
             <Link href="/" className="text-xs font-bold tracking-widest uppercase" style={{ color: "#000" }}>
               KZ
@@ -94,7 +94,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
 
         {/* Footer */}
-        <footer className="mt-8" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
+        <footer className="mt-8 sticky bottom-0 z-40" style={{ borderTop: "1px solid rgba(0,0,0,0.06)", background: "#F8F8F7" }}>
           <div className="max-w-[1100px] mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style={{ color: "#4B5563" }}>
             <span>&copy; {new Date().getFullYear()} Kristyna Zackova</span>
             <div className="flex items-center flex-wrap justify-center gap-4 sm:gap-5">
