@@ -101,6 +101,106 @@ const grouped = capabilities.reduce((acc, c) => {
   return acc;
 }, {} as Record<string, string[]>);
 
+const MENTORCRUISE_PROFILE_URL =
+  "https://mentorcruise.com/mentor/kristynazackova/?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=testimonials";
+// TODO: swap for Kristyna's ADPList profile URL once available.
+const ADPLIST_PROFILE_URL = "https://adplist.org";
+
+type Testimonial = {
+  quote: string;
+  name: string;
+  role?: string;
+  source: "MentorCruise" | "ADPList";
+  sourceUrl: string;
+};
+
+const featuredTestimonial: Testimonial = {
+  quote:
+    "This was an entirely new experience for me, and I wasn't sure what to expect. I had ideas about where I wanted to go in my professional work, but I didn't know where to start or what assumptions I might be making. What first stood out to me about Kristyna was the breadth of her experience, especially across disciplines I was already interested in. She has been very responsive and worked with me to line out the best direction for me to pursue. She was thorough in the questions she asked, objectively assessed where I was, and has tailored our sessions to help me reach my goals as quickly as possible. Kristyna provides a comfortable but challenging environment and is able to tie new concepts directly into my current work experiences. She is very knowledgeable and has clearly put a lot of effort into helping me achieve my goals. After only a few sessions, those goals feel far more attainable than they did before.",
+  name: "John",
+  role: "Mentee",
+  source: "MentorCruise",
+  sourceUrl: MENTORCRUISE_PROFILE_URL,
+};
+
+const testimonials: Testimonial[] = [
+  {
+    quote:
+      "Kristýna has honestly been one of the best mentors I've met on ADPList. She truly thinks from the mentee's side, and understands how confusing early career decisions can feel, especially in tech, and our conversations always feel genuine and actionable. She's also incredibly organized and always comes prepared for our sessions, which I really respect. As a woman in the industry, she is a true inspiration. Really grateful!",
+    name: "Qingyi Zhi",
+    role: "Product Designer",
+    source: "ADPList",
+    sourceUrl: ADPLIST_PROFILE_URL,
+  },
+  {
+    quote:
+      "I had an outstanding session with Kristýna, who excelled in every aspect of product management and mentorship. Her structured approach and communication skills made complex product management concepts clear and relatable. She provided practical guidance on day-to-day operations which was insightful. Highly recommend, Kristýna!",
+    name: "Patricia Charles",
+    role: "Product Manager",
+    source: "ADPList",
+    sourceUrl: ADPLIST_PROFILE_URL,
+  },
+  {
+    quote:
+      "It was my first mentored session after a while and this is after I pivoted from Engineering into Product Management. Kristyna is highly skilled and qualified in this domain. She was able to navigate me through a situation where I felt stuck. She was able to help me start somewhere because I had multiple things going on in my head. Right now I feel like I have a direction of where to go to figure out what I'm cut out for.",
+    name: "Upasana Dayananda",
+    role: "Product Manager",
+    source: "ADPList",
+    sourceUrl: ADPLIST_PROFILE_URL,
+  },
+];
+
+function Stars() {
+  return (
+    <div className="flex gap-0.5" role="img" aria-label="Rated 5 out of 5">
+      {[0, 1, 2, 3, 4].map((i) => (
+        <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="#800020" aria-hidden="true">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
+function TestimonialCard({ t, featured = false }: { t: Testimonial; featured?: boolean }) {
+  return (
+    <figure
+      className="border rounded-lg p-5 flex flex-col h-full"
+      style={{ borderColor: "#E5E7EB", background: "#FEFEFE" }}
+    >
+      <Stars />
+      <blockquote
+        className={`${featured ? "text-sm sm:text-[15px]" : "text-sm"} leading-[1.6] mt-3 flex-1`}
+        style={{ color: "#374151" }}
+      >
+        &ldquo;{t.quote}&rdquo;
+      </blockquote>
+      <figcaption
+        className="mt-4 pt-4 border-t flex items-center justify-between gap-3"
+        style={{ borderColor: "rgba(0,0,0,0.06)" }}
+      >
+        <div className="min-w-0">
+          <div className="text-xs font-bold truncate">{t.name}</div>
+          {t.role && (
+            <div className="text-[11px] truncate" style={{ color: "#6B7280" }}>
+              {t.role}
+            </div>
+          )}
+        </div>
+        <a
+          href={t.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[10px] font-medium font-mono tracking-wider px-2 py-1 rounded transition-all duration-100 hover:bg-black/5 shrink-0"
+          style={{ color: "#000", background: "rgba(0,0,0,0.03)" }}
+        >
+          via {t.source} {"↗"}
+        </a>
+      </figcaption>
+    </figure>
+  );
+}
+
 export default function VersionD() {
   return (
     <div
@@ -236,6 +336,33 @@ export default function VersionD() {
                   alt="MentorCruise"
                 />
               </a>
+            </div>
+          </section>
+
+          {/* Testimonials */}
+          <section className="py-14">
+            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-8">
+              <div>
+                <h2 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4B5563" }}>Testimonials</h2>
+                <p className="text-xs" style={{ color: "#6B7280" }}>What mentees say after working together.</p>
+              </div>
+              <a
+                href={MENTORCRUISE_PROFILE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-medium uppercase tracking-wider hover:underline transition-all duration-100 shrink-0"
+                style={{ color: "#4B5563" }}
+              >
+                Mentor with me &rarr;
+              </a>
+            </div>
+            <div className="space-y-3">
+              <TestimonialCard t={featuredTestimonial} featured />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                {testimonials.map((t) => (
+                  <TestimonialCard key={t.name} t={t} />
+                ))}
+              </div>
             </div>
           </section>
 
