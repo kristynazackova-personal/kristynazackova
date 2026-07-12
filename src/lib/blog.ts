@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { cache } from "react";
 import matter from "gray-matter";
 
 const POSTS_DIR = path.join(process.cwd(), "src/content/blog");
@@ -13,7 +14,7 @@ export interface Post {
   content: string;
 }
 
-export function getAllPosts(): Post[] {
+export const getAllPosts = cache((): Post[] => {
   if (!fs.existsSync(POSTS_DIR)) return [];
 
   const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".mdx"));
@@ -36,9 +37,9 @@ export function getAllPosts(): Post[] {
   return posts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
-}
+});
 
-export function getPostBySlug(slug: string): Post | null {
+export const getPostBySlug = cache((slug: string): Post | null => {
   const filePath = path.join(POSTS_DIR, `${slug}.mdx`);
   if (!fs.existsSync(filePath)) return null;
 
@@ -53,4 +54,4 @@ export function getPostBySlug(slug: string): Post | null {
     tags: data.tags ?? [],
     content,
   };
-}
+});

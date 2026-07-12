@@ -5,8 +5,6 @@ import type { Metadata } from "next";
 import { MDXRemote } from "@/lib/mdx-remote";
 import LikeButton from "@/components/like-button";
 
-export const dynamic = "force-dynamic";
-
 type Props = {
   params: Promise<{ slug: string }>;
 };

@@ -50,6 +50,7 @@ function MediaCarousel({ media }: { media: VentureMedia[] }) {
                 <img
                   src={m.src}
                   alt={m.alt}
+                  loading="lazy"
                   className="w-full rounded-[22px]"
                 />
               )}
