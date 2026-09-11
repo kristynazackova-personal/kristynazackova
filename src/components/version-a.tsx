@@ -26,10 +26,10 @@ const experience = [
 
 const ventures = [
   {
-    title: "ConversationLens",
+    title: "Selvenn",
     description:
-      "AI-driven platform analyzing couples' conversations to deliver relationship insights. Live with active users.",
-    link: "https://conversationlens.com",
+      "AI life coaching platform that turns conversations, voice sessions, and daily check-ins into personal insight and a guided growth journey across 13 life areas. Live with active users.",
+    link: "https://www.selvenn.com",
   },
   {
     title: "ThreadLift",
@@ -128,7 +128,7 @@ export default function VersionA() {
                 </h3>
                 <div className="space-y-4 text-muted leading-relaxed text-lg">
                   <p>I&apos;m a product leader with a passion for building solutions that connect brands with consumers in meaningful ways. Currently at Inmar Intelligence, I lead CPG enterprise product strategy across multiple Martech roadmaps.</p>
-                  <p>I also founded <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-2 transition-colors underline underline-offset-4">ConversationLens.com</a> and <a href="https://www.threadlift.io" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-2 transition-colors underline underline-offset-4">ThreadLift.io</a>.</p>
+                  <p>I also founded <a href="https://www.selvenn.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-2 transition-colors underline underline-offset-4">Selvenn.com</a> and <a href="https://www.threadlift.io" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-2 transition-colors underline underline-offset-4">ThreadLift.io</a>.</p>
                   <p>Originally from the Czech Republic, I studied international management through the CEMS program in Prague and Calcutta before making my way to New York.</p>
                 </div>
               </div>
@@ -245,7 +245,7 @@ export default function VersionA() {
           <p>&copy; {new Date().getFullYear()} Kristyna Zackova</p>
           <div className="flex items-center gap-6">
             <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
-            <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">ConversationLens</a>
+            <a href="https://www.selvenn.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Selvenn</a>
           </div>
         </div>
       </footer>

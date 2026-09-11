@@ -2,10 +2,10 @@ import Link from "next/link";
 
 const ventures = [
   {
-    title: "ConversationLens",
+    title: "Selvenn",
     description:
-      "AI-driven platform analyzing couples' conversations to deliver relationship insights. Identified a market gap in accessible couple therapy, crafted the product and business strategy, and designed the UX. Live with active users.",
-    link: "https://conversationlens.com",
+      "AI life coaching platform that turns conversations, voice sessions, and daily check-ins into personal insight and a guided growth journey across 13 life areas. Live with active users.",
+    link: "https://www.selvenn.com",
     status: "Live",
   },
   {
@@ -122,8 +122,8 @@ export default function VersionC() {
                   <p>I believe the best products come from deeply understanding the people who use them. My work sits at the intersection of product strategy, user research, and technology — translating complex business problems into solutions that feel simple.</p>
                   <p>
                     Beyond my day job, I build my own products. I founded{" "}
-                    <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-accent transition-colors duration-250">ConversationLens</a>{" "}
-                    to bring AI-powered relationship insights to couples, and{" "}
+                    <a href="https://www.selvenn.com" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-accent transition-colors duration-250">Selvenn</a>{" "}
+                    to bring AI coaching to people&apos;s relationships, goals, and everyday lives, and{" "}
                     <a href="https://www.threadlift.io" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-accent transition-colors duration-250">ThreadLift</a>{" "}
                     to help brands engage authentically in online communities.
                   </p>
@@ -240,7 +240,7 @@ export default function VersionC() {
           <p>&copy; {new Date().getFullYear()} Kristyna Zackova</p>
           <div className="flex items-center gap-6">
             <a href="https://www.linkedin.com/in/k-zackova/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-250">LinkedIn</a>
-            <a href="https://conversationlens.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-250">ConversationLens</a>
+            <a href="https://www.selvenn.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-250">Selvenn</a>
             <a href="https://www.threadlift.io" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-250">ThreadLift</a>
           </div>
         </div>

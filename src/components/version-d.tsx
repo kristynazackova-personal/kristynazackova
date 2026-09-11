@@ -5,20 +5,19 @@ import FloatingObject from "./floating-object";
 
 const ventures: Venture[] = [
   {
-    title: "ConversationLens",
-    summary: "AI-driven platform analyzing couples' conversations to deliver relationship insights.",
-    link: "https://conversationlens.com?utm_source=kristynazackova.com&utm_medium=portfolio",
+    title: "Selvenn",
+    summary: "AI life coaching platform that turns your conversations, voice sessions, and daily check-ins into personal insight and a guided growth journey.",
+    link: "https://www.selvenn.com?utm_source=kristynazackova.com&utm_medium=portfolio",
     status: "LIVE",
-    why: "I saw a consistent gap in how people understand and improve their relationships. While therapy can be valuable, it is often expensive, difficult to access, and not embedded in the day-to-day interactions where most relationship dynamics actually play out. I wanted to build a system that brings more clarity to those everyday moments — helping people better understand how they communicate, how patterns form, and where friction emerges.",
-    description: "ConversationLens analyzes real conversations (text, audio, or transcripts) to identify communication patterns, emotional dynamics, and recurring points of tension. The goal is not to replace therapy, but to complement it by providing structured, objective insight into how people communicate, visibility into patterns across time (not just isolated moments), and practical, evidence-informed suggestions for improving interactions. The platform combines conversation analysis, AI-guided reflection, and voice-based sessions into a single system designed to make relationship insight more continuous and accessible. Live with active users since November 2025.",
+    why: "Despite growing mental health awareness, people still struggle. They struggle to talk to one another, and they struggle to seek support. Even those who find support often need help in the moments between sessions, and until now the only thing filling that gap was a crisis hotline. I wanted to make mental health support more accessible: to people who don't feel comfortable sharing their struggles with another person, to those who have support but lack guidance in the hardest moments that happen outside of a session, and to those who can't afford human support.",
+    description: "Selvenn is an AI life coaching platform for relationships, goals, and everyday life. It started as a conversation-analysis tool for couples and grew into a full coaching platform. Users talk to Lena, the AI coach, through voice sessions and chat, upload files, journal, and complete personalized tasks. Selvenn surfaces insights, explains why those moments happen, and helps users improve, with clear visibility into their progress over the long term. Progress is gamified as a levelled journey that unlocks deeper insights along the way. The vision: Selvenn is an extension of our brain that helps us live mentally and physically better lives. Live with active users since November 2025.",
     media: [
-      { type: "image", src: "/ventures/IMG_6681.jpeg", alt: "Dashboard" },
-      { type: "image", src: "/ventures/IMG_6682.jpeg", alt: "Relationship Journey" },
-      { type: "image", src: "/ventures/IMG_6674.jpeg", alt: "Health Score & Metrics" },
-      { type: "image", src: "/ventures/IMG_6676.jpeg", alt: "AI Therapist Chat" },
-      { type: "image", src: "/ventures/IMG_6677.jpeg", alt: "Features Overview" },
-      { type: "image", src: "/ventures/IMG_6678.jpeg", alt: "Shared Dashboards" },
-      { type: "image", src: "/ventures/IMG_6679.jpeg", alt: "Plans & Pricing" },
+      { type: "image", src: "/ventures/selvenn-today.webp", alt: "Today: weekly focus & journey" },
+      { type: "image", src: "/ventures/selvenn-chat.webp", alt: "Chat with Lena, the AI coach" },
+      { type: "image", src: "/ventures/selvenn-voice.webp", alt: "Live voice coaching session" },
+      { type: "image", src: "/ventures/selvenn-journey.webp", alt: "Growth path across life areas" },
+      { type: "image", src: "/ventures/selvenn-analyze.webp", alt: "Analyze a real conversation" },
+      { type: "image", src: "/ventures/selvenn-resources.webp", alt: "Recommended resources" },
     ],
   },
   {
@@ -59,10 +58,10 @@ const ventures: Venture[] = [
 const experience = [
   {
     role: "Founder",
-    company: "ConversationLens",
+    company: "Selvenn",
     period: "2025 — Present",
-    scope: "AI Relationship Intelligence",
-    description: "Built an AI platform that analyzes real conversations to uncover patterns in relationships and communication. Identified a gap in accessible, structured relationship insight and designed a product that translates unstructured human interaction into measurable signals. Defined product strategy, system architecture, and core experience end-to-end. Launched in November 2025. The platform is live with active users and ongoing iteration across analytics, voice-based therapy, and insight generation.",
+    scope: "AI Life Coaching",
+    description: "Built Selvenn, an AI coaching platform that turns conversations, voice sessions, and daily check-ins into personal insight and guided exercises across 13 life areas. Launched as a couples conversation-analysis tool in November 2025 and expanded the scope to life coaching in 2026. Defined product strategy, system architecture, and the core experience end-to-end; live with active users and ongoing iteration across voice coaching, analytics, and insight generation.",
   },
   {
     role: "Senior \u2192 Principal Product Manager",
@@ -137,7 +136,7 @@ export default function VersionD() {
                       Kristyna Zackova
                     </div>
                     <div className="text-[13px] sm:text-[14px] text-gray-500">
-                      Principal Product Manager @ Inmar Intelligence & Founder of <a href="https://conversationlens.com?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-150">ConversationLens</a>
+                      Principal Product Manager @ Inmar Intelligence & Founder of <a href="https://www.selvenn.com?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-150">Selvenn</a>
                     </div>
                   </div>
                 </div>
