@@ -4,7 +4,7 @@ const ventures = [
   {
     title: "Selvenn",
     description:
-      "AI-driven platform analyzing couples' conversations to deliver relationship insights. Identified a market gap in accessible couple therapy, crafted the product and business strategy, and designed the UX. Live with active users.",
+      "AI life coaching platform that turns conversations, voice sessions, and daily check-ins into personal insight and a guided growth journey across 13 life areas. Live with active users.",
     link: "https://www.selvenn.com",
     status: "Live",
   },
@@ -123,7 +123,7 @@ export default function VersionC() {
                   <p>
                     Beyond my day job, I build my own products. I founded{" "}
                     <a href="https://www.selvenn.com" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-accent transition-colors duration-250">Selvenn</a>{" "}
-                    to bring AI-powered relationship insights to couples, and{" "}
+                    to bring AI coaching to people&apos;s relationships, goals, and everyday lives, and{" "}
                     <a href="https://www.threadlift.io" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-accent transition-colors duration-250">ThreadLift</a>{" "}
                     to help brands engage authentically in online communities.
                   </p>

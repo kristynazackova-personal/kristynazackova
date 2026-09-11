@@ -4,7 +4,7 @@ const ventures = [
   {
     title: "Selvenn",
     description:
-      "AI-driven platform analyzing couples' conversations to deliver relationship insights. Identified a market gap in accessible couple therapy, crafted the product and business strategy, and designed the UX. Live with active users.",
+      "AI life coaching platform that turns conversations, voice sessions, and daily check-ins into personal insight and a guided growth journey across 13 life areas. Live with active users.",
     link: "https://www.selvenn.com",
     status: null,
   },
