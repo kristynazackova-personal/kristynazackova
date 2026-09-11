@@ -101,7 +101,7 @@ function formatDate(iso: string): string {
   });
 }
 
-const CLAMP_CHARS = 420;
+const CLAMP_CHARS = 170;
 
 function Stars() {
   return (
@@ -137,11 +137,11 @@ function TextCard({ review }: { review: TextReview }) {
 
   return (
     <figure
-      className="rounded-lg border p-5 flex flex-col gap-3 h-full w-[300px] sm:w-[340px] shrink-0 snap-start"
+      className="rounded-lg border p-4 flex flex-col gap-2.5 h-full w-[270px] shrink-0 snap-start"
       style={{ borderColor: "#E5E7EB", background: "#FEFEFE" }}
     >
       <Stars />
-      <blockquote className="text-sm leading-[1.6] flex-1" style={{ color: "#374151" }}>
+      <blockquote className="text-[13px] leading-[1.55] flex-1" style={{ color: "#374151" }}>
         {text}
         {isLong && (
           <>
@@ -157,10 +157,10 @@ function TextCard({ review }: { review: TextReview }) {
           </>
         )}
       </blockquote>
-      <figcaption className="pt-3 border-t flex items-end justify-between gap-3" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
+      <figcaption className="pt-2.5 border-t flex items-end justify-between gap-3" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
         <div className="min-w-0">
-          <p className="text-sm font-bold truncate">{review.name}</p>
-          <p className="text-[11px]" style={{ color: "#6B7280" }}>{review.meta} · {formatDate(review.date)}</p>
+          <p className="text-[13px] font-bold truncate">{review.name}</p>
+          <p className="text-[10px] leading-snug" style={{ color: "#6B7280" }}>{review.meta} · {formatDate(review.date)}</p>
         </div>
         <SourceLink source={review.source} />
       </figcaption>
@@ -171,7 +171,7 @@ function TextCard({ review }: { review: TextReview }) {
 function ImageCard({ review }: { review: ImageReview }) {
   return (
     <figure
-      className="rounded-lg border overflow-hidden flex flex-col h-full w-[300px] sm:w-[340px] shrink-0 snap-start"
+      className="rounded-lg border overflow-hidden flex flex-col h-full w-[270px] shrink-0 snap-start"
       style={{ borderColor: "#E5E7EB", background: "#FEFEFE" }}
     >
       <a href={SOURCE_URL[review.source]} target="_blank" rel="noopener noreferrer" className="block">
@@ -184,10 +184,10 @@ function ImageCard({ review }: { review: ImageReview }) {
           style={{ aspectRatio: "3360 / 2480", background: "#1a1a1a" }}
         />
       </a>
-      <figcaption className="p-5 pt-4 flex items-end justify-between gap-3 flex-1">
+      <figcaption className="p-4 pt-3 flex items-end justify-between gap-3 flex-1">
         <div className="min-w-0">
-          <p className="text-sm font-bold truncate">{review.name}</p>
-          <p className="text-[11px]" style={{ color: "#6B7280" }}>{review.meta} · {formatDate(review.date)}</p>
+          <p className="text-[13px] font-bold truncate">{review.name}</p>
+          <p className="text-[10px] leading-snug" style={{ color: "#6B7280" }}>{review.meta} · {formatDate(review.date)}</p>
         </div>
         <SourceLink source={review.source} />
       </figcaption>
@@ -211,32 +211,25 @@ function Chevron({ dir }: { dir: "left" | "right" }) {
 
 export default function MenteeReviews() {
   const stripRef = useRef<HTMLDivElement>(null);
-  const [active, setActive] = useState(0);
-  // Number of distinct scroll positions: once the remaining cards fit in
-  // view, the strip cannot scroll further, so dots / Next stop there.
-  const [pages, setPages] = useState(sortedReviews.length);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
 
   const itemStep = () => {
     const el = stripRef.current;
     const item = el?.querySelector<HTMLElement>("[data-review-item]");
-    return item ? item.offsetWidth + 16 : 356;
+    return item ? item.offsetWidth + 16 : 286;
   };
 
-  const scrollTo = (i: number) => {
-    const el = stripRef.current;
-    if (!el) return;
-    const idx = Math.max(0, Math.min(pages - 1, i));
-    el.scrollTo({ left: idx * itemStep(), behavior: "smooth" });
+  const scrollBy = (dir: -1 | 1) => {
+    stripRef.current?.scrollBy({ left: dir * itemStep(), behavior: "smooth" });
   };
 
   useEffect(() => {
     const el = stripRef.current;
     if (!el) return;
     const measure = () => {
-      const step = itemStep();
-      const maxScroll = el.scrollWidth - el.clientWidth;
-      setPages(Math.max(1, Math.round(maxScroll / step) + 1));
-      setActive(Math.round(el.scrollLeft / step));
+      setAtStart(el.scrollLeft <= 1);
+      setAtEnd(el.scrollLeft >= el.scrollWidth - el.clientWidth - 1);
     };
     measure();
     el.addEventListener("scroll", measure, { passive: true });
@@ -249,68 +242,54 @@ export default function MenteeReviews() {
   }, []);
 
   const arrowBtn =
-    "flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-100 hover:bg-black/5 disabled:opacity-30 disabled:hover:bg-transparent cursor-pointer disabled:cursor-default";
+    "absolute top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-9 h-9 rounded-full border shadow-md transition-all duration-100 hover:bg-black/5 cursor-pointer disabled:opacity-0 disabled:pointer-events-none";
 
   return (
     <div className="mt-8">
-      <div className="flex items-center justify-between gap-3 mb-4">
-        <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 min-w-0">
-          <p className="text-[10px] font-bold font-mono tracking-wider shrink-0" style={{ color: "#800020" }}>
-            WHAT MENTEES SAY
-          </p>
-          <p className="text-[11px]" style={{ color: "#6B7280" }}>
-            All 5-star, newest first. Read them on{" "}
-            <a href={MENTORCRUISE_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-black">MentorCruise</a>
-            {" "}and{" "}
-            <a href={ADPLIST_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-black">ADPList</a>.
-          </p>
-        </div>
-        <div className="flex items-center gap-2 shrink-0">
-          <button
-            type="button"
-            onClick={() => scrollTo(active - 1)}
-            disabled={active <= 0}
-            className={arrowBtn}
-            style={{ borderColor: "#E5E7EB", color: "#4B5563" }}
-            aria-label="Previous review"
-          >
-            <Chevron dir="left" />
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollTo(active + 1)}
-            disabled={active >= pages - 1}
-            className={arrowBtn}
-            style={{ borderColor: "#E5E7EB", color: "#4B5563" }}
-            aria-label="Next review"
-          >
-            <Chevron dir="right" />
-          </button>
-        </div>
+      <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mb-4">
+        <p className="text-[10px] font-bold font-mono tracking-wider shrink-0" style={{ color: "#800020" }}>
+          WHAT MENTEES SAY
+        </p>
+        <p className="text-[11px]" style={{ color: "#6B7280" }}>
+          All 5-star, newest first. Read them on{" "}
+          <a href={MENTORCRUISE_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-black">MentorCruise</a>
+          {" "}and{" "}
+          <a href={ADPLIST_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-black">ADPList</a>.
+        </p>
       </div>
 
-      <div
-        ref={stripRef}
-        className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide items-stretch"
-      >
-        {sortedReviews.map((r, i) => (
-          <div key={i} data-review-item className="shrink-0 flex">
-            {r.kind === "image" ? <ImageCard review={r} /> : <TextCard review={r} />}
-          </div>
-        ))}
-      </div>
+      <div className="relative">
+        <button
+          type="button"
+          onClick={() => scrollBy(-1)}
+          disabled={atStart}
+          className={`${arrowBtn} -left-3 sm:-left-4`}
+          style={{ borderColor: "#E5E7EB", background: "#FFFFFF", color: "#4B5563" }}
+          aria-label="Previous review"
+        >
+          <Chevron dir="left" />
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollBy(1)}
+          disabled={atEnd}
+          className={`${arrowBtn} -right-3 sm:-right-4`}
+          style={{ borderColor: "#E5E7EB", background: "#FFFFFF", color: "#4B5563" }}
+          aria-label="Next review"
+        >
+          <Chevron dir="right" />
+        </button>
 
-      <div className="flex justify-center gap-1.5 mt-3">
-        {Array.from({ length: pages }).map((_, i) => (
-          <button
-            key={i}
-            type="button"
-            onClick={() => scrollTo(i)}
-            className="w-1.5 h-1.5 rounded-full transition-all duration-150 cursor-pointer"
-            style={{ background: i === active ? "#800020" : "rgba(0,0,0,0.12)" }}
-            aria-label={`Go to position ${i + 1} of ${pages}`}
-          />
-        ))}
+        <div
+          ref={stripRef}
+          className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide items-stretch"
+        >
+          {sortedReviews.map((r, i) => (
+            <div key={i} data-review-item className="shrink-0 flex">
+              {r.kind === "image" ? <ImageCard review={r} /> : <TextCard review={r} />}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
