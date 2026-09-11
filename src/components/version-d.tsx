@@ -131,7 +131,7 @@ export default function VersionD() {
                   <img
                     src="/kristyna.png"
                     alt="Kristyna Zackova"
-                    className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-300 shrink-0 mt-0.5"
+                    className="w-[52px] h-[52px] sm:w-[57px] sm:h-[57px] rounded-full object-cover object-top shrink-0 mt-0.5"
                     style={{ border: "2px solid rgba(0,0,0,0.06)" }}
                   />
                   <div className="space-y-0.5 sm:space-y-1">
