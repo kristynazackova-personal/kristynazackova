@@ -2,6 +2,7 @@ import Link from "next/link";
 import VentureCard from "./venture-card";
 import type { Venture } from "./venture-card";
 import FloatingObject from "./floating-object";
+import MenteeReviews from "./mentee-reviews";
 
 const ventures: Venture[] = [
   {
@@ -238,6 +239,7 @@ export default function VersionD() {
                 />
               </a>
             </div>
+            <MenteeReviews />
           </section>
 
           <div className="h-px mx-auto max-w-[200px]" style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)" }} />
