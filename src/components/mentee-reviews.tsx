@@ -74,7 +74,7 @@ const reviews: Review[] = [
     kind: "text",
     name: "Austin",
     source: "MentorCruise",
-    date: "2026-09-06",
+    date: "2026-07-07",
     meta: "Standard Plan · 3 months",
     quote:
       "Kristyna is a great mentor, she has very valuable insights that I’m sure will come in handy in the future. Very gracious with her time as well, thank you!",
