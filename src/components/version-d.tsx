@@ -5,12 +5,12 @@ import FloatingObject from "./floating-object";
 
 const ventures: Venture[] = [
   {
-    title: "ConversationLens",
+    title: "Selvenn",
     summary: "AI-driven platform analyzing couples' conversations to deliver relationship insights.",
-    link: "https://conversationlens.com?utm_source=kristynazackova.com&utm_medium=portfolio",
+    link: "https://www.selvenn.com?utm_source=kristynazackova.com&utm_medium=portfolio",
     status: "LIVE",
     why: "I saw a consistent gap in how people understand and improve their relationships. While therapy can be valuable, it is often expensive, difficult to access, and not embedded in the day-to-day interactions where most relationship dynamics actually play out. I wanted to build a system that brings more clarity to those everyday moments — helping people better understand how they communicate, how patterns form, and where friction emerges.",
-    description: "ConversationLens analyzes real conversations (text, audio, or transcripts) to identify communication patterns, emotional dynamics, and recurring points of tension. The goal is not to replace therapy, but to complement it by providing structured, objective insight into how people communicate, visibility into patterns across time (not just isolated moments), and practical, evidence-informed suggestions for improving interactions. The platform combines conversation analysis, AI-guided reflection, and voice-based sessions into a single system designed to make relationship insight more continuous and accessible. Live with active users since November 2025.",
+    description: "Selvenn analyzes real conversations (text, audio, or transcripts) to identify communication patterns, emotional dynamics, and recurring points of tension. The goal is not to replace therapy, but to complement it by providing structured, objective insight into how people communicate, visibility into patterns across time (not just isolated moments), and practical, evidence-informed suggestions for improving interactions. The platform combines conversation analysis, AI-guided reflection, and voice-based sessions into a single system designed to make relationship insight more continuous and accessible. Live with active users since November 2025.",
     media: [
       { type: "image", src: "/ventures/IMG_6681.jpeg", alt: "Dashboard" },
       { type: "image", src: "/ventures/IMG_6682.jpeg", alt: "Relationship Journey" },
@@ -59,7 +59,7 @@ const ventures: Venture[] = [
 const experience = [
   {
     role: "Founder",
-    company: "ConversationLens",
+    company: "Selvenn",
     period: "2025 — Present",
     scope: "AI Relationship Intelligence",
     description: "Built an AI platform that analyzes real conversations to uncover patterns in relationships and communication. Identified a gap in accessible, structured relationship insight and designed a product that translates unstructured human interaction into measurable signals. Defined product strategy, system architecture, and core experience end-to-end. Launched in November 2025. The platform is live with active users and ongoing iteration across analytics, voice-based therapy, and insight generation.",
@@ -137,7 +137,7 @@ export default function VersionD() {
                       Kristyna Zackova
                     </div>
                     <div className="text-[13px] sm:text-[14px] text-gray-500">
-                      Principal Product Manager @ Inmar Intelligence & Founder of <a href="https://conversationlens.com?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-150">ConversationLens</a>
+                      Principal Product Manager @ Inmar Intelligence & Founder of <a href="https://www.selvenn.com?utm_source=kristynazackova.com&utm_medium=portfolio" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors duration-150">Selvenn</a>
                     </div>
                   </div>
                 </div>

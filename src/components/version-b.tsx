@@ -2,10 +2,10 @@ import Link from "next/link";
 
 const ventures = [
   {
-    title: "ConversationLens",
+    title: "Selvenn",
     description:
       "AI-driven platform analyzing couples' conversations to deliver relationship insights. Identified a market gap in accessible couple therapy, crafted the product and business strategy, and designed the UX. Live with active users.",
-    link: "https://conversationlens.com",
+    link: "https://www.selvenn.com",
     status: null,
   },
   {

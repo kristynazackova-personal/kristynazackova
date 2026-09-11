@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s — Kristyna Zackova",
   },
   description:
-    "Principal Product Manager at Inmar Intelligence. Building consumer-centric SaaS solutions for CPG brands. Founder of ConversationLens and ThreadLift.",
+    "Principal Product Manager at Inmar Intelligence. Building consumer-centric SaaS solutions for CPG brands. Founder of Selvenn and ThreadLift.",
   keywords: [
     "Kristyna Zackova",
     "Product Manager",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "SaaS",
     "Martech",
     "AI Products",
-    "ConversationLens",
+    "Selvenn",
     "ThreadLift",
     "Inmar Intelligence",
   ],
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Kristyna Zackova — Product Leader & Founder",
     description:
-      "Principal Product Manager at Inmar Intelligence. Building consumer-centric SaaS solutions for CPG brands. Founder of ConversationLens and ThreadLift.",
+      "Principal Product Manager at Inmar Intelligence. Building consumer-centric SaaS solutions for CPG brands. Founder of Selvenn and ThreadLift.",
     url: "https://kristynazackova.com",
     siteName: "Kristyna Zackova",
     locale: "en_US",
@@ -105,7 +105,7 @@ export default function RootLayout({
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               </a>
               <a href="https://mentorcruise.com/mentor/kristynazackova/?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">Mentorship</a>
-              <a href="https://conversationlens.com?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ConversationLens</a>
+              <a href="https://www.selvenn.com?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">Selvenn</a>
               <a href="https://www.threadlift.io?utm_source=kristynazackova.com&utm_medium=portfolio&utm_campaign=footer" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-100 hover:text-black">ThreadLift</a>
             </div>
           </div>
